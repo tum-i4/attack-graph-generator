@@ -1,0 +1,15 @@
+# The location of the folder with the NVD attack rule files.
+attack-vector-folder-path: attack_vector_files
+
+# The criteria that we use to determine exploitability of a vulnerability.
+# Example: https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2017-8980&vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)
+attack-vector-filter:
+  accessVector : NETWORK # Options {"NETWORK", "LOCAL", "ADJACENT_NETWORK"}
+  accessComplexity: LOW # Options {"LOW", "MEDIUM", "HIGH"}
+  authentication: NONE # Options {"NONE", "SINGLE", "MULTIPLE"}
+  confidentialityImpact: COMPLETE # Options {"NONE", "PARTIAL", "COMPLETE"}
+  integrityImpact: COMPLETE # Options {"NONE", "PARTIAL", "COMPLETE"}
+# Note that availability Impact is not interesting in our scenario, so that is why we don't include it.
+
+# The locations from where the example-folders are read and where their results are beeing stored.
+examples-results-path: examples-results

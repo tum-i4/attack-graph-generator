@@ -1,0 +1,25 @@
+// Attack Graph
+digraph {
+	"example_phpmailer(CVE-2016-4448)"
+	"example_phpmailer(CVE-2007-0448)"
+	"example_phpmailer(CVE-2005-2541)"
+	"example_samba(CVE-2017-12762)"
+	"example_samba(CVE-2017-18017)"
+	"example_samba(CVE-2016-4448)"
+	"example_samba(CVE-2005-2541)"
+	"example_phpmailer(CVE-2016-4448)" -> "example_samba(CVE-2016-4448)" [contstraint=false]
+	"example_phpmailer(CVE-2007-0448)" -> "example_samba(CVE-2017-12762)" [contstraint=false]
+	"example_phpmailer(CVE-2016-4448)" -> "example_samba(CVE-2017-18017)" [contstraint=false]
+	outside -> "example_phpmailer(CVE-2016-4448)" [contstraint=false]
+	"example_phpmailer(CVE-2007-0448)" -> "example_samba(CVE-2017-18017)" [contstraint=false]
+	outside -> "example_phpmailer(CVE-2007-0448)" [contstraint=false]
+	"example_phpmailer(CVE-2005-2541)" -> "example_samba(CVE-2017-18017)" [contstraint=false]
+	"example_phpmailer(CVE-2005-2541)" -> "example_samba(CVE-2005-2541)" [contstraint=false]
+	"example_phpmailer(CVE-2016-4448)" -> "example_samba(CVE-2005-2541)" [contstraint=false]
+	"example_phpmailer(CVE-2016-4448)" -> "example_samba(CVE-2017-12762)" [contstraint=false]
+	"example_phpmailer(CVE-2005-2541)" -> "example_samba(CVE-2017-12762)" [contstraint=false]
+	outside -> "example_phpmailer(CVE-2005-2541)" [contstraint=false]
+	"example_phpmailer(CVE-2007-0448)" -> "example_samba(CVE-2016-4448)" [contstraint=false]
+	"example_phpmailer(CVE-2007-0448)" -> "example_samba(CVE-2005-2541)" [contstraint=false]
+	"example_phpmailer(CVE-2005-2541)" -> "example_samba(CVE-2016-4448)" [contstraint=false]
+}

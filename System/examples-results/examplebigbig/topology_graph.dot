@@ -1,0 +1,53 @@
+// Topology Graph
+graph {
+	examplebigbig_samba1
+	examplebigbig_samba9
+	examplebigbig_samba4
+	outside
+	examplebigbig_phpmailer
+	examplebigbig_samba3
+	examplebigbig_samba8
+	examplebigbig_samba7
+	examplebigbig_samba5
+	examplebigbig_samba6
+	examplebigbig_samba2
+	examplebigbig_samba1 -- examplebigbig_phpmailer [contstraint=false]
+	examplebigbig_samba7 -- examplebigbig_samba2 [contstraint=false]
+	outside -- examplebigbig_phpmailer [contstraint=false]
+	examplebigbig_samba8 -- examplebigbig_samba5 [contstraint=false]
+	examplebigbig_samba7 -- examplebigbig_samba5 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba3 [contstraint=false]
+	examplebigbig_samba7 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_samba6 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba8 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba5 [contstraint=false]
+	examplebigbig_samba5 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba8 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba3 [contstraint=false]
+	examplebigbig_samba9 -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba5 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_samba3 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba9 -- examplebigbig_samba8 [contstraint=false]
+	examplebigbig_samba3 -- examplebigbig_samba8 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_phpmailer [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba8 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba3 [contstraint=false]
+	examplebigbig_samba3 -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba8 -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba3 -- examplebigbig_samba5 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba5 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba4 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba8 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_samba1 -- examplebigbig_samba2 [contstraint=false]
+	examplebigbig_samba4 -- examplebigbig_samba7 [contstraint=false]
+	examplebigbig_samba8 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_samba3 -- examplebigbig_samba6 [contstraint=false]
+	examplebigbig_phpmailer -- examplebigbig_samba5 [contstraint=false]
+}
