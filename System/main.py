@@ -39,9 +39,10 @@ def main(example_folder, goal_container):
     print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
 
     # Parsing the vulnerabilities for each docker container.
-    time_start = time.time()
-    vul_par.parse_vulnerabilities(example_folder)
-    print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
+    if config["mode"] == "online":
+        time_start = time.time()
+        vul_par.parse_vulnerabilities(example_folder)
+        print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
 
     # Getting the attack graph nodes and edges from the attack paths.
     time_start = time.time()
