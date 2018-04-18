@@ -1,14 +1,13 @@
 #!/bin/bash
 
-echo ""
 echo "Checking if dependencies are installed..."
 # Checking if python is installed.
 path_python=$(which python3)
 length_path_python=$(expr length "$path_python")
 if [ "$length_path_python3" = "0" ]; then
      echo "Python is not installed."
-     sudo $(apt-get update)
-     sudo $(apt-get install docker-ce)
+     sudo apt-get update
+     sudo apt-get install python3.6
 else
      echo "Python is installed."
 fi
@@ -18,8 +17,11 @@ path_docker=$(which docker)
 length_path_docker=$(expr length "$path_docker")
 if [ $length_path_docker = 0 ]; then
      echo "Docker is not installed."
-     sudo $(apt-get update)
-     sudo $(sudo apt-get install python3.6)
+     sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+     sudo apt-get update
+     sudo apt-get install docker-ce
 else
      echo "Docker is installed."
 fi
@@ -29,8 +31,8 @@ path_docker_compose=$(which docker-compose)
 length_path_docker_compose=$(expr length "$path_docker_compose")
 if [ $length_path_docker_compose = 0 ]; then
      echo "Docker-compose is not installed."
-     sudo $(apt-get -y install python-pip)
-     sudo $(pip install docker-compose)
+     sudo apt-get -y install python-pip
+     sudo pip install docker-compose
 else
      echo "Docker-compose is installed."
 fi

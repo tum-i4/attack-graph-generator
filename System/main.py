@@ -24,6 +24,51 @@ def visualize_attack_graph(example_folder_path, nodes, edges):
     writer.write_attack_graph(example_folder_path, dot)
     print("Vizualizing the graph...")
 
+"""def print_graph_properties(graph):
+    """This functions prints graph properties."""
+
+    # Calculate topology properties
+    
+    # Number of nodes
+
+    # Number of edges
+
+    # Degree
+    degree_centrality(graph)
+
+    # Radius 
+    property_graph = radius(graph)
+    print("The radius of the graph is "+str(property_graph))
+
+    # Diameter   
+    property_graph = diameter(graph)
+    print("The radius of the graph is "+str(property_graph))
+    # Connectivity
+    average_degree_connectivity(graph)
+
+    # Cycles
+    cycle_basis(graph)
+
+    # Betweenness
+
+    # Clustering
+
+    # Closeness
+
+    # Eccentriity
+    eccentricity(graph)
+
+    # Cliques
+
+    # N- cliques
+
+    # Principal eigenvector
+    eigenvector_centrality(graph)
+
+    # Redundancy
+
+    # Dispersion"""
+
 def main(example_folder, goal_container):
     """Main function responsible for running the attack graph generation pipeline."""
 

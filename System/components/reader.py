@@ -59,7 +59,8 @@ def validate_config_file():
     # Check if the main keywords are present in the config file.
     main_keywords = ["attack-vector-filter",
                      "attack-vector-folder-path",
-                     "examples-results-path"]
+                     "examples-results-path",
+                     "mode"]
 
     for main_keyword in main_keywords:
         if main_keyword not in config_file.keys():
@@ -113,6 +114,31 @@ def validate_config_file():
                 print("Value: "+filter_vulnerabilities[criterium]
                       + " is invalid for criterum "+criterium)
                 break
+
+    # Check if the mode keyword has the right values
+    if is_valid:
+        config_mode = config_file["mode"]
+        if config_mode != "offline" and config_mode != "online":
+            is_valid = False
+            print("Value: "+config_mode
+                      + " is invalid for keyword mode")
+            break
+        
+        # Checks if clairctl has been installed.
+        else if config_mode == "online":
+            print("Checking if clairctl has been installed")
+            
+            home = os.path.expanduser("~")
+            os.path.exists(os.path.join(home,
+                                        "golang"
+                                        "go",
+                                        "bin",
+                                        "src",
+                                        "github.com",
+                                        "jgsqware",
+                                        "clairctl"))
+
+    
 
     # Check if the paths for "attack-vector-folder-path" and "examples-results-path" are valid
     if is_valid:
