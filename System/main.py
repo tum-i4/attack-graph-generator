@@ -4,6 +4,7 @@
 import sys
 import os
 import time
+import networkx as nx
 
 from graphviz import Digraph
 from components import reader
@@ -24,28 +25,56 @@ def visualize_attack_graph(example_folder_path, nodes, edges):
     writer.write_attack_graph(example_folder_path, dot)
     print("Vizualizing the graph...")
 
-"""def print_graph_properties(graph):
+def print_graph_properties(nodes, edges):
     """This functions prints graph properties."""
 
-    # Calculate topology properties
+    # Create the graph
+    graph = nx.DiGraph()
+    for node in nodes:
+        graph.add_node(node)
+    for edge in edges:
+        graph.add_edge(edges[edge][0], edges[edge][1], contstraint='false')
+
+    # Calculate the attack graph properties
     
     # Number of nodes
+    property_graph = graph.number_of_nodes()
+    print("The number of nodes in the graph is "+str(property_graph))
 
     # Number of edges
+    property_graph = graph.number_of_edges()
+    print("The number of edges in the graph is "+str(property_graph))
 
-    # Degree
-    degree_centrality(graph)
-
+    # Degree centrality
+    property_graph = nx.degree_centrality(graph)
+    print("The degree centrality of the graph is "+str(property_graph))
+    sum_centrality = 0
+    for node in property_graph:
+        sum_centrality = sum_centrality + property_graph[node]
+    print("The average degree centrality of the graph is "+str(sum_centrality/len(property_graph)))
+    """
     # Radius 
-    property_graph = radius(graph)
+    property_graph = nx.radius(graph)
     print("The radius of the graph is "+str(property_graph))
-
+    
     # Diameter   
-    property_graph = diameter(graph)
+    property_graph = nx.diameter(graph)
     print("The radius of the graph is "+str(property_graph))
+    """
+    
     # Connectivity
-    average_degree_connectivity(graph)
+    property_graph = nx.average_degree_connectivity(graph)
+    print("The average degree conectivity of the graph is "+str(property_graph))
 
+    property_graph = nx.degree_assortativity_coefficient(graph)
+    print("The average degree assortativity coefficient of the graph is "+str(property_graph))
+
+    print("The in-degree is "+str(graph.in_degree()))
+    print("The out-degree is "+str(graph.out_degree()))
+
+
+    print("The graph is strongly connected? "+nx.is_strongly_connected(graph))
+    """
     # Cycles
     cycle_basis(graph)
 
@@ -97,10 +126,16 @@ def main(example_folder, goal_container):
                                                     config["attack-vector-filter"])
     print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
 
+    # Printing the graph properties.
+    time_start = time.time()
+    print_graph_properties(nodes, edges)
+    print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
+    
     # Visualizing the attack graph.
     time_start = time.time()
     visualize_attack_graph(example_folder, nodes, edges)
     print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
+
 
 if __name__ == "__main__":
 
