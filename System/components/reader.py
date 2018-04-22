@@ -4,6 +4,7 @@
 import os
 import json
 import yaml
+import sys
 
 def validate_command_line_input(arguments):
     """This function validates the command line user input."""
@@ -122,10 +123,10 @@ def validate_config_file():
             is_valid = False
             print("Value: "+config_mode
                       + " is invalid for keyword mode")
-            break
+            sys.exit(0)
         
         # Checks if clairctl has been installed.
-        else if config_mode == "online":
+        elif config_mode == "online":
             print("Checking if clairctl has been installed")
             
             home = os.path.expanduser("~")

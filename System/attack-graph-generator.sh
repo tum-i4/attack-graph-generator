@@ -63,14 +63,13 @@ fi
 # Checking if go is present.
 path_go=$(echo $GOPATH)
 length_path_go=$(expr length "$path_go")
-echo $length_path_go
 if [ $length_path_go = 0 ]; then
-     echo "GOPATH is not set. Setting GOPATH..."
-     
-     export PATH=$PATH:/usr/local/go/bin
-     export GOPATH=$GOPATH:/usr/local/go/bin
-     GOPATH="/usr/local/go/bin"
-     exec /bin/bash
+     echo "GOPATH is not set. Setting GOPATH..."     
+     #export PATH=$PATH:/usr/local/go/bin
+     #export GOPATH=$GOPATH:/usr/local/go/bin
+     #GOPATH="/usr/local/go/bin"
+     #exec /bin/bash
+     source "exportGO.sh"
 else
      echo "GOPATH is already set."
 fi
