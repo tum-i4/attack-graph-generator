@@ -48,10 +48,10 @@ def print_graph_properties(nodes, edges):
     # Degree centrality
     property_graph = nx.degree_centrality(graph)
     print("The degree centrality of the graph is "+str(property_graph))
-    sum_centrality = 0
-    for node in property_graph:
-        sum_centrality = sum_centrality + property_graph[node]
-    print("The average degree centrality of the graph is "+str(sum_centrality/len(property_graph)))
+    #sum_centrality = 0
+    #for node in property_graph:
+    #    sum_centrality = sum_centrality + property_graph[node]
+    #print("The average degree centrality of the graph is "+str(sum_centrality/len(property_graph)))
     """
     # Radius 
     property_graph = nx.radius(graph)
@@ -73,7 +73,7 @@ def print_graph_properties(nodes, edges):
     print("The out-degree is "+str(graph.out_degree()))
 
 
-    print("The graph is strongly connected? "+nx.is_strongly_connected(graph))
+    print("The graph is strongly connected? "+str(nx.is_strongly_connected(graph)))
     """
     # Cycles
     cycle_basis(graph)
@@ -128,7 +128,7 @@ def main(example_folder, goal_container):
 
     # Printing the graph properties.
     time_start = time.time()
-    print_graph_properties(nodes, edges)
+    #print_graph_properties(nodes, edges)
     print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
     
     # Visualizing the attack graph.

@@ -13,8 +13,8 @@ else
      echo "Python3.6 is installed."
 fi
 
-path_pip=$(which pip3)
-length_path_pip=$(expr length "$path_pip")
+path_pip3=$(which pip3)
+length_path_pip3=$(expr length "$path_pip3")
 if [ "$length_path_pip3" = "0" ]; then
      echo "Pip3 is not installed."
      sudo apt-get install python3-pip
@@ -25,7 +25,7 @@ fi
 # Checking if docker is installed.
 path_docker=$(which docker)
 length_path_docker=$(expr length "$path_docker")
-if [ $length_path_docker = 0 ]; then
+if [ "$length_path_docker" = "0" ]; then
      echo "Docker is not installed."
      sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -40,10 +40,10 @@ fi
 # Checking if docker-compose is installed.
 path_docker_compose=$(which docker-compose)
 length_path_docker_compose=$(expr length "$path_docker_compose")
-if [ $length_path_docker_compose = 0 ]; then
+if [ "$length_path_docker_compose" = "0" ]; then
      echo "Docker-compose is not installed."
-     sudo $(apt-get -y install python-pip)
-     sudo $(pip install docker-compose)
+     sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+     sudo chmod +x /usr/local/bin/docker-compose
 else
      echo "Docker-compose is installed."
 fi
@@ -97,15 +97,49 @@ else
    unzip master.zip -d $GOPATH/src/github.com/jgsqware
    rm master.zip
    mv $GOPATH/src/github.com/jgsqware/clairctl-master $GOPATH/src/github.com/jgsqware/clairctl
-   exit 1
 fi
 
 # Installing graphviz
-sudo pip3 install graphviz
+python3 -c "import graphviz" &> /dev/null
+if [ "$?" = "1" ]; then
+    echo "Graphviz has not been installed. Installing Graphviz..."
+    sudo pip3 install graphviz
+else
+    echo "Graphviz is installed."
+fi
+
 sudo apt-get install graphviz
 
 # Installing yaml
-sudo pip3 install pyyaml
+python3 -c "import yaml" &> /dev/null
+if [ "$?" = "1" ]; then
+    echo "Pyyaml has not been installed. Installing Pyyaml..."
+    sudo pip3 install pyyaml
+else
+    echo "Pyyaml is installed."
+fi
+
+# Installing networkx
+python3 -c "import networkx" &> /dev/null
+if [ "$?" = "1" ]; then
+    echo "Networkx has not been installed. Installing Networkx..."
+    sudo pip3 install networkx
+else
+    echo "Networkx is installed."
+fi
+
+# Installing numpy
+python3 -c "import numpy" &> /dev/null
+if [ "$?" = "1" ]; then
+    echo "Numpy has not been installed. Installing Numpy..."
+    sudo pip3 install numpy
+else
+    echo "Numpy is installed."
+fi
+
+#sudo groupadd docker
+#sudo usermod -aG docker $(whoami)
+#sudo service docker start
 
 # Checks if the number of arguments is correct.
 if  [ $# == 2 ]; then
