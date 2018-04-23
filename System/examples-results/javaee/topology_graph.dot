@@ -1,9 +1,9 @@
 // Topology Graph
 graph {
-	outside
-	"movieplex7-tomee"
 	"react-client"
-	outside -- "react-client" [contstraint=false]
-	outside -- "movieplex7-tomee" [contstraint=false]
-	"movieplex7-tomee" -- "react-client" [contstraint=false]
+	"movieplex7-tomee"
+	outside
+	"react-client" -- "movieplex7-tomee" [contstraint=false]
+	"movieplex7-tomee" -- outside [contstraint=false]
+	"react-client" -- outside [contstraint=false]
 }

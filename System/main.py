@@ -128,7 +128,7 @@ def main(example_folder, goal_container):
 
     # Printing the graph properties.
     time_start = time.time()
-    #print_graph_properties(nodes, edges)
+    print_graph_properties(nodes, edges)
     print("Time elapsed: "+str(time.time() - time_start)+" seconds.\n")
     
     # Visualizing the attack graph.
