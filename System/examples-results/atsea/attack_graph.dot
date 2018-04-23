@@ -2,6 +2,6 @@
 digraph {
 	"atsea_db(CVE-2005-2541)"
 	"atsea_db(CVE-2017-1000082)"
-	outside -> "atsea_db(CVE-2017-1000082)" [contstraint=false]
 	outside -> "atsea_db(CVE-2005-2541)" [contstraint=false]
+	outside -> "atsea_db(CVE-2017-1000082)" [contstraint=false]
 }

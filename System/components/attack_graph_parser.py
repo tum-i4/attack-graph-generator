@@ -222,8 +222,9 @@ def breadth_first_search_direct(goal_container,
                     key = node_start+"|"+node_end
                     edges[key] = [node_start, node_end]
 
-    print("Breadth-first-search took "+str(time.time()-bds_start)+" seconds.")
-    return nodes, edges
+    duration_bdf = time.time()-bds_start
+    print("Breadth-first-search took "+str(duration_bdf)+" seconds.")
+    return nodes, edges, duration_bdf
 
 def generate_attack_graph(goal_container_name,
                           example_folder,
@@ -263,7 +264,7 @@ def generate_attack_graph(goal_container_name,
                                                                       attack_filter)
 
     # Breadth first search algorithm for generation of attack paths.
-    nodes, edges = breadth_first_search_direct(mapping_names[goal_container_name],
+    nodes, edges, duration_bdf = breadth_first_search_direct(mapping_names[goal_container_name],
                                         topology,
                                         container_exploitability)
 
@@ -271,4 +272,4 @@ def generate_attack_graph(goal_container_name,
 
     # Returns a graph with nodes and edges.
     #return get_graph(attack_paths)
-    return nodes, edges
+    return nodes, edges, duration_bdf

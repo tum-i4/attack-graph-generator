@@ -1,7 +1,4 @@
-# Project Title
-
-Attack Graph Generator
- If it is started for the first time and some of the dependencies are installed. Please however not that the list is in progress and it is not complete. Use the steps from above.
+# Docker Attack Graph Generator
 
 
 ## Getting Started
@@ -11,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-It works currently only on Ubuntu 16.04.4 LTS
+It works currently only on Ubuntu 16.04.4 LTS.
 It is tested on a virtual machine containing the above-mentioned operating system from scratch.
 
 Executing the program for the first time will download all of the needed libraries/components including:
