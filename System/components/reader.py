@@ -142,14 +142,14 @@ def validate_config_file():
     
 
     # Check if the paths for "attack-vector-folder-path" and "examples-results-path" are valid
-    if is_valid:
+    """if is_valid:
         paths = ["attack-vector-folder-path", "examples-results-path"]
         current_directory = os.getcwd()
         for path in paths:
             combined_path = os.path.join(current_directory, config_file[path])
             if not os.path.exists(combined_path):
                 print(combined_path+" does not exist.")
-                is_valid = False
+                is_valid = False"""
 
     return is_valid
 
