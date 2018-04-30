@@ -30,7 +30,7 @@ Executing the program for the first time will download all of the needed librari
 In order to run the program, the following script should be run:
 
 ```
-$ ./attack-graph-generator.sh ./examples/atsea database
+$ sudo ./attack-graph-generator.sh ./examples/atsea database
 
 ```
 
@@ -41,10 +41,8 @@ In the config file, there is a possiblity to indicate online/offline mode. This 
 
 Other examples are
 ```
-$ ./attack-graph-generator.sh ./examples/javaee movieplex7
-$ ./attack-graph-generator.sh ./examples/example samba
-$ ./attack-graph-generator.sh ./examples/examplebig samba4
-$ ./attack-graph-generator.sh ./examples/examplebigbig samba9
+$ sudo ./attack-graph-generator.sh ./examples/javaee movieplex7
+$ sudo ./attack-graph-generator.sh ./examples/example samba
 
 ```
 

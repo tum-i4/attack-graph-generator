@@ -101,8 +101,8 @@ def print_graph_properties(nodes, edges):
         avg_out_degree = avg_out_degree / no_nodes
     print("The average out-degree is "+str(avg_out_degree))
 
-
-    print("Is the graph strongly connected? "+str(nx.is_strongly_connected(graph)))
+    if no_nodes != 0:
+        print("Is the graph strongly connected? "+str(nx.is_strongly_connected(graph)))
 
     """
     # Cycles

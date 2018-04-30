@@ -1,2 +1,4 @@
-examples/*
+examples/atsea
+examples/javaee
 examples-results/*
+components/__pycache__
