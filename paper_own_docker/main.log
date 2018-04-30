@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  28 FEB 2018 04:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  30 APR 2018 10:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -186,12 +186,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7.69997> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.5> on input line 54.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 82.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 84.
  (/home/stevica/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
 
 
 ** Conference Paper **
@@ -214,7 +214,7 @@ Overfull \vbox (336.63313pt too high) has occurred while \output is active []
 ] (main.aux) ) 
 Here is how much of TeX's memory you used:
  1833 strings out of 495203
- 30098 string characters out of 3181196
+ 30213 string characters out of 3181196
  94118 words of memory out of 3000000
  5189 multiletter control sequences out of 15000+200000
  35971 words of font info for 69 fonts, out of 3000000 for 9000
@@ -227,7 +227,7 @@ Here is how much of TeX's memory you used:
 stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></home/stevica
 /.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></home/stevica/.miktex
 /texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 68597 bytes).
+Output written on main.pdf (1 page, 69046 bytes).
 PDF statistics:
  31 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,8 +1,0 @@
-// Topology Graph
-graph {
-	example_samba
-	outside
-	example_phpmailer
-	outside -- example_phpmailer [contstraint=false]
-	example_samba -- example_phpmailer [contstraint=false]
-}

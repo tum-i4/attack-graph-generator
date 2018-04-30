@@ -1,7 +1,0 @@
-// Attack Graph
-digraph {
-	"movieplex7-tomee(CVE-2017-1000082)"
-	"movieplex7-tomee(CVE-2005-2541)"
-	outside -> "movieplex7-tomee(CVE-2005-2541)" [contstraint=false]
-	outside -> "movieplex7-tomee(CVE-2017-1000082)" [contstraint=false]
-}

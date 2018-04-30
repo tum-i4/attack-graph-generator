@@ -1,5 +1,0 @@
-ctdb-import.git$ git filter-branch \
-		--tree-filter /path/to/ctdb-import.tree-filter.sh \
-		--msg-filter  /path/to/ctdb-import.msg-filter.sh \
-		HEAD
-
