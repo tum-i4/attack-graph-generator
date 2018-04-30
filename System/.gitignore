@@ -2,3 +2,4 @@ examples/atsea
 examples/javaee
 examples-results/*
 components/__pycache__
+components/__pycache__/*
