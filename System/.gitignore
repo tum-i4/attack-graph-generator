@@ -1,5 +1,6 @@
-#examples/atsea
-#examples/javaee
-#examples-results/*
+examples/atsea
+examples/javaee
+examples/example
+examples-results/*
 components/__pycache__
 components/__pycache__/*
