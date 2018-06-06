@@ -1,0 +1,115 @@
+version: '2'
+services:
+  phpmailer:
+    build: ./phpmailer
+    networks: 
+      - frontend
+    ports:
+      - 80
+      
+  samba1:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba2:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba3:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba4:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba5:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba6:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba7:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba8:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba9:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba10:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba11:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba12:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba13:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba14:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba15:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba16:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba17:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba18:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba19:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba20:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

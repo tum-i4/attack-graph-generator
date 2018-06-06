@@ -1,19 +1,260 @@
 # The location of the folder with the NVD attack rule files.
 attack-vector-folder-path: attack_vector_files
 
-# The criteria that we use to determine exploitability of a vulnerability.
-# Example: https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?name=CVE-2017-8980&vector=(AV:N/AC:L/Au:N/C:P/I:N/A:N)
-attack-vector-filter:
-  accessVector : NETWORK # Options {"NETWORK", "LOCAL", "ADJACENT_NETWORK"}
-  accessComplexity: LOW # Options {"LOW", "MEDIUM", "HIGH"}
-  authentication: NONE # Options {"NONE", "SINGLE", "MULTIPLE"}
-  confidentialityImpact: COMPLETE # Options {"NONE", "PARTIAL", "COMPLETE"}
-  integrityImpact: COMPLETE # Options {"NONE", "PARTIAL", "COMPLETE"}
-# Note that availability Impact is not interesting in our scenario, so that is why we don't include it.
-
 # The locations from where the example-folders are read and where their results are beeing stored.
 examples-results-path: examples-results
 
-mode: online # Options {"online", "offline"}
 # online calculates vulnerabilites with clairctl
 # offline skips clairctl and assumes that the vulnerabilities are already calculated.
+mode: offline # Options {"online", "offline"}
+
+# This property states if topology and attack graphs are going to be produced.
+generate_graphs: False # Options {True, False}
+
+# This property states if single or multiple vulnerabilties constitute 
+# an edge between two same nodes
+labels_edges: single # Options {"single", "multiple"}
+
+# The rules required to produce pre- and postconditions. They follow a specific pattern.
+preconditions-rules:
+  rule1:
+    accessVector: '?'
+    authentication: '?'
+    accessComplexity: '?'
+    cpe: '?'
+    precondition: 'NONE'
+  rule2:
+    accessVector: 'LOCAL'
+    authentication: '?'
+    accessComplexity: 'LOW'
+    cpe: 'o'
+    precondition: 'USER'
+  rule3:
+    accessVector: 'LOCAL'
+    authentication: '?'
+    accessComplexity: 'HIGH'
+    cpe: 'o'
+    precondition: 'ADMIN'
+  rule6:
+    accessVector: 'LOCAL'
+    authentication: 'NONE'
+    accessComplexity: 'LOW'
+    cpe: 'h'
+    precondition: 'USER'
+  rule7:
+    accessVector: 'LOCAL'
+    authentication: 'NONE'
+    accessComplexity: 'HIGH'
+    cpe: 'h'
+    precondition: 'ADMIN'
+  rule8:
+    accessVector: '!LOCAL'
+    authentication: '!NONE'
+    accessComplexity: 'LOW'
+    cpe: 'o'
+    precondition: 'USER'
+  rule9:
+    accessVector: '!LOCAL'
+    authentication: '!NONE'
+    accessComplexity: 'HIGH'
+    cpe: 'o'
+    precondition: 'ADMIN'
+  rule12:
+    vocabulary:
+      - 'allow ... guest OS user'
+      - 'allow ... PV guest user'
+      - 'user on a guest operating system'
+    cpe: '?'
+    precondition: 'VOS USER'
+  rule13:
+    vocabulary:
+      - 'allow ... guest OS admin'
+      - 'allow ... PV guest admin'
+      - 'allow ... guest OS kernel admin'
+    cpe: '?'
+    precondition: 'VOS ADMIN'
+  rule14:
+    vocabulary:
+      - 'allows local users'
+      - 'allowing local users'
+      - 'allow local users'
+      - 'allows the local user'
+    cpe: '?'
+    precondition: 'USER'
+  rule15:
+    vocabulary:
+      - 'allows local administrators'
+      - 'allow local administrators'
+      - 'allows the local administrator'
+    cpe: '?'
+    precondition: 'ADMIN'
+  rule18:
+    vocabulary:
+      - 'remote authenticated users'
+    cpe: 'o'
+    precondition: 'USER'
+  rule19:
+    vocabulary:
+      - 'remote authenticated admin'
+    cpe: 'o'
+    precondition: 'ADMIN'
+
+postconditions-rules:
+  rule1:
+    vocabulary:
+      - 'gain root'
+      - 'gain unrestricted, root shell access'
+      - 'obtain root'
+    impacts: 'ALL_COMPLETE'
+    cpe: '?'
+    postcondition: 'ADMIN'
+  rule2:
+    vocabulary:
+      - 'gain privilege'
+      - 'gain host OS privilege'
+      - 'gain admin'
+      - 'obtain local admin'
+      - 'gain unauthorized access'
+      - 'to root'
+      - 'to the root'
+      - 'elevate the privilege'
+      - 'elevate privilege'
+      - 'root privileges via buffer overflow'
+    impacts: 'ALL_COMPLETE'
+    cpe: '?'
+    postcondition: 'ADMIN'
+  rule3:
+    vocabulary:
+      - 'unspecified vulnerability'
+      - 'unspecified other impact'
+      - 'unspecified impact'
+      - 'other impacts'
+    impacts: 'ALL_COMPLETE'
+    cpe: '?'
+    postcondition: 'ADMIN'
+  rule4:
+    vocabulary:
+      - 'unspecified vulnerability'
+      - 'unspecified other impact'
+      - 'unspecified impact'
+      - 'other impacts'
+    impacts: 'PARTIAL'
+    cpe: 'o'
+    postcondition: 'USER'
+  rule5:
+    vocabulary:
+      - 'gain privilege'
+      - 'gain unauthorized access'
+    impacts: 'PARTIAL'
+    cpe: 'o'
+    postcondition: 'USER'
+  rule9:
+    vocabulary:
+      - 'obtain password'
+      - 'obtain credential'
+      - 'sniff ... credentials'
+      - 'sniff ... passwords'
+      - 'steal ... credentials'
+      - 'steal ... passwords'
+    impacts: 'ALL_COMPLETE'
+    cpe: 'o'
+    postcondition: 'ADMIN'
+  rule10:
+    vocabulary:
+      - 'obtain password'
+      - 'obtain credential'
+      - 'sniff ... credentials'
+      - 'sniff ... passwords'
+      - 'steal ... credentials'
+      - 'steal ... passwords'
+    impacts: 'PARTIAL'
+    cpe: 'o'
+    postcondition: 'USER'
+  rule12:
+    vocabulary:
+      - 'cleartext credential'
+      - 'cleartext password'
+      - 'obtain plaintext'
+      - 'obtain cleartext'
+      - 'discover cleartext'
+      - 'read network traffic'
+      - 'un-encrypted'
+      - 'unencrypted'
+      - 'intercept transmission'
+      - 'intercept communication'
+      - 'obtain and decrypt passwords'
+      - 'conduct offline password guessing'
+      - 'bypass authentication'
+    impacts: 'ALL_COMPLETE'
+    cpe: 'o'
+    postcondition: 'ADMIN'
+  rule13:
+    vocabulary:
+      - 'cleartext credential'
+      - 'cleartext password'
+      - 'obtain plaintext'
+      - 'obtain cleartext'
+      - 'discover cleartext'
+      - 'read network traffic'
+      - 'un-encrypted'
+      - 'unencrypted'
+      - 'intercept transmission'
+      - 'intercept communication'
+      - 'obtain and decrypt passwords'
+      - 'conduct offline password guessing'
+      - 'bypass authentication'
+    impacts: 'PARTIAL'
+    cpe: 'o'
+    postcondition: 'USER'
+  rule15:
+    vocabulary:
+      - 'buffer overflow'
+      - 'command injection'
+      - 'write arbitrary file'
+      - 'command execution'
+      - 'execute command'
+      - 'execute root command'
+      - 'execute commands as root'
+      - 'execute arbitrary'
+      - 'execute dangerous'
+      - 'execute php'
+      - 'execute script'
+      - 'execute local'
+      - 'execution of arbitrary'
+      - 'execution of command'
+      - 'remote execution'
+      - 'execute code'
+    impacts: 'ALL_COMPLETE'
+    cpe: '?'
+    postcondition: 'ADMIN'
+  rule16:
+    vocabulary:
+      - 'buffer overflow'
+      - 'command injection'
+      - 'write arbitrary file'
+      - 'command execution'
+      - 'execute command'
+      - 'execute root command'
+      - 'execute commands as root'
+      - 'execute arbitrary'
+      - 'execute dangerous'
+      - 'execute php'
+      - 'execute script'
+      - 'execute local'
+      - 'execution of arbitrary'
+      - 'execution of command'
+      - 'remote execution'
+      - 'execute code'
+    impacts: 'PARTIAL'
+    cpe: '?'
+    postcondition: 'USER'
+  rule18:
+    vocabulary:
+      - '?'
+    impacts: 'ANY_NONE'
+    cpe: '?'
+    postcondition: 'NONE'
+
+
+
+    

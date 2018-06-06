@@ -141,24 +141,24 @@ sudo apt-get install unzip
 
 # Creating examples
 # Atsea
-unzip examples/atsea-sample-shop-app-master.zip -d examples
-sudo chmod 777 examples/atsea-sample-shop-app-master
-mv examples/atsea-sample-shop-app-master examples/atsea
+#unzip examples/atsea-sample-shop-app-master.zip -d examples
+#sudo chmod 777 examples/atsea-sample-shop-app-master
+#mv examples/atsea-sample-shop-app-master examples/atsea
 
 # Javaee
-unzip examples/javaee-demo-master.zip -d examples
-sudo chmod 777 examples/javaee-demo-master
-mv examples/javaee-demo-master examples/javaee
+#unzip examples/javaee-demo-master.zip -d examples
+#sudo chmod 777 examples/javaee-demo-master
+#mv examples/javaee-demo-master examples/javaee
 
 # Samba
-unzip examples/exploit-CVE-2017-7494-master -d examples
-sudo chmod 777 examples/exploit-CVE-2017-7494-master
-mv examples/exploit-CVE-2017-7494-master examples/example/samba
+#unzip examples/exploit-CVE-2017-7494-master -d examples
+#sudo chmod 777 examples/exploit-CVE-2017-7494-master
+#mv examples/exploit-CVE-2017-7494-master examples/example/samba
 
 # Phpmailer
-unzip examples/exploit-CVE-2016-10033-master -d examples
-sudo chmod 777 examples/exploit-CVE-2016-10033-master
-mv examples/exploit-CVE-2016-10033-master examples/example/phpmailer
+#unzip examples/exploit-CVE-2016-10033-master -d examples
+#sudo chmod 777 examples/exploit-CVE-2016-10033-master
+#mv examples/exploit-CVE-2016-10033-master examples/example/phpmailer
 
 #sudo groupadd docker
 #sudo usermod -aG docker $(whoami)

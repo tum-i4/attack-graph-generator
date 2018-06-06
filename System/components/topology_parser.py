@@ -2,6 +2,7 @@
 """Module responsible for manipulation of the topology of the docker system."""
 
 import os
+import time
 
 from graphviz import Graph
 from components import reader
@@ -65,7 +66,9 @@ def get_mapping_service_to_image_names(example_folder_path):
 
     return mapping
 
-def create_topology_graph(list_services, example_folder_path):
+def create_topology_graph(list_services,
+                          example_folder_path,
+                          example_results_path=""):
     """This function creates a topology graph."""
 
     nodes = []
@@ -82,17 +85,22 @@ def create_topology_graph(list_services, example_folder_path):
     for edge in edges:
         dot.edge(edges[edge][0], edges[edge][1], contstraint='false')
 
-    writer.write_topology_graph(example_folder_path, dot)
+    writer.write_topology_graph(dot,
+                                example_folder_path,
+                                example_results_path)
 
-def parse_topology(example_folder_path):
+def parse_topology(example_folder_path,
+                   example_results_path=""):
     """ Function for parsing the topology of the docker system.
 
     Assumptions:
-    1) We assume that the docker-compose file containes networks
+    1) We assume that the docker-compose file contains networks
     and the dockers are connected through these networks
     2) We assume that port mapping is done exclusively through docker-compose.yml"""
 
     print("Executing the topology parser...")
+
+    time_start = time.time()
 
     # Checks if the services are specified.
     services = get_services(example_folder_path)
@@ -103,6 +111,7 @@ def parse_topology(example_folder_path):
 
     # Checks if the services are connected to the outside.
     list_services["outside"] = []
+    list_services["docker host"] = []
 
     # Iteration through the first service.
     for first_service_name in services:
@@ -142,9 +151,18 @@ def parse_topology(example_folder_path):
             list_services["outside"].append(mapping_names[first_service_name])
             list_services[mapping_names[first_service_name]].append("outside")
 
+        # Adding the docker host as a node in the graph connected to all of the services
+        list_services["docker host"].append(mapping_names[first_service_name])
+        list_services[mapping_names[first_service_name]].append("docker host")
+
     # Writing the dictonary into a json file.
     writer.write_topology_file(list_services,
-                               example_folder_path)
+                               example_folder_path,
+                               example_results_path)
 
-    create_topology_graph(list_services, example_folder_path)
     print("Topology parser executed.")
+
+    duration_topology = time.time() - time_start
+    print("Time elapsed: "+str(duration_topology)+" seconds.\n")
+
+    return list_services, duration_topology

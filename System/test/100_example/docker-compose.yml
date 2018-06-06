@@ -1,0 +1,514 @@
+version: '2'
+services:
+  phpmailer:
+    build: ./phpmailer
+    networks: 
+      - frontend
+    ports:
+      - 80
+      
+  samba1:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba2:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba3:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba4:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba5:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba6:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba7:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba8:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba9:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba10:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba11:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba12:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba13:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba14:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba15:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba16:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba17:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba18:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba19:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba20:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba21:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba22:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba23:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba24:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba25:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba26:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba27:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba28:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba29:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba30:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba31:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba32:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba33:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba34:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba35:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba36:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba37:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba38:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba39:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba40:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba41:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba42:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba43:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba44:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba45:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba46:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba47:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba48:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba49:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba50:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba51:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba52:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba53:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba54:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba55:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba56:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba57:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba58:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba59:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba60:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba61:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba62:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba63:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba64:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba65:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba66:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba67:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba68:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba69:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba70:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba71:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba72:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba73:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba74:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba75:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba76:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba77:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba78:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba79:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba80:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba81:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba82:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba83:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba84:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba85:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba86:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba87:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba88:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba89:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba90:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba91:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba92:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba93:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba94:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba95:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba96:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba97:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba98:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba99:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba100:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

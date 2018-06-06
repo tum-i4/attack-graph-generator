@@ -7,12 +7,16 @@ import yaml
 
 from components import reader
 
-def write_topology_file(list_services, example_folder_path=""):
+def write_topology_file(list_services,
+                        example_folder_path="",
+                        example_result_path=""):
     """Writes list of services into a file."""
 
-    config = reader.read_config_file()
     folder_name = os.path.basename(example_folder_path)
-    topology_writing_path = os.path.join(config["examples-results-path"],
+    if example_result_path == "":
+        config = reader.read_config_file()
+        example_result_path = config["examples-results-path"]
+    topology_writing_path = os.path.join(example_result_path,
                                          folder_name,
                                          "topology.json")
 
@@ -29,15 +33,20 @@ def write_attack_graph(example_folder_path, graph):
                                      "attack_graph.dot")
     graph.render(attack_graph_path)
 
-def write_topology_graph(example_folder_path, graph):
+def write_topology_graph(graph,
+                         example_folder_path, 
+                         example_result_path=""):
     """Writes the topology graph onto a dot file."""
 
-    config = reader.read_config_file()
     folder_name = os.path.basename(example_folder_path)
-    topology_graph_path = os.path.join(config["examples-results-path"],
+    if example_result_path == "":
+        config = reader.read_config_file()
+        example_result_path = config["examples-results-path"]
+    topology_graph_path = os.path.join(example_result_path,
                                        folder_name,
                                        "topology_graph.dot")
     graph.render(topology_graph_path)
+
 def write_clarictl_config_file(clairctl_home, clairctl_config_dict):
     """Writes the modified clairctl config file."""
 
@@ -67,3 +76,24 @@ def create_folder(example_folder_path):
     directory_path = os.path.join(config["examples-results-path"], example_folder_path)
     if not os.path.exists(directory_path):
         os.makedirs(directory_path, mode=0o777)
+
+def print_summary(config_mode,
+                  config_generate_graphs,
+                  duration_topology=0,
+                  duration_vulnerabilities=0,
+                  duration_attack_graph=0,
+                  duration_bdf=0,
+                  duration_graph_properties=0,
+                  duration_visualization=0):
+    """Function responsible for printing the time summary."""
+
+    print("\n**********Time Summary of the Attack Graph Generation Process**********")
+    print("Topology parsing took "+str(duration_topology)+" seconds.")
+    if config_mode == "online":
+        print("Vulnerability parsing took "+str(duration_vulnerabilities)+" seconds.")
+    print("Attack Graph Generation took "+str(duration_attack_graph)+" seconds.")
+    print("    -Breadth First Search took "+str(duration_bdf)+" seconds.")
+    print("Calculation of Graph Properties took "+str(duration_graph_properties)+" seconds.")
+    if config_generate_graphs:
+        print("Attack Graph Visualization took "+str(duration_visualization)+" seconds.")
+    print("\n\n")

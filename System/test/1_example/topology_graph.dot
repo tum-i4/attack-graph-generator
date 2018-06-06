@@ -1,0 +1,11 @@
+// Topology Graph
+graph {
+	outside
+	"docker host"
+	"1example_phpmailer"
+	"1example_samba"
+	outside -- "1example_phpmailer" [contstraint=false]
+	"docker host" -- "1example_phpmailer" [contstraint=false]
+	"docker host" -- "1example_samba" [contstraint=false]
+	"1example_phpmailer" -- "1example_samba" [contstraint=false]
+}

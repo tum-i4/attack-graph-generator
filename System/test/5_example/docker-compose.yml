@@ -1,0 +1,40 @@
+version: '2'
+services:
+  phpmailer:
+    build: ./phpmailer
+    networks: 
+      - frontend
+    ports:
+      - 80
+      
+  samba1:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba2:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba3:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba4:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+  samba5:
+    build: ./samba
+    networks: 
+      - frontend
+    tty: true
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

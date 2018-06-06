@@ -58,63 +58,16 @@ def validate_config_file():
     config_file = read_config_file()
 
     # Check if the main keywords are present in the config file.
-    main_keywords = ["attack-vector-filter",
-                     "attack-vector-folder-path",
+    main_keywords = ["attack-vector-folder-path",
                      "examples-results-path",
-                     "mode"]
+                     "mode",
+                     "labels_edges",
+                     "generate_graphs"]
 
     for main_keyword in main_keywords:
         if main_keyword not in config_file.keys():
             print("'"+main_keyword+"' keyword is missing in the config file.")
             is_valid = False
-
-    # Check if the filter keywords are present in the config file
-    if is_valid:
-        filter_keywords = ["accessVector",
-                           "accessComplexity",
-                           "authentication",
-                           "confidentialityImpact",
-                           "integrityImpact"]
-        for filter_keyword in filter_keywords:
-            if filter_keyword not in config_file["attack-vector-filter"].keys():
-                print("'"+filter_keyword
-                      + "' filter keyword is missing in the config file.")
-                is_valid = False
-
-    # Check if the filter keywords have the right values.
-    if is_valid:
-        filter_vulnerabilities = config_file["attack-vector-filter"]
-        for criterium in filter_vulnerabilities.keys():
-            if criterium == "accessVector":
-                if filter_vulnerabilities[criterium] != "NETWORK" and \
-                   filter_vulnerabilities[criterium] != "LOCAL" and \
-                   filter_vulnerabilities[criterium] != "ADJACENT_NETWORK":
-                    is_valid = False
-            elif criterium == "accessComplexity":
-                if filter_vulnerabilities[criterium] != "LOW" and \
-                   filter_vulnerabilities[criterium] != "MEDIUM" and \
-                   filter_vulnerabilities[criterium] != "HIGH":
-                    is_valid = False
-            elif criterium == "authentication":
-                if filter_vulnerabilities[criterium] != "NONE" and \
-                   filter_vulnerabilities[criterium] != "SINGLE" and \
-                   filter_vulnerabilities[criterium] != "MULTIPLE":
-                    is_valid = False
-            elif criterium == "confidentialityImpact":
-                if filter_vulnerabilities[criterium] != "NONE" and \
-                   filter_vulnerabilities[criterium] != "PARTIAL" and \
-                   filter_vulnerabilities[criterium] != "COMPLETE":
-                    is_valid = False
-            elif criterium == "integrityImpact":
-                if filter_vulnerabilities[criterium] != "NONE" and \
-                   filter_vulnerabilities[criterium] != "PARTIAL" and \
-                   filter_vulnerabilities[criterium] != "COMPLETE":
-                    is_valid = False
-
-            if not is_valid:
-                print("Value: "+filter_vulnerabilities[criterium]
-                      + " is invalid for criterum "+criterium)
-                break
 
     # Check if the mode keyword has the right values
     if is_valid:
@@ -139,6 +92,25 @@ def validate_config_file():
                                         "jgsqware",
                                         "clairctl"))
 
+    # Check if the generate_graphs keyword has the right values
+    if is_valid:
+        config_mode = config_file["generate_graphs"]
+        if config_mode != True and config_mode != False:
+            is_valid = False
+            print("Value: "+config_mode
+                      + " is invalid for keyword generate_graphs")
+            sys.exit(0)
+
+    # Check if the labels_edges keyword has the right values
+    if is_valid:
+        config_mode = config_file["labels_edges"]
+        if config_mode != "single" and config_mode != "multiple":
+            is_valid = False
+            print("Value: "+config_mode
+                      + " is invalid for keyword labels_edges")
+            sys.exit(0)      
+        
+
     
 
     # Check if the paths for "attack-vector-folder-path" and "examples-results-path" are valid
@@ -153,6 +125,29 @@ def validate_config_file():
 
     return is_valid
 
+def check_priviledged_access(mapping_names, example_folder_path):
+    docker_compose = read_docker_compose_file(example_folder_path)
+    services = docker_compose["services"]
+    priviledged_access = {}
+    for service in services:
+        if "privileged" in services[service] and services[service]["privileged"] == True:
+            priviledged_access[mapping_names[service]] = True
+        elif "volumes" in services[service]:
+            volumes = services[service]["volumes"]
+            # Check if docker socket is mounted
+            socket_mounted = False
+            for volume in volumes:
+                if "/var/run/docker.sock:/var/run/docker.sock" in volume:
+                    socker_mounted = True
+            if socket_mounted:
+                priviledged_access[mapping_names[service]] = True
+            else:
+                priviledged_access[mapping_names[service]] = False
+        else:
+            priviledged_access[mapping_names[service]] = False
+
+    return priviledged_access
+    
 def read_attack_vector_files(attack_vector_folder_path):
     """It reads the attack vector files."""
 
@@ -185,18 +180,21 @@ def read_topology(example_folder_path):
 
     return topology
 
-def read_vulnerabilities(example_folder_path, container_name):
+def read_vulnerabilities(vulnerabilities_folder_path, containers):
     """This function reads the .json file for the vulnerabilities of a container."""
 
-    config = read_config_file()
-    folder_name = os.path.basename(example_folder_path)
-    vulnerabilities_path = os.path.join(config["examples-results-path"],
-                                        folder_name,
-                                        container_name+"-vulnerabilities.json")
+    vulnerabilities = {}
 
-    with open(vulnerabilities_path) as vul_file:
-        vulnerabilities = json.load(vul_file)
+    for container in containers:
 
+        vulnerabilities_path = os.path.join(vulnerabilities_folder_path,
+                                            container+"-vulnerabilities.json")
+        if os.path.exists(vulnerabilities_path):
+            with open(vulnerabilities_path) as vul_file:
+                vulnerabilities_container = json.load(vul_file)
+            vulnerabilities[container] = vulnerabilities_container
+
+    
     return vulnerabilities
 
 def read_docker_compose_file(example_folder_path):

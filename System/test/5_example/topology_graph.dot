@@ -1,0 +1,33 @@
+// Topology Graph
+graph {
+	outside
+	"docker host"
+	"5example_phpmailer"
+	"5example_samba1"
+	"5example_samba2"
+	"5example_samba3"
+	"5example_samba4"
+	"5example_samba5"
+	outside -- "5example_phpmailer" [contstraint=false]
+	"docker host" -- "5example_phpmailer" [contstraint=false]
+	"docker host" -- "5example_samba1" [contstraint=false]
+	"docker host" -- "5example_samba2" [contstraint=false]
+	"docker host" -- "5example_samba3" [contstraint=false]
+	"docker host" -- "5example_samba4" [contstraint=false]
+	"docker host" -- "5example_samba5" [contstraint=false]
+	"5example_phpmailer" -- "5example_samba1" [contstraint=false]
+	"5example_phpmailer" -- "5example_samba2" [contstraint=false]
+	"5example_phpmailer" -- "5example_samba3" [contstraint=false]
+	"5example_phpmailer" -- "5example_samba4" [contstraint=false]
+	"5example_phpmailer" -- "5example_samba5" [contstraint=false]
+	"5example_samba1" -- "5example_samba2" [contstraint=false]
+	"5example_samba1" -- "5example_samba3" [contstraint=false]
+	"5example_samba1" -- "5example_samba4" [contstraint=false]
+	"5example_samba1" -- "5example_samba5" [contstraint=false]
+	"5example_samba2" -- "5example_samba3" [contstraint=false]
+	"5example_samba2" -- "5example_samba4" [contstraint=false]
+	"5example_samba2" -- "5example_samba5" [contstraint=false]
+	"5example_samba3" -- "5example_samba4" [contstraint=false]
+	"5example_samba3" -- "5example_samba5" [contstraint=false]
+	"5example_samba4" -- "5example_samba5" [contstraint=false]
+}
