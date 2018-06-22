@@ -79,13 +79,32 @@ def create_folder(example_folder_path):
 
 def print_summary(config_mode,
                   config_generate_graphs,
+                  no_topology_nodes = 0,
+                  no_topology_edges = 0,
+                  no_attack_graph_nodes = 0,
+                  no_attack_graph_edges = 0,
                   duration_topology=0,
                   duration_vulnerabilities=0,
                   duration_attack_graph=0,
                   duration_bdf=0,
                   duration_graph_properties=0,
                   duration_visualization=0):
-    """Function responsible for printing the time summary."""
+    """Function responsible for printing the time and properties summary."""
+    
+    if no_topology_nodes != 0 and no_topology_edges != 0 and no_attack_graph_nodes != 0 and no_attack_graph_edges != 0:
+        print("\n**********Nodes and edges summary of the topology and attack graphs**********")
+
+    if no_topology_nodes != 0:
+        print("The number of nodes in the topology graph is "+str(no_topology_nodes)+".")
+
+    if no_topology_edges != 0:
+        print("The number of edges in the topology graph is "+str(no_topology_edges)+".")
+
+    if no_attack_graph_nodes != 0:
+        print("The number of nodes in the attack graph is "+str(no_attack_graph_nodes)+".")
+
+    if no_attack_graph_edges != 0:
+        print("The number of edges in the attack graph is "+str(no_attack_graph_edges)+".")
 
     print("\n**********Time Summary of the Attack Graph Generation Process**********")
     print("Topology parsing took "+str(duration_topology)+" seconds.")

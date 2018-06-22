@@ -44,7 +44,7 @@ Architecture
 %         {\tt\small pmisra@cs.wright.edu}}
 %}
 
-\author{Stevica Bozhinoski$^{1}$ and Amjad Ibrahim$^{2}$% <-this % stops a space
+\author{Stevica Bozhinoski$^{1}$, Amjad Ibrahim$^{2}$ and Prof. Dr. Alexander Pretschner$^{3}$% <-this % stops a space
 }
 
 \begin{document}
@@ -58,7 +58,7 @@ Architecture
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
+Microservices, in contrast to monolithic systems, provide an architecture that is modular and easily scalable. This advantage has resulted in a rapid increase in usage of microservices in recent years. Despite their rapid increase in popularity, there is a lack of work that focuses of their security aspect. Therefore, in the following paper, we present a novel Breath-First Search(BFS) based method for attack graph generation and security analysis of microservice architectures using Docker and Clair. 
 
 \end{abstract}
 
@@ -66,20 +66,69 @@ Architecture
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
 
+
+
+Attack graphs are a popular way of examining security aspects of network. They help security analysts to carefully analyse a system connection and detect the most vulnerable parts of the system. An attack graph depicts the actions that an attacker uses in order to reach his goal.  
+
+We first have a look into the work of other( Section 2), then present the architecure of our system(Section 3), test the scalability(Section 4) and at the end provide a conclusion(Section 5) and future work(Section 6).
+
 \section{RELATED WORK}
 
-What makes us different to previous work:
-- To the best of our knowledge, there is no work that has been done for attack graph generation for docker containers.
-- The paper(Automated Generation of Attack Graphs Using NVD) does not provide an example/ or clearly define the attack graph generation process. Their main focus is to evaluate attack rules. They dont use Clair as well. They do not offer any performance comparison between different topologies. 
+Previous work has dealt with attack graph generation, mainly in computer networks, where multiple machines are connected to each other and the internet. There the attacker performs multiple steps to achieve his goal, i.e. gaining privileges of the goal container. Some works use model checkers with goal property(Sheyner reference). They However model checkers as a disadvantage have a state explosion.(Ingols reference)
+
+Others use breath first search algorithm. (Ingols reference)  They model the 
+
+Others have extended this work by generating attack graphs with using rule pre- and postcondtions in generating attacks.(reference) They define a specific test of rules and test their correctness.
+
+Containers, despite their ever-growing popularity, have shown somewhat bigger security risks, mostly because of their bigger need of connectivity and lesser degree of encapsulation(Reference). To the best of our knowledge, there is no work that has been done for attack graph generation for docker containers.
+ They dont use Clair as well. They do not offer any performance comparison between different topologies. 
 
 \section{ARCHITECTURE}
 
-\subsubsection{Breadth-first search}
+In this section, we examine the architecture of our attack graph generator. We first present a brief overview of the main concepts. Next, we have a look at the preprocessing step. Lastly we have look into the main algorithm for generating the attack graph.
 
-We use a modification of the breadth first search algorithm to find the nodes and the edges.
+\subsubsection{Main concepts}
+
+Preconditions are conditions that have to be fulfilled in order for the attack to take place. Postconditions are the result of a successful attack and the privileges acquired.
+
+Atomic attack is one step or edge in the attack graph. A state is the container with its privilege level.
+
+We model the privileges into a hierarchy. The priviliges in ascending order are: None, VOS(User), VOS(Admin), OS(User) and OS(Admin). VOS means that the privilege is connected to a virtual machine, while OS means that the host machine has been infected. Since VOS are on some hosts, they have lower level of hierarchy.
+
+<INSERT IMAGE PRIVILEGES>
+
+<INSERT IMAGE EXAMPLE>
+
+<INSERT IMAGE ATTACK GRAPH>
+
+
+\subsubsection{Preprocessing}
+In our preprocessing step, we use Clair in order to generate the vulnerabilities for a given container. Clair provides the CVE-ID, description and attack vector. Attack vector is an entity that descriptes which conditions and effects are connected to this vulnerability. Clairctl is a wrapper that we use in order to analyze a docker image. 
+
+Additionaly, we parse the attack vectors from the vulnerability database to generate attack rules. We use rules annotated
+
+docker-compose.yml is used for extraction of the topology of the system. The containers that have published ports are connected to the outside.
+Some containers have privileged access. That means that an attacker with access to these containers, has also access to the docker daemon. This can be done by us
+
+This results in a list of container vulnerabilities with their preconditions and postconditions.
+\subsubsection{Breadth-First Search}
+
+After the preprocessing step is done, the vulnerabilties are parsed and their pre- and postconditions are extracted, together with the topology are feed into the Bradth-First Search algorithm(BFS).
+Breadth-first search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before going deeper in the graph.
+
+Some properties of BFS:
+
+Completeness: Breadth First Search is complete i.e. if there is a solution, breadth-first search will find it regardless of the kind of graph.
+
+Termination - monotonicity properties
+- complexity
+time complexity O(|N| + |E|) where |N| is the number of nodes and |E| is the number of edges in the attack graph.
+memory complexity
+We use a modification of the breadth first search algorithm to find the nodes and the edges of the attack graph.
 \begin{algorithm}
 	\SetAlgoLined
-	\KwData{goal\_container, topology, container\_exploitability}
+	\KwData{topology, container\_exploitability,
+	privileged\_access}
 	\KwResult{nodes, edges}
 	nodes, edges, queue, passed\_nodes = list(), dict\{\}, Queue(), []\;
 	queue.put(goal\_container)\;
@@ -109,13 +158,58 @@ We use a modification of the breadth first search algorithm to find the nodes an
 \caption{Breadth-first search algorithm for generating an attack graph.}
 \end{algorithm}
 
-The algorithm requires the goal container, the topology and a dictionary of the exploitable vulnerabilities as an input and the output is made up of the nodes and the edges that make the attack graph. 
+The algorithm requires the topology and a dictionary of the exploitable vulnerabilities as an input and the output is made up of the nodes and the edges that make the attack graph. 
 The algorithm first initializes the nodes, edges, queue and the passed nodes. Afterwards it generates the nodes which are a combination of the image name and the exploitable vulnerability.
 Then into a while loop we iterate through every node, check its neighbours and add the edges. If the neighbour was not passed, then we add it to the queue. The algorithm terminates when the queue is empty.
+
 \section{EXPERIMENTS}
+
+In this section, we will conduct few experiments in order to test the scalability of our system with different number of containers and links between them.
+
+Throughout the experiments, the biggest time bottleneck is the preprocessing step, and the graph drawing step. However these steps are with linear complexity because the container files are analyzied only once. The attack graph generation less time than the preprocessing step.
+
+The following experiments were perfomed. We used the Samba(reference) and Phpmailer(reference) examples which were taken from . Where we artificially made clique of 1, 5, 20, 50 and 100 containers to test the scalability of the system. Each of them has a lot of vulnerabilities.
+
+We also performed testing on a real example- atsea sample shop app(reference). The system is composed of the containers app, database, payment_gateway and reverse_proxy.
+
+
+\begin{table*}[t]
+\begin{center}
+	\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+		\hline
+		Statistics & example\_1 & example\_5 & example\_20 & example\_50 & example\_100 & example\_500 & example\_1000 \\ 
+		
+		No. of Phpmailer containers & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\ 
+		
+		No. of Samba containers & 1 & 5 & 20 & 50 & 100 & 500 & 1000 \\ 
+		
+		No. of nodes in topology & 4 & 8 & 23 & 53 & 103 & 503 & 1003\\ 
+		
+	    No. of edges in topology & 8 & 44 & 464 & 2654 & 10304 & 251504 & 1003004 \\ 
+		
+		No. nodes in attack graph & 5 & 13 & 43 & 103 & 203 & 1003 & 2003 \\ 
+		
+		No. edges in attack graph & 4 & 12 & 42 & 102 & 202 & 1002 & 2002 \\ 
+		
+		Topology parsing time & 0.0053 & 0.0093 & 0.0250 & 0.0672 & 0.1112 & 0.7047 & 2.1485 \\ 
+		
+		Attack Graph Generation time & 16.3807 & 16.9825 & 16.0742 & 18.0513 & 21.3882 & 78.6452 & 245.4832 \\ 
+		
+		Breadth-First Search time & 0.0016 & 0.0099 & 0.0931 & 0.5109 & 2.0188 & 54.5766 & 212.2954 \\ 
+		
+		Total time & 17.5676 & 18.2907 & 17.3227 & 19.3901 & 22.7405 & 81.0005 & 249.2042 \\ 
+		\hline
+	\end{tabular}
+\end{center}
+
+\caption{Table with graph characteristics(no. of containers, nodes and edges in both the topology and attack graph) and executing times of the main attack graph generator components(topology parser, attack graph generator and Breadth-first Search) of example graphs containing Phpmailer and Samba. Phpmailer has 181, while Samba has 367 vulnerabilities. The times are given in seconds. The topology time is the time required to generate the graph topology. The attack graph generation time includes both  the breath first search and filtering and processing of the vulnerabilities which has a linear time. The Breadth-First Search has a complexity O(V + E) where V is the number of nodes represented by the number of containers and E is a tuple of the container, the neighboring container and the vulnerabilities of the neighboring container.  The total time contains the topology parsing, the attack graph generation and some minor processes. However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is not in the scope of this analysis.}
+
+\end{table*}[t]
+
+
 \section{CONCLUSION}
 
-
+\section{FUTURE WORK}
 
 
 \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
@@ -148,12 +242,21 @@ Then into a while loop we iterate through every node, check its neighbours and a
 
 \bibitem{c1} Merkel, Dirk. "Docker: lightweight linux containers for consistent development and deployment." Linux Journal 2014.239 (2014): 2.
 
+\bibitem{c2}  CoreOS Clair. https://github.com/coreos/clair
 
+\bibitem{c3}  Clairctl. https://github.com/jgsqware/clairctl
 
+\bibitem{c4}  Computer Security Division of National Institute of Standards and Technology.
+National vulnerability database version 2.2 (2010),
+http://nvd.nist.gov/
 
+\bibitem{c5}  Ingols, Kyle, Richard Lippmann, and Keith Piwowarski. "Practical attack graph generation for network defense." Computer Security Applications Conference, 2006. ACSAC'06. 22nd Annual. IEEE, 2006.
 
+\bibitem{c6}  Aksu, M. Ugur, et al. "Automated Generation Of Attack Graphs Using NVD." Proceedings of the Eighth ACM Conference on Data and Application Security and Privacy. ACM, 2018.
 
+\bibitem{c7}  Sheyner, Oleg, et al. "Automated generation and analysis of attack graphs." Security and privacy, 2002. Proceedings. 2002 IEEE Symposium on. IEEE, 2002.
 
+\bibitem{c8}  Artz, Michael Lyle. Netspa: A network security planning architecture. Diss. Massachusetts Institute of Technology, 2002.
 \end{thebibliography}
 
 

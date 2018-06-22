@@ -5,6 +5,7 @@ import sys
 import os
 import unittest
 import json
+import time
 
 sys.path.append(os.path.dirname(os.getcwd()))
 
@@ -18,6 +19,7 @@ from components.attack_graph_parser import print_graph_properties
 
 def scalability_test_helper(goal_container, example_folder):
 
+    total_time_start = time.time()
     # Preparing the data for testing
     parent_path = os.path.dirname(os.getcwd())
 
@@ -36,7 +38,7 @@ def scalability_test_helper(goal_container, example_folder):
             if container_orig in container_topology:
                 vulnerabilities[container_topology] = vuls_orig[container_orig] 
        
-    nodes, edges, duration_bdf, duration_attack_graph = generate_attack_graph(os.path.join(parent_path, config["attack-vector-folder-path"]),
+    attack_graph_nodes, attack_graph_edges, duration_bdf, duration_attack_graph = generate_attack_graph(os.path.join(parent_path, config["attack-vector-folder-path"]),
                                                        config["preconditions-rules"],
                                                        config["postconditions-rules"],
                                                        topology,
@@ -44,15 +46,31 @@ def scalability_test_helper(goal_container, example_folder):
                                                        goal_container,
                                                        example_folder)
 
-    duration_graph_properties = print_graph_properties(config["labels_edges"], nodes, edges)
+    duration_graph_properties = print_graph_properties(config["labels_edges"],
+                                                       attack_graph_nodes,
+                                                       attack_graph_edges)
+
+    no_topology_nodes = len(topology.keys())
+    no_topology_edges = 0
+    for container in topology.keys():
+        no_topology_edges += len(topology[container])
+
+    no_attack_graph_nodes = len(attack_graph_nodes)
+    no_attack_graph_edges = len(attack_graph_edges)
 
     # Printing time summary of the attack graph generation.
     writer.print_summary(config["mode"],
                          config["generate_graphs"],
+                         no_topology_nodes = no_topology_nodes,
+                         no_topology_edges = no_topology_edges,
+                         no_attack_graph_nodes = no_attack_graph_nodes,
+                         no_attack_graph_edges = no_attack_graph_edges,
                          duration_topology=duration_topology,
                          duration_attack_graph=duration_attack_graph,
                          duration_bdf=duration_bdf,
                          duration_graph_properties=duration_graph_properties)
+
+    print("Total time elapsed: "+str(time.time() - total_time_start)+"\n\n\n")
 
 class MyTest(unittest.TestCase):
 
@@ -422,6 +440,28 @@ class MyTest(unittest.TestCase):
         # Preparing the data for testing
         goal_container = "samba100"
         example_folder = os.path.join(os.getcwd(), "100_example")
+        scalability_test_helper(goal_container, example_folder)
+
+    def test_scalability_500(self):
+        """Doing scalability testing of samba and phpmailer example. It has 
+        1 phpmailer container and 500 samba containers."""
+
+        print("Test: Scalability test of 500 samba and phpmailer example...")
+
+        # Preparing the data for testing
+        goal_container = "samba500"
+        example_folder = os.path.join(os.getcwd(), "500_example")
+        scalability_test_helper(goal_container, example_folder)
+
+    def test_scalability_1000(self):
+        """Doing scalability testing of samba and phpmailer example. It has 
+        1 phpmailer container and 1000 samba containers."""
+
+        print("Test: Scalability test of 1000 samba and phpmailer example...")
+
+        # Preparing the data for testing
+        goal_container = "samba1000"
+        example_folder = os.path.join(os.getcwd(), "1000_example")
         scalability_test_helper(goal_container, example_folder)
 
 if __name__ == "__main__":
