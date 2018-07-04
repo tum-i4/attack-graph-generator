@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """Module responsible for all the input reading and validation."""
 
+import sys
 import os
 import json
 import yaml
-import sys
 
 def validate_command_line_input(arguments):
     """This function validates the command line user input."""
@@ -13,7 +13,7 @@ def validate_command_line_input(arguments):
     is_valid = True
 
     # Check if the user has entered right number of arguments.
-    if len(arguments) != 3:
+    if len(arguments) != 2:
         print("Incorrect number of arguments.")
         is_valid = False
 
@@ -28,23 +28,6 @@ def validate_command_line_input(arguments):
         content = os.listdir(arguments[1])
         if "docker-compose.yml" not in content:
             print("docker-compose.yml is missing in the folder "+arguments[1])
-            is_valid = False
-
-    # Check if the goal property is in the docker-compose.yml file.
-    if is_valid:
-
-        # See if goal state is present in docker-compose.yml.
-        compose_file = read_docker_compose_file(arguments[1])
-
-        goal_container_present = False
-        if 'services' in compose_file.keys():
-            services = compose_file['services']
-            if arguments[2] in services.keys():
-                goal_container_present = True
-
-        if not goal_container_present:
-            print("The goal container is not wrong. Please choose one of the following: "
-                  + str(list(services.keys())))
             is_valid = False
 
     return is_valid
@@ -74,14 +57,15 @@ def validate_config_file():
         config_mode = config_file["mode"]
         if config_mode != "offline" and config_mode != "online":
             is_valid = False
-            print("Value: "+config_mode
-                      + " is invalid for keyword mode")
+            print("Value: "+ \
+                  config_mode + \
+                  " is invalid for keyword mode")
             sys.exit(0)
-        
+
         # Checks if clairctl has been installed.
         elif config_mode == "online":
             print("Checking if clairctl has been installed")
-            
+
             home = os.path.expanduser("~")
             os.path.exists(os.path.join(home,
                                         "golang"
@@ -97,8 +81,9 @@ def validate_config_file():
         config_mode = config_file["generate_graphs"]
         if config_mode != True and config_mode != False:
             is_valid = False
-            print("Value: "+config_mode
-                      + " is invalid for keyword generate_graphs")
+            print("Value: " + \
+                  config_mode + \
+                  " is invalid for keyword generate_graphs")
             sys.exit(0)
 
     # Check if the labels_edges keyword has the right values
@@ -106,31 +91,20 @@ def validate_config_file():
         config_mode = config_file["labels_edges"]
         if config_mode != "single" and config_mode != "multiple":
             is_valid = False
-            print("Value: "+config_mode
-                      + " is invalid for keyword labels_edges")
-            sys.exit(0)      
-        
-
-    
-
-    # Check if the paths for "attack-vector-folder-path" and "examples-results-path" are valid
-    """if is_valid:
-        paths = ["attack-vector-folder-path", "examples-results-path"]
-        current_directory = os.getcwd()
-        for path in paths:
-            combined_path = os.path.join(current_directory, config_file[path])
-            if not os.path.exists(combined_path):
-                print(combined_path+" does not exist.")
-                is_valid = False"""
+            print("Value: " + \
+                  config_mode + \
+                  " is invalid for keyword labels_edges")
+            sys.exit(0)
 
     return is_valid
 
 def check_priviledged_access(mapping_names, example_folder_path):
+    """Checks if a container has the privileged flag."""
     docker_compose = read_docker_compose_file(example_folder_path)
     services = docker_compose["services"]
     priviledged_access = {}
     for service in services:
-        if "privileged" in services[service] and services[service]["privileged"] == True:
+        if "privileged" in services[service] and services[service]["privileged"]:
             priviledged_access[mapping_names[service]] = True
         elif "volumes" in services[service]:
             volumes = services[service]["volumes"]
@@ -138,7 +112,7 @@ def check_priviledged_access(mapping_names, example_folder_path):
             socket_mounted = False
             for volume in volumes:
                 if "/var/run/docker.sock:/var/run/docker.sock" in volume:
-                    socker_mounted = True
+                    socket_mounted = True
             if socket_mounted:
                 priviledged_access[mapping_names[service]] = True
             else:
@@ -147,7 +121,7 @@ def check_priviledged_access(mapping_names, example_folder_path):
             priviledged_access[mapping_names[service]] = False
 
     return priviledged_access
-    
+
 def read_attack_vector_files(attack_vector_folder_path):
     """It reads the attack vector files."""
 
@@ -194,7 +168,6 @@ def read_vulnerabilities(vulnerabilities_folder_path, containers):
                 vulnerabilities_container = json.load(vul_file)
             vulnerabilities[container] = vulnerabilities_container
 
-    
     return vulnerabilities
 
 def read_docker_compose_file(example_folder_path):

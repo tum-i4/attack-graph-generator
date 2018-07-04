@@ -25,7 +25,7 @@ def validation_docker_compose(example_folder_path):
     services = get_services(example_folder_path)
 
     # Checks if the services are present.
-    if len(services) == 0:
+    if not services:
         print("The services in the docker-compose are not specified. Please specify them.")
         return False
 
@@ -34,10 +34,10 @@ def validation_docker_compose(example_folder_path):
         contents_service = services[service]
         if 'build' not in contents_service.keys():
             print("Now it is not allowed to take images from distant repository.")
-            print("They should be manually built. Please specify the keyword 'build' "+
-                  + " for the service "
-                  + service
-                  + " to the location of the image in the docker-compose.yml file.")
+            print("They should be manually built. Please specify the keyword 'build' "
+                  " for the service " + \
+                  service + \
+                  " to the location of the image in the docker-compose.yml file.")
             return False
 
     return True

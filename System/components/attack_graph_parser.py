@@ -11,8 +11,6 @@ from components import topology_parser as top_par
 def clean_vulnerabilities(raw_vulnerabilities, container):
     """Cleans the vulnerabilities for a given container."""
 
-    print("Getting the vurnabilities")
-
     vulnerabilities = {}
 
     # Going to the .json hierarchy to get the CVE ids.
@@ -123,7 +121,7 @@ def get_attack_vector(attack_vector_files):
                         dictionary_cve["cpe"] = cpe
                         count = count + 1
 
-            if dictionary_cve["cpe"] is not "?":
+            if dictionary_cve["cpe"] != "?":
                 dictionary_cve["cpe"] = dictionary_cve["cpe"][5]
             attack_vector_dict[cve_id] = dictionary_cve
     return attack_vector_dict
@@ -152,8 +150,7 @@ def add_edge(nodes,
 
     return nodes, edges
 
-def breadth_first_search(goal_container,
-                         topology,
+def breadth_first_search(topology,
                          container_exploitability,
                          priviledged_access):
     """Breadth first search approach for generation of nodes and edges
@@ -235,8 +232,14 @@ def breadth_first_search(goal_container,
                             # Add the edge
                             nodes, edges = add_edge(nodes,
                                                     edges,
-                                                    current_node+"("+get_priv(privileges[current_node])+")",
-                                                    neighbour+"("+get_priv(postcond[vul])+")",
+                                                    current_node + \
+                                                    "(" + \
+                                                    get_priv(privileges[current_node]) + \
+                                                    ")",
+                                                    neighbour + \
+                                                    "(" + \
+                                                    get_priv(postcond[vul]) + \
+                                                    ")",
                                                     vul)
 
                             # Checking if the node has already been passed.
@@ -245,12 +248,11 @@ def breadth_first_search(goal_container,
 
                             for key in passed_nodes.keys():
 
-                               parts = key.split("|")
+                                parts = key.split("|")
 
-                               if neighbour == parts[0] and passed_nodes[key]:
-                                   if int(parts[1]) > int(privilege_node):
-
-                                       privilege_node = parts[1]
+                                if neighbour == parts[0] and passed_nodes[key]:
+                                    if int(parts[1]) > int(privilege_node):
+                                        privilege_node = parts[1]
 
                             # If the node was not passed or it has a lower privilege...
                             if not passed_nodes[neighbour+"|"+str(postcond[vul])] and \
@@ -263,7 +265,7 @@ def breadth_first_search(goal_container,
                 # Update the current privilege of the neighbour
                 if highest_privilege != 0:
                     privileges[neighbour] = highest_privilege
-            
+
     duration_bdf = time.time()-bds_start
     print("Breadth-first-search took "+str(duration_bdf)+" seconds.")
     return nodes, edges, duration_bdf
@@ -339,7 +341,7 @@ def get_priv(privilege):
                4: "ADMIN"}
 
     return mapping[privilege]
-        
+
 def get_rule_precondition(rule, vul, precond, vul_key):
     """Checks if it finds rule precondition"""
 
@@ -366,7 +368,8 @@ def get_rule_precondition(rule, vul, precond, vul_key):
             elif sentence in vul["desc"]:
                 hit_vocab = True
                 break
-        if hit_vocab and (vul_key not in precond or precond[vul_key] < get_val(rule["precondition"])):
+        if hit_vocab and \
+           (vul_key not in precond or precond[vul_key] < get_val(rule["precondition"])):
             precond[vul_key] = get_val(rule["precondition"])
 
     # Check access vector
@@ -492,12 +495,12 @@ def generate_attack_graph(attack_vector_path,
                           post_rules,
                           topology,
                           vulnerabilities,
-                          goal_container_name,
                           example_folder):
     """Main pipeline for the attack graph generation algorithm."""
 
     print("Start with attack graph generation...")
 
+    print("Vulnerabilities preprocessing started.")
     time_start = time.time()
 
     # Read the attack vector files.
@@ -524,19 +527,21 @@ def generate_attack_graph(attack_vector_path,
                                                                          pre_rules,
                                                                          post_rules)
 
+    duration_vuls_preprocessing = time.time() - time_start
+    print("Vulnerabilities preprocessing finished. Time elapsed: " + \
+          str(duration_vuls_preprocessing) + \
+          " seconds.\n")
+
     # Breadth first search algorithm for generation of attack paths.
-    nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                      topology,
+    print("Breadth-first search started.")
+    nodes, edges, duration_bdf = breadth_first_search(topology,
                                                       exploitable_vuls,
                                                       privileged_access)
 
-    print("Attack graph generation finished.")
-
-    duration_attack_graph = time.time() - time_start
-    print("Time elapsed: "+str(duration_attack_graph)+" seconds.\n")
+    print("Breadth-first search finished. Time elapsed: "+str(duration_bdf)+" seconds.\n")
 
     # Returns a graph with nodes and edges.
-    return nodes, edges, duration_bdf, duration_attack_graph
+    return nodes, edges, duration_bdf, duration_vuls_preprocessing
 
 def print_graph_properties(label_edges, nodes, edges):
     """This functions prints graph properties."""
@@ -562,13 +567,12 @@ def print_graph_properties(label_edges, nodes, edges):
                                contstraint='false')
 
         elif label_edges == "multiple":
-            
             graph.add_edge(terminal_points[0],
                            terminal_points[1],
                            contstraint='false')
 
     # Calculate the attack graph properties
-    
+
     # Number of nodes
     no_nodes = graph.number_of_nodes()
     print("The number of nodes in the graph is "+str(no_nodes)+"\n")
@@ -590,13 +594,13 @@ def print_graph_properties(label_edges, nodes, edges):
     if no_nodes != 0:
         avg_degree_centrality = avg_degree_centrality / no_nodes
     print("The average degree centrality of the graph is: "+str(avg_degree_centrality)+"\n")
-    
+
     # In-degree and average in-degree
     in_degree = graph.in_degree()
     print("The in-degree is:")
     for item in in_degree:
         print(item)
-    
+
     avg_in_degree = 0
     for node in in_degree:
         avg_in_degree = avg_in_degree + node[1]

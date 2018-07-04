@@ -34,7 +34,7 @@ def write_attack_graph(example_folder_path, graph):
     graph.render(attack_graph_path)
 
 def write_topology_graph(graph,
-                         example_folder_path, 
+                         example_folder_path,
                          example_result_path=""):
     """Writes the topology graph onto a dot file."""
 
@@ -79,19 +79,23 @@ def create_folder(example_folder_path):
 
 def print_summary(config_mode,
                   config_generate_graphs,
-                  no_topology_nodes = 0,
-                  no_topology_edges = 0,
-                  no_attack_graph_nodes = 0,
-                  no_attack_graph_edges = 0,
+                  no_topology_nodes=0,
+                  no_topology_edges=0,
+                  no_attack_graph_nodes=0,
+                  no_attack_graph_edges=0,
                   duration_topology=0,
                   duration_vulnerabilities=0,
-                  duration_attack_graph=0,
+                  duration_vuls_preprocessing=0,
                   duration_bdf=0,
                   duration_graph_properties=0,
-                  duration_visualization=0):
+                  duration_visualization=0,
+                  duration_total_time=0):
     """Function responsible for printing the time and properties summary."""
-    
-    if no_topology_nodes != 0 and no_topology_edges != 0 and no_attack_graph_nodes != 0 and no_attack_graph_edges != 0:
+
+    if no_topology_nodes != 0 and \
+       no_topology_edges != 0 and \
+       no_attack_graph_nodes != 0 and \
+       no_attack_graph_edges != 0:
         print("\n**********Nodes and edges summary of the topology and attack graphs**********")
 
     if no_topology_nodes != 0:
@@ -107,12 +111,26 @@ def print_summary(config_mode,
         print("The number of edges in the attack graph is "+str(no_attack_graph_edges)+".")
 
     print("\n**********Time Summary of the Attack Graph Generation Process**********")
+
     print("Topology parsing took "+str(duration_topology)+" seconds.")
+
     if config_mode == "online":
         print("Vulnerability parsing took "+str(duration_vulnerabilities)+" seconds.")
-    print("Attack Graph Generation took "+str(duration_attack_graph)+" seconds.")
-    print("    -Breadth First Search took "+str(duration_bdf)+" seconds.")
-    print("Calculation of Graph Properties took "+str(duration_graph_properties)+" seconds.")
+
+    print("The attack graph generation took " + \
+          str(duration_vuls_preprocessing+duration_bdf)+" seconds.")
+
+    print("	-Preprocessing of the vulnerabilities took " + \
+          str(duration_vuls_preprocessing)+" seconds.")
+
+    print("	-Breadth First Search took "+str(duration_bdf)+" seconds.")
+
+    if duration_graph_properties != 0:
+        print("Calculation of Graph Properties took "+str(duration_graph_properties)+" seconds.")
+
     if config_generate_graphs:
         print("Attack Graph Visualization took "+str(duration_visualization)+" seconds.")
+
+    if duration_total_time != 0:
+        print("The total elapsed time is "+str(duration_total_time)+" seconds.")
     print("\n\n")

@@ -141,36 +141,41 @@ sudo apt-get install unzip
 
 # Creating examples
 # Atsea
-#unzip examples/atsea-sample-shop-app-master.zip -d examples
-#sudo chmod 777 examples/atsea-sample-shop-app-master
-#mv examples/atsea-sample-shop-app-master examples/atsea
+unzip examples/atsea-sample-shop-app-master.zip -d examples
+sudo chmod -R 777 examples/atsea-sample-shop-app-master
+mv examples/atsea-sample-shop-app-master examples/atsea
 
 # Javaee
-#unzip examples/javaee-demo-master.zip -d examples
-#sudo chmod 777 examples/javaee-demo-master
-#mv examples/javaee-demo-master examples/javaee
+unzip examples/javaee-demo-master.zip -d examples
+sudo chmod -R 777 examples/javaee-demo-master
+mv examples/javaee-demo-master examples/javaee
 
 # Samba
-#unzip examples/exploit-CVE-2017-7494-master -d examples
-#sudo chmod 777 examples/exploit-CVE-2017-7494-master
-#mv examples/exploit-CVE-2017-7494-master examples/example/samba
+unzip examples/exploit-CVE-2017-7494-master -d examples
+sudo chmod -R 777 examples/exploit-CVE-2017-7494-master
+mv examples/exploit-CVE-2017-7494-master examples/example/samba
 
 # Phpmailer
-#unzip examples/exploit-CVE-2016-10033-master -d examples
-#sudo chmod 777 examples/exploit-CVE-2016-10033-master
-#mv examples/exploit-CVE-2016-10033-master examples/example/phpmailer
+unzip examples/exploit-CVE-2016-10033-master -d examples
+sudo chmod -R 777 examples/exploit-CVE-2016-10033-master
+mv examples/exploit-CVE-2016-10033-master examples/example/phpmailer
+
+# Netflix OSS example
+unzip examples/netflix-oss-example-master-modified -d examples
+sudo chmod -R 777 examples/netflix-oss-example-master-modified
+mv examples/netflix-oss-example-master-modified examples/netflix-oss-example
 
 #sudo groupadd docker
 #sudo usermod -aG docker $(whoami)
 #sudo service docker start
 
 # Checks if the number of arguments is correct.
-if  [ $# == 2 ]; then
+if  [ $# == 1 ]; then
     echo "The dependencies are installed. Starting the attack graph generator."
     echo ""
-    sudo python3 main.py $1 $2
+    sudo python3 main.py $1
 else
-    echo "You need to provide two arguments. First argument should be the folder for the project, and the second one should be the goal container."
+    echo "You need to provide one argument(folder for the project)."
 fi
 
 if  [ $1 == "--help" ]; then

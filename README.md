@@ -30,19 +30,20 @@ Executing the program for the first time will download all of the needed librari
 In order to run the program, the following script should be run:
 
 ```
-$ sudo ./attack-graph-generator.sh ./examples/atsea database
+$ sudo ./attack-graph-generator.sh ./examples/atsea
 
 ```
 
-* The command starts the attack-graph-generator.sh script, generates an attack graph based on the system ./examples/atsea with the goal container that we want to achieve named database.
+* The command starts the attack-graph-generator.sh script, generates an attack graph based on the system ./examples/atsea.
 
-This would download and install the required libraries and set up env variables when run for the furst time. Then it will do the attack graph analysis.
+This command will download and install the required libraries and set up env variables when run for the first time. Then, it performs the attack graph analysis.
 In the config file, there is a possiblity to indicate online/offline mode. This means that offline mode does not use internet connection and we skip the vulnerabilities calculation step with clair. However we assume that the vulnerabilites files are already there and in the right location and they are produced by clair and named as such.
 
 Other examples are
 ```
-$ sudo ./attack-graph-generator.sh ./examples/javaee movieplex7
-$ sudo ./attack-graph-generator.sh ./examples/example samba
+$ sudo ./attack-graph-generator.sh ./examples/javaee
+$ sudo ./attack-graph-generator.sh ./examples/example
+$ sudo ./attack-graph-generator.sh ./examples/netflix-oss-example
 
 ```
 

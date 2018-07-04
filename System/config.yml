@@ -6,14 +6,14 @@ examples-results-path: examples-results
 
 # online calculates vulnerabilites with clairctl
 # offline skips clairctl and assumes that the vulnerabilities are already calculated.
-mode: offline # Options {"online", "offline"}
+mode: online # Options {"online", "offline"}
 
 # This property states if topology and attack graphs are going to be produced.
-generate_graphs: False # Options {True, False}
+generate_graphs: True # Options {True, False}
 
 # This property states if single or multiple vulnerabilties constitute 
 # an edge between two same nodes
-labels_edges: single # Options {"single", "multiple"}
+labels_edges: multiple # Options {"single", "multiple"}
 
 # The rules required to produce pre- and postconditions. They follow a specific pattern.
 preconditions-rules:

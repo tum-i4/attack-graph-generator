@@ -4,7 +4,6 @@
 import sys
 import os
 import time
-import networkx as nx
 
 from graphviz import Digraph
 from components import reader
@@ -39,9 +38,9 @@ def visualize_attack_graph(labels_edges,
             desc = ""
             for edge_vul in edge_vuls:
                 if desc == "":
-                   desc += edge_vul
+                    desc += edge_vul
                 else:
-                   desc += "\n"+edge_vul
+                    desc += "\n"+edge_vul
             dot.edge(terminal_points[0],
                      terminal_points[1],
                      label=desc, contstraint='false')
@@ -50,7 +49,7 @@ def visualize_attack_graph(labels_edges,
     print("Vizualizing the graph...")
 
 
-def main(example_folder, goal_container):
+def main(example_folder):
     """Main function responsible for running the attack graph generation pipeline."""
 
     # Opening the configuration file.
@@ -73,42 +72,48 @@ def main(example_folder, goal_container):
                                       example_folder)
         duration_visualization = time.time() - time_start
         print("Time elapsed: "+str(duration_visualization)+" seconds.\n")
-    
+
     # Parsing the vulnerabilities for each docker container.
     vulnerabilities = {}
     duration_vulnerabilities = 0
     if config["mode"] == "online":
         time_start = time.time()
-        vulnerabilities = vul_par.parse_vulnerabilities(example_folder)
+        vul_par.parse_vulnerabilities(example_folder)
         duration_vulnerabilities = time.time() - time_start
         print("Time elapsed: "+str(duration_vulnerabilities)+" seconds.\n")
-    else:
-        vulnerabilities_folder_path = os.path.join(config['examples-results-path'],
-                                                   os.path.basename(example_folder))
-        vulnerabilities = reader.read_vulnerabilities(vulnerabilities_folder_path, topology.keys())
+
+    vulnerabilities_folder_path = os.path.join(config['examples-results-path'],
+                                               os.path.basename(example_folder))
+    vulnerabilities = reader.read_vulnerabilities(vulnerabilities_folder_path, topology.keys())
+
+    if not vulnerabilities.keys():
+        print("There is a mistake with the vulnerabilities. Terminating the function...")
+        return
 
     # Getting the attack graph nodes and edges from the attack paths.
-    time_start = time.time()
-    nodes, edges, duration_bdf, duration_attack_graph = att_gr_par.generate_attack_graph(config["attack-vector-folder-path"],
-                                                                  config["preconditions-rules"],
-                                                                  config["postconditions-rules"],
-                                                                  topology,
-                                                                  vulnerabilities,
-                                                                  goal_container,
-                                                                  example_folder)
+    # Returns a tuple of the form:
+    # (attack_graph_nodes, attack_graph_edges, duration_bdf, duration_vul_preprocessing)
+    att_graph_tuple = att_gr_par.generate_attack_graph(config["attack-vector-folder-path"],
+                                                       config["preconditions-rules"],
+                                                       config["postconditions-rules"],
+                                                       topology,
+                                                       vulnerabilities,
+                                                       example_folder)
 
-
-    duration_attack_graph = time.time() - time_start
-    print("Time elapsed: "+str(duration_attack_graph)+" seconds.\n")
+    print("Time elapsed: "+str(att_graph_tuple[2]+att_graph_tuple[3])+" seconds.\n")
 
     # Printing the graph properties.
-    
-    duration_graph_properties = att_gr_par.print_graph_properties(config["labels_edges"], nodes, edges)
-    
+    duration_graph_properties = att_gr_par.print_graph_properties(config["labels_edges"],
+                                                                  nodes=att_graph_tuple[0],
+                                                                  edges=att_graph_tuple[1])
+
     # Visualizing the attack graph.
     if config['generate_graphs']:
         time_start = time.time()
-        visualize_attack_graph(config["labels_edges"], example_folder, nodes, edges)
+        visualize_attack_graph(config["labels_edges"],
+                               example_folder,
+                               nodes=att_graph_tuple[0],
+                               edges=att_graph_tuple[1])
         duration_visualization = time.time() - time_start
         print("Time elapsed: "+str(duration_visualization)+" seconds.\n")
 
@@ -117,8 +122,8 @@ def main(example_folder, goal_container):
                          config['generate_graphs'],
                          duration_topology=duration_topology,
                          duration_vulnerabilities=duration_vulnerabilities,
-                         duration_attack_graph=duration_attack_graph,
-                         duration_bdf=duration_bdf,
+                         duration_bdf=att_graph_tuple[2],
+                         duration_vuls_preprocessing=att_graph_tuple[3],
                          duration_graph_properties=duration_graph_properties,
                          duration_visualization=duration_visualization)
 
@@ -137,6 +142,6 @@ if __name__ == "__main__":
         # Checks if the docker-compose file is valid.
         IS_VALID_COMPOSE = top_par.validation_docker_compose(sys.argv[1])
         if IS_VALID_COMPOSE:
-            main(sys.argv[1], sys.argv[2])
+            main(sys.argv[1])
     else:
         print("Please have a look at the --help.")

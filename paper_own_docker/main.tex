@@ -168,7 +168,9 @@ In this section, we will conduct few experiments in order to test the scalabilit
 
 Throughout the experiments, the biggest time bottleneck is the preprocessing step, and the graph drawing step. However these steps are with linear complexity because the container files are analyzied only once. The attack graph generation less time than the preprocessing step.
 
-The following experiments were perfomed. We used the Samba(reference) and Phpmailer(reference) examples which were taken from . Where we artificially made clique of 1, 5, 20, 50 and 100 containers to test the scalability of the system. Each of them has a lot of vulnerabilities.
+The following experiments were perfomed. We used the Samba(reference) and Phpmailer(reference) examples which were taken from . Where we artificially made clique of 1, 5, 20, 50, 100, 500 and 1000 containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair.
+
+On the table(Table I) we can see the results of our experiments. In each of the experiments the number of Phpcontainer is constant, while the number of Samba containers is increasing in a clique fashion. There are also two artifitial containers("outside" that represents the outside world from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are present). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is: 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and clique of the Phpmailer and samba containers n*(n+1)/2. For example_5, the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clicque edges(5*6/2=15).
 
 We also performed testing on a real example- atsea sample shop app(reference). The system is composed of the containers app, database, payment_gateway and reverse_proxy.
 
@@ -185,24 +187,24 @@ We also performed testing on a real example- atsea sample shop app(reference). T
 		
 		No. of nodes in topology & 4 & 8 & 23 & 53 & 103 & 503 & 1003\\ 
 		
-	    No. of edges in topology & 8 & 44 & 464 & 2654 & 10304 & 251504 & 1003004 \\ 
+	    No. of edges in topology & 4 & 22 & 232 & 1327 & 5152 & 125752 & 501502 \\ 
 		
 		No. nodes in attack graph & 5 & 13 & 43 & 103 & 203 & 1003 & 2003 \\ 
 		
 		No. edges in attack graph & 4 & 12 & 42 & 102 & 202 & 1002 & 2002 \\ 
 		
-		Topology parsing time & 0.0053 & 0.0093 & 0.0250 & 0.0672 & 0.1112 & 0.7047 & 2.1485 \\ 
+		Topology parsing time & 0.0052 & 0.0096 & 0.0257 & 0.0638 & 0.1185 & 0.8763 & 1.8723 \\ 
 		
-		Attack Graph Generation time & 16.3807 & 16.9825 & 16.0742 & 18.0513 & 21.3882 & 78.6452 & 245.4832 \\ 
+		Vulnerabilities preprocessing time & 14.7317 & 15.1778 & 15.5593 & 17.1801 & 16.6612 & 23.8188 & 28.1352 \\ 
 		
-		Breadth-First Search time & 0.0016 & 0.0099 & 0.0931 & 0.5109 & 2.0188 & 54.5766 & 212.2954 \\ 
+		Breadth-First Search time & 0.0017 & 0.0106 & 0.1043 & 0.6128 & 2.1841 & 55.1850 & 193.2329 \\ 
 		
-		Total time & 17.5676 & 18.2907 & 17.3227 & 19.3901 & 22.7405 & 81.0005 & 249.2042 \\ 
+		Total time & 14.7387 & 15.1981 & 15.6895 & 17.8567 & 18.9638 & 79.8802 & 223.2404 \\ 
 		\hline
 	\end{tabular}
 \end{center}
 
-\caption{Table with graph characteristics(no. of containers, nodes and edges in both the topology and attack graph) and executing times of the main attack graph generator components(topology parser, attack graph generator and Breadth-first Search) of example graphs containing Phpmailer and Samba. Phpmailer has 181, while Samba has 367 vulnerabilities. The times are given in seconds. The topology time is the time required to generate the graph topology. The attack graph generation time includes both  the breath first search and filtering and processing of the vulnerabilities which has a linear time. The Breadth-First Search has a complexity O(V + E) where V is the number of nodes represented by the number of containers and E is a tuple of the container, the neighboring container and the vulnerabilities of the neighboring container.  The total time contains the topology parsing, the attack graph generation and some minor processes. However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is not in the scope of this analysis.}
+\caption{Table with graph characteristics(no. of containers, nodes and edges in both the topology and attack graph) and executing times of the main attack graph generator components: Topology Parser, Vulerability Preprocessing Module and Breadth-first Search Module(the latter two parts of the main attack graph generation process). The examples are composed of two containers: Phpmailer and Samba. The Phpmailer container has 181, while the Samba container has 367 vulnerabilities. The topology time is the time required to generate the graph topology. The vulnerabilities preprocessing time is the time required to convert the vulnerabilities into sets of pre- and postconditions. The Breath-First Search is the main component that generates the attack graph. All of the components are executed five times for each of the examples and their final time is averaged. The times are given in seconds. The total time contains the topology parsing, the attack graph generation and some minor processes. However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is therefore not in the scope of this analysis.}
 
 \end{table*}[t]
 

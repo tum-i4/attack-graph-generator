@@ -15,64 +15,91 @@ from components import topology_parser as top_par
 
 from components.attack_graph_parser import breadth_first_search
 from components.attack_graph_parser import generate_attack_graph
-from components.attack_graph_parser import print_graph_properties
 
-def scalability_test_helper(goal_container, example_folder):
+def scalability_test_helper(example_folder):
+    """Main function that tests the scalability for different examples."""
 
-    total_time_start = time.time()
-    # Preparing the data for testing
-    parent_path = os.path.dirname(os.getcwd())
+    number_runs_per_test = 5
 
-    # Opening the configuration file.
-    config = reader.read_config_file(old_root_path=parent_path)
-    topology, duration_topology = top_par.parse_topology(example_folder,
-                                                         os.getcwd())
+    duration_topology = 0
+    duration_bdf = 0
+    duration_vuls_preprocessing = 0
+    duration_total_time = 0
 
-    vuls_orig = reader.read_vulnerabilities(example_folder,
-                                            ["example_samba",
-                                             "example_phpmailer"])
-        
-    vulnerabilities = {}
-    for container_orig in vuls_orig.keys():
-        for container_topology in topology.keys():
-            if container_orig in container_topology:
-                vulnerabilities[container_topology] = vuls_orig[container_orig] 
-       
-    attack_graph_nodes, attack_graph_edges, duration_bdf, duration_attack_graph = generate_attack_graph(os.path.join(parent_path, config["attack-vector-folder-path"]),
-                                                       config["preconditions-rules"],
-                                                       config["postconditions-rules"],
-                                                       topology,
-                                                       vulnerabilities,
-                                                       goal_container,
-                                                       example_folder)
+    for i in range(1, number_runs_per_test+1):
 
-    duration_graph_properties = print_graph_properties(config["labels_edges"],
-                                                       attack_graph_nodes,
-                                                       attack_graph_edges)
+        print("\n\nIteration: "+str(i))
+        total_time_start = time.time()
 
-    no_topology_nodes = len(topology.keys())
-    no_topology_edges = 0
-    for container in topology.keys():
-        no_topology_edges += len(topology[container])
+        # Preparing the data for testing
+        parent_path = os.path.dirname(os.getcwd())
 
-    no_attack_graph_nodes = len(attack_graph_nodes)
-    no_attack_graph_edges = len(attack_graph_edges)
+        # Opening the configuration file.
+        config = reader.read_config_file(old_root_path=parent_path)
+        topology, duration_topology_new = top_par.parse_topology(example_folder,
+                                                                 os.getcwd())
+
+        duration_topology += duration_topology_new
+
+        vuls_orig = reader.read_vulnerabilities(example_folder,
+                                                ["example_samba",
+                                                 "example_phpmailer"])
+
+        vulnerabilities = {}
+        for container_orig in vuls_orig.keys():
+            for container_topology in topology.keys():
+                if container_orig in container_topology:
+                    vulnerabilities[container_topology] = vuls_orig[container_orig]
+
+        att_vec_path = os.path.join(parent_path, config["attack-vector-folder-path"])
+
+        # Returns a tuple of the form:
+        # (attack_graph_nodes, attack_graph_edges, duration_bdf, duration_vul_preprocessing)
+        attack_graph_tuple = generate_attack_graph(att_vec_path,
+                                                   config["preconditions-rules"],
+                                                   config["postconditions-rules"],
+                                                   topology,
+                                                   vulnerabilities,
+                                                   example_folder)
+
+        # Unpacking the variables
+        duration_bdf += attack_graph_tuple[2]
+        duration_vuls_preprocessing += attack_graph_tuple[3]
+
+        no_topology_nodes = len(topology.keys())
+        no_topology_edges = 0
+        for container in topology.keys():
+            no_topology_edges += len(topology[container])
+
+        # We divide them by two because each edge is counted twice.
+        no_topology_edges = int(no_topology_edges / 2)
+        no_attack_graph_nodes = len(attack_graph_tuple[0])
+        no_attack_graph_edges = len(attack_graph_tuple[1])
+
+        duration_total_time += (time.time() - total_time_start)
+
+    # Calculate the averages of the times
+    duration_topology = duration_topology/5
+    duration_vuls_preprocessing = duration_vuls_preprocessing/5
+    duration_bdf = duration_bdf/5
+    duration_total_time = duration_topology + duration_vuls_preprocessing + duration_bdf
 
     # Printing time summary of the attack graph generation.
     writer.print_summary(config["mode"],
                          config["generate_graphs"],
-                         no_topology_nodes = no_topology_nodes,
-                         no_topology_edges = no_topology_edges,
-                         no_attack_graph_nodes = no_attack_graph_nodes,
-                         no_attack_graph_edges = no_attack_graph_edges,
+                         no_topology_nodes=no_topology_nodes,
+                         no_topology_edges=no_topology_edges,
+                         no_attack_graph_nodes=no_attack_graph_nodes,
+                         no_attack_graph_edges=no_attack_graph_edges,
                          duration_topology=duration_topology,
-                         duration_attack_graph=duration_attack_graph,
+                         duration_vuls_preprocessing=duration_vuls_preprocessing,
                          duration_bdf=duration_bdf,
-                         duration_graph_properties=duration_graph_properties)
+                         duration_total_time=duration_total_time)
 
-    print("Total time elapsed: "+str(time.time() - total_time_start)+"\n\n\n")
+    print("Total time elapsed: "+str(duration_total_time)+"\n\n\n")
 
 class MyTest(unittest.TestCase):
+    """This class contains the unit tests."""
 
     def test_bfs_priviledged_exists(self):
         """Testing the creation of attack graph with a priviledged container.
@@ -80,10 +107,6 @@ class MyTest(unittest.TestCase):
         only be reached through the docker host."""
 
         print("Test: Testing an image with a 'priviledged' flag...")
-
-        mapping_names = {"container1": "container1",
-                         "container2": "container2",
-                         "container3" : "container3"}
 
         topology = {"outside" : ["container1"],
                     "container1": ["container2", "outside", "docker host"],
@@ -100,12 +123,9 @@ class MyTest(unittest.TestCase):
 
         privileged_access = {"container1" : False, "container2" : True, "container3" : False}
 
-        goal_container_name = "container3"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, edges, _ = breadth_first_search(topology,
+                                               exploitable_vuls,
+                                               privileged_access)
 
         # Checking that container3 has been attacked and the edges that lead to it.
         self.assertTrue('container2(ADMIN)|docker host(ADMIN)' in edges)
@@ -118,10 +138,6 @@ class MyTest(unittest.TestCase):
         only be reached through the docker host."""
 
         print("Test: Testing an image without a 'privileged' flag...")
-
-        mapping_names = {"container1": "container1",
-                         "container2": "container2",
-                         "container3" : "container3"}
 
         topology = {"outside" : ["container1"],
                     "container1": ["container2", "outside", "docker host"],
@@ -138,12 +154,9 @@ class MyTest(unittest.TestCase):
 
         privileged_access = {"container1" : False, "container2" : False, "container3" : False}
 
-        goal_container_name = "container3"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, _, _ = breadth_first_search(topology,
+                                           exploitable_vuls,
+                                           privileged_access)
 
         # Checking that container3 has not been attacked
         self.assertFalse('container3(NONE)' in nodes)
@@ -160,10 +173,6 @@ class MyTest(unittest.TestCase):
 
         print("Test: Testing an empty attack graph(attacker has no access)...")
 
-        mapping_names = {"container1": "container1",
-                         "container2": "container2",
-                         "container3" : "container3"}
-
         topology = {"outside" : [],
                     "container1": ["container2", "docker host"],
                     "container2": ["container1", "docker host"],
@@ -179,12 +188,9 @@ class MyTest(unittest.TestCase):
 
         privileged_access = {"container1" : False, "container2" : False, "container3" : False}
 
-        goal_container_name = "container3"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, edges, _ = breadth_first_search(topology,
+                                               exploitable_vuls,
+                                               privileged_access)
 
         # Checking that outside(ADMIN) is the only node.
         self.assertTrue('outside(ADMIN)' not in nodes)
@@ -201,10 +207,6 @@ class MyTest(unittest.TestCase):
 
         print("Test: Testing an all-connected attacker...")
 
-        mapping_names = {"container1": "container1",
-                         "container2": "container2",
-                         "container3" : "container3"}
-
         topology = {"outside" : ["container1", "container2", "container3"],
                     "container1": ["outside", "container2", "docker host"],
                     "container2": ["outside", "container1", "docker host"],
@@ -220,12 +222,9 @@ class MyTest(unittest.TestCase):
 
         privileged_access = {"container1" : False, "container2" : False, "container3" : False}
 
-        goal_container_name = "container3"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, edges, _ = breadth_first_search(topology,
+                                               exploitable_vuls,
+                                               privileged_access)
 
         # Checking the nodes
         self.assertEqual(len(nodes), 4)
@@ -240,15 +239,12 @@ class MyTest(unittest.TestCase):
         self.assertTrue('outside(ADMIN)|container2(ADMIN)' in edges)
         self.assertTrue('outside(ADMIN)|container3(ADMIN)' in edges)
 
-    def test_more_than_one_vulnerabilities(self):
+    def test_more_than_one_vuls(self):
         """Tests an attack graph that has has more than two ways to attack
         same node from the same node. In this example container2 has two vulnerabilities
         that can potentially be exploited"""
 
         print("Test: Testing more than one vuls attack from the same node...")
-
-        mapping_names = {"container1": "container1",
-                         "container2": "container2"}
 
         topology = {"outside" : ["container1"],
                     "container1": ["outside", "container2", "docker host"],
@@ -264,12 +260,9 @@ class MyTest(unittest.TestCase):
 
         privileged_access = {"container1" : False, "container2" : False}
 
-        goal_container_name = "container2"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, edges, _ = breadth_first_search(topology,
+                                               exploitable_vuls,
+                                               privileged_access)
 
         # Checking the nodes
         self.assertEqual(len(nodes), 3)
@@ -294,11 +287,6 @@ class MyTest(unittest.TestCase):
 
         print("Test: Testing a long attack graph...")
 
-        mapping_names = {"container1": "container1",
-                         "container2": "container2",
-                         "container3": "container3",
-                         "container4": "container4"}
-
         topology = {"outside" : ["container1"],
                     "container1": ["outside", "container2", "docker host"],
                     "container2": ["container1", "container3", "docker host"],
@@ -320,12 +308,9 @@ class MyTest(unittest.TestCase):
                              "container3" : False,
                              "container4" : False}
 
-        goal_container_name = "container2"
-
-        nodes, edges, duration_bdf = breadth_first_search(mapping_names[goal_container_name],
-                                                          topology,
-                                                          exploitable_vuls,
-                                                          privileged_access)
+        nodes, edges, _ = breadth_first_search(topology,
+                                               exploitable_vuls,
+                                               privileged_access)
 
         # Checking the nodes
         self.assertEqual(len(nodes), 5)
@@ -349,7 +334,6 @@ class MyTest(unittest.TestCase):
         print("Test: Testing a real example...")
 
         # Preparing the data for testing
-        goal_container = "appserver"
         example_folder = os.path.join(os.getcwd(), "atsea")
         parent_path = os.path.dirname(os.getcwd())
 
@@ -363,13 +347,13 @@ class MyTest(unittest.TestCase):
         vulnerabilities = reader.read_vulnerabilities(example_folder, topology.keys())
 
         # Running the attack graph generator
-        nodes, edges, duration_bdf, duration_attack_graph = generate_attack_graph(os.path.join(parent_path, config["attack-vector-folder-path"]),
-                                                           config["preconditions-rules"],
-                                                           config["postconditions-rules"],
-                                                           topology,
-                                                           vulnerabilities,
-                                                           goal_container,
-                                                           example_folder)
+        att_vec_path = os.path.join(parent_path, config["attack-vector-folder-path"])
+        nodes, edges, _, _ = generate_attack_graph(att_vec_path,
+                                                   config["preconditions-rules"],
+                                                   config["postconditions-rules"],
+                                                   topology,
+                                                   vulnerabilities,
+                                                   example_folder)
 
         # Checking the nodes
         self.assertEqual(len(nodes), 5)
@@ -387,82 +371,75 @@ class MyTest(unittest.TestCase):
         self.assertTrue('outside(ADMIN)|atsea_db(USER)' in edges)
 
     def test_scalability_1(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 1 samba container."""
 
         print("Test: Scalability test of samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba"
         example_folder = os.path.join(os.getcwd(), "1_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
     def test_scalability_5(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 5 samba containers."""
 
         print("Test: Scalability test of 5 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba5"
         example_folder = os.path.join(os.getcwd(), "5_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
 
     def test_scalability_20(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 20 samba containers."""
 
         print("Test: Scalability test of 20 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba20"
         example_folder = os.path.join(os.getcwd(), "20_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
     def test_scalability_50(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 50 samba containers."""
 
         print("Test: Scalability test of 50 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba50"
         example_folder = os.path.join(os.getcwd(), "50_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
     def test_scalability_100(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 100 samba containers."""
 
         print("Test: Scalability test of 100 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba100"
         example_folder = os.path.join(os.getcwd(), "100_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
     def test_scalability_500(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 500 samba containers."""
 
         print("Test: Scalability test of 500 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba500"
         example_folder = os.path.join(os.getcwd(), "500_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
     def test_scalability_1000(self):
-        """Doing scalability testing of samba and phpmailer example. It has 
+        """Doing scalability testing of samba and phpmailer example. It has
         1 phpmailer container and 1000 samba containers."""
 
         print("Test: Scalability test of 1000 samba and phpmailer example...")
 
         # Preparing the data for testing
-        goal_container = "samba1000"
         example_folder = os.path.join(os.getcwd(), "1000_example")
-        scalability_test_helper(goal_container, example_folder)
+        scalability_test_helper(example_folder)
 
 if __name__ == "__main__":
     print("Testing the attack graph generator...")
