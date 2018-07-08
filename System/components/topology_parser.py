@@ -152,8 +152,8 @@ def parse_topology(example_folder_path,
             list_services[mapping_names[first_service_name]].append("outside")
 
         # Adding the docker host as a node in the graph connected to all of the services
-        list_services["docker host"].append(mapping_names[first_service_name])
         list_services[mapping_names[first_service_name]].append("docker host")
+        list_services["docker host"].append(mapping_names[first_service_name])
 
     # Writing the dictonary into a json file.
     writer.write_topology_file(list_services,

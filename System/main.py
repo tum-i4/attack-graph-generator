@@ -107,6 +107,13 @@ def main(example_folder):
                                                                   nodes=att_graph_tuple[0],
                                                                   edges=att_graph_tuple[1])
 
+    #print(att_graph_tuple[0])
+    #print(len(att_graph_tuple[1].keys()))
+
+    if config["show_one_vul_per_edge"]:
+        for element in att_graph_tuple[1].keys():
+            att_graph_tuple[1][element] = [att_graph_tuple[1][element][0]]
+
     # Visualizing the attack graph.
     if config['generate_graphs']:
         time_start = time.time()

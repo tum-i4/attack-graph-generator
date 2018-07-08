@@ -133,6 +133,13 @@ def add_edge(nodes,
              edge_desc):
     """Adding an edge to the attack graph and checking if nodes already exist."""
 
+    # Checks if the opposite edge is already in the collection. If it is, dont add the edge.
+    for key in edges.keys():
+        if key.endswith(node_start):
+            container = node_end.split("(")[0]
+            if key.startswith(container):
+                return nodes, edges
+
     if node_start not in nodes:
         nodes.append(node_start)
 
@@ -166,14 +173,6 @@ def breadth_first_search(topology,
         for privilege in ["0", "1", "2", "3", "4"]:
             passed_nodes[container+"|"+privilege] = False
 
-    # Initializing the current priviledge array
-    privileges = {}
-    for container in topology:
-        privileges[container] = 0
-
-    # The attacker always has admin priviledges
-    privileges["outside"] = 4
-
     # Putting the attacker in the queue
     queue = Queue()
     queue.put("outside|4")
@@ -184,8 +183,13 @@ def breadth_first_search(topology,
 
     while not queue.empty():
 
-        current_node = queue.get().split("|")[0]
+        parts_current = queue.get().split("|")
+        current_node = parts_current[0]
+        priv_current = int(parts_current[1])
+
         neighbours = topology[current_node]
+        if current_node != "docker host":
+            neighbours.append(current_node)
 
         # Iterate through all of the neighbours
         for neighbour in neighbours:
@@ -206,7 +210,7 @@ def breadth_first_search(topology,
                 # Add the edge
                 nodes, edges = add_edge(nodes,
                                         edges,
-                                        current_node+"("+get_priv(privileges[current_node])+")",
+                                        current_node+"("+get_priv(priv_current)+")",
                                         neighbour+"(ADMIN)",
                                         "privileged")
 
@@ -218,53 +222,25 @@ def breadth_first_search(topology,
                 precond = container_exploitability[neighbour]["precond"]
                 postcond = container_exploitability[neighbour]["postcond"]
 
-                highest_privilege = 0
-
                 for vul in precond.keys():
 
-                    if privileges[current_node] >= precond[vul]:
+                    if priv_current >= precond[vul] and \
+                       ((neighbour != current_node and postcond[vul] != 0) or \
+                        (neighbour == current_node and priv_current < postcond[vul])):
 
-                        if postcond[vul] > privileges[neighbour]:
+                        # Add the edge
+                        nodes, edges = add_edge(nodes,
+                                                edges,
+                                                current_node + \
+                                                "(" + get_priv(priv_current) + ")",
+                                                neighbour + "(" + get_priv(postcond[vul]) + ")",
+                                                vul)
 
-                            if highest_privilege < postcond[vul]:
-                                highest_privilege = postcond[vul]
-
-                            # Add the edge
-                            nodes, edges = add_edge(nodes,
-                                                    edges,
-                                                    current_node + \
-                                                    "(" + \
-                                                    get_priv(privileges[current_node]) + \
-                                                    ")",
-                                                    neighbour + \
-                                                    "(" + \
-                                                    get_priv(postcond[vul]) + \
-                                                    ")",
-                                                    vul)
-
-                            # Checking if the node has already been passed.
-                            # If yes with which privilege
-                            privilege_node = 0
-
-                            for key in passed_nodes.keys():
-
-                                parts = key.split("|")
-
-                                if neighbour == parts[0] and passed_nodes[key]:
-                                    if int(parts[1]) > int(privilege_node):
-                                        privilege_node = parts[1]
-
-                            # If the node was not passed or it has a lower privilege...
-                            if not passed_nodes[neighbour+"|"+str(postcond[vul])] and \
-                               int(privilege_node) < postcond[vul]:
-
-                                # ... put it in the queue
-                                queue.put(neighbour+"|"+str(postcond[vul]))
-                                passed_nodes[neighbour+"|"+str(postcond[vul])] = True
-
-                # Update the current privilege of the neighbour
-                if highest_privilege != 0:
-                    privileges[neighbour] = highest_privilege
+                        # If the neighbour was not passed or it has a lower privilege...
+                        if not passed_nodes[neighbour+"|"+str(postcond[vul])]:
+                            # ... put it in the queue
+                            queue.put(neighbour+"|"+str(postcond[vul]))
+                            passed_nodes[neighbour+"|"+str(postcond[vul])] = True
 
     duration_bdf = time.time()-bds_start
     print("Breadth-first-search took "+str(duration_bdf)+" seconds.")

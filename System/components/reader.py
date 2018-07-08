@@ -45,7 +45,8 @@ def validate_config_file():
                      "examples-results-path",
                      "mode",
                      "labels_edges",
-                     "generate_graphs"]
+                     "generate_graphs",
+                     "show_one_vul_per_edge"]
 
     for main_keyword in main_keywords:
         if main_keyword not in config_file.keys():
@@ -79,6 +80,16 @@ def validate_config_file():
     # Check if the generate_graphs keyword has the right values
     if is_valid:
         config_mode = config_file["generate_graphs"]
+        if config_mode != True and config_mode != False:
+            is_valid = False
+            print("Value: " + \
+                  config_mode + \
+                  " is invalid for keyword generate_graphs")
+            sys.exit(0)
+
+    # Check if the show_one_vul_per_edge keyword has the right values
+    if is_valid:
+        config_mode = config_file["show_one_vul_per_edge"]
         if config_mode != True and config_mode != False:
             is_valid = False
             print("Value: " + \
