@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  30 APR 2018 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  27 JUL 2018 12:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -162,36 +162,242 @@ Package: relsize 2013/03/29 ver 4.1
 \algocf@algoframe=\box33
 \algocf@algobox=\box34
 )
-** ATTENTION: Overriding command lockouts (line 10).
-** ATTENTION: Overriding IEEE standard margins (line 13).
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/home/stevica/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+** ATTENTION: Overriding command lockouts (line 11).
+** ATTENTION: Overriding IEEE standard margins (line 14).
 (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 54.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 84.
- (/home/stevica/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+ (/home/stevica/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen121
+\scratchbox=\box35
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen122
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
+\everyMPtoPDFconversion=\toks17
+) (/home/stevica/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+(/home/stevica/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/home/stevica/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <11> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.69997> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.5> on input line 55.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
+<./images/AttackGraphSystem.jpg, id=1, 184.5294pt x 78.0516pt>
+File: ./images/AttackGraphSystem.jpg Graphic file (type jpg)
+<use ./images/AttackGraphSystem.jpg>
+Package pdftex.def Info: ./images/AttackGraphSystem.jpg  used on input line 97.
+
+(pdftex.def)             Requested size: 505.89pt x 214.01253pt.
+
+[1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
+
+
+] [2 <./images/AttackGraphSystem.jpg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 193.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 193.
+ [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 222.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 222.
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]\OT1/ptm/m/n/8 Spring Cloud,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+\OT1/ptm/m/n/8 Net-flix Rib-bon,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+\OT1/ptm/m/n/8 Spring Cloud
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]\OT1/ptm/m/n/8 https://github.com/Oreste-Luci/netflix-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+[]\OT1/ptm/m/n/8 Spring Boot,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--228
+\OT1/ptm/m/n/8 Re-ac-t, NG-INX,
+ []
+
+
+Overfull \hbox (0.66496pt too wide) in paragraph at lines 228--228
+[]\OT1/ptm/m/n/8 https://github.com/dockersamples/atsea-
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 230--230
+\OT1/ptm/m/n/8 ing movies a-long with
+ []
+
+
+Overfull \hbox (4.74504pt too wide) in paragraph at lines 230--230
+[]\OT1/ptm/m/n/8 https://github.com/dockersamples/javaee-
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 at-ed from t-wo sep-a-rate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+[]\OT1/ptm/m/n/8 PHPMailer(email
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 cre-ation and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 trans-fer class
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 for PH-P), Sam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 ba(SMB/CIFS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+\OT1/ptm/m/n/8 net-work-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+[]\OT1/ptm/m/n/8 https://github.com/opsxcq/exploit-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/ptm/m/n/8 CVE-2016-10033
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/ptm/m/n/8 https://github.com/opsxcq/exploit-
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 317--320
+\OT1/ptm/m/n/8 Tech-nol-o-gy. Na-tion-al vul-ner-a-bil-i-ty database ver-sion 2
+.2 (2010),
+ []
 
 
 ** Conference Paper **
@@ -204,32 +410,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
+[4
 
-Overfull \vbox (336.63313pt too high) has occurred while \output is active []
-
-
-[1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
-
-
-] (main.aux) ) 
+] [5] [6] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 1833 strings out of 495203
- 30213 string characters out of 3181196
- 94118 words of memory out of 3000000
- 5189 multiletter control sequences out of 15000+200000
- 35971 words of font info for 69 fonts, out of 3000000 for 9000
+ 3042 strings out of 495203
+ 48409 string characters out of 3181196
+ 124554 words of memory out of 3000000
+ 6331 multiletter control sequences out of 15000+200000
+ 38606 words of font info for 74 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 26i,16n,28p,345b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc
-}</home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></home/stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></home/
-stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></home/stevica
-/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></home/stevica/.miktex
-/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 69046 bytes).
+ 41i,24n,36p,1284b,487s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/bas
+e/8r.enc}</home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmb8a.pf
+b></home/stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></hom
+e/stevica/.miktex/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></home/stevic
+a/.miktex/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 159126 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
+ 63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

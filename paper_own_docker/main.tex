@@ -6,7 +6,8 @@
 \usepackage[options]{algorithm2e}                                     % if you need a4paper
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
                                                           % paper
-
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 \IEEEoverridecommandlockouts                              % This command is only
                                                           % needed if you want to
                                                           % use the \thanks command
@@ -83,86 +84,128 @@ Others have extended this work by generating attack graphs with using rule pre- 
 Containers, despite their ever-growing popularity, have shown somewhat bigger security risks, mostly because of their bigger need of connectivity and lesser degree of encapsulation(Reference). To the best of our knowledge, there is no work that has been done for attack graph generation for docker containers.
  They dont use Clair as well. They do not offer any performance comparison between different topologies. 
 
-\section{ARCHITECTURE}
+\section{PROPOSED METHOD}
 
-In this section, we examine the architecture of our attack graph generator. We first present a brief overview of the main concepts. Next, we have a look at the preprocessing step. Lastly we have look into the main algorithm for generating the attack graph.
 
-\subsubsection{Main concepts}
+In this section, we first have a look at docker and attack graph terminology. We then present an overview of our proposed system with its components and at the end describe each of these components in more detail. 
 
-Preconditions are conditions that have to be fulfilled in order for the attack to take place. Postconditions are the result of a successful attack and the privileges acquired.
+In Docker, distinction is being made between the terms image, container and service. Image is an executable package that includes everything needed to run an application,  container is a runtime instance of an image and service represents a container in production. A service only runs one image, but it codifies the way that image runs—what ports it should use, how many replicas of the container should run so the service has the capacity it needs, and so on. In our work we treat these terms equally, since we are doing a statical attack graph analysis.
 
-Atomic attack is one step or edge in the attack graph. A state is the container with its privilege level.
+In this work we model an attack graph as a sequence of atomic attacks. Each atomic attack represents a transition from a component(with its privilege) to either the same component with a higher privilege or a completely new component with a new privilege. A goal of an attacker would be to perform multiple atomic attacks to get to the desired goal container. For example, let us suppose that an attacker wants to have access to a database of a certain website. In order to reach the database, he has to pass other containers between them/ He does that by finding a vulnerability to exploit and give access to the container's neighbors.After a successful exploitation of a chain of intermediate containers, he finally has access to the database and its functions. Eventhough attack graphs model the attacker scenario, they are of crucial importance in computer security. A system administrator would be interested to have an overview of the attack paths that an attacker could exploit, in order to harden the security of a given enterprise system.
 
-We model the privileges into a hierarchy. The priviliges in ascending order are: None, VOS(User), VOS(Admin), OS(User) and OS(Admin). VOS means that the privilege is connected to a virtual machine, while OS means that the host machine has been infected. Since VOS are on some hosts, they have lower level of hierarchy.
+\begin{figure*}
+	\includegraphics[width=\textwidth]{AttackGraphSystem}
+	\caption{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.}
+	\label{AttackGraphSystem}
+\end{figure*}
 
-<INSERT IMAGE PRIVILEGES>
+
+Atomic attacks are the fundamental building blocks in our attack graph. A single atomic attack represents a successful vulnerability exploitation. A consecutive sequence of atomic attacks represents a path in an attack graph and multiple attack paths constitute the attack graph. For an atomic attack to be executed, two constraints are imposed. First, the containers have to be connected to each other, so that physical access can be ensured. Second, the attacked container should contain some vulnerability that the attacker can exploit and gain a privilege level. We model the privileges into a hierarchy. The privileges in ascending order are: None, VOS(User), VOS(Admin), OS(User) and OS(Admin). VOS means that the privilege is connected to a virtual machine, while OS means that the host machine has been infected. Since VOS are on some hosts, they have lower level of hierarchy.
+
+Furthermore, in order for an atomic attack to be performed, a certain precondition has to be met. Preconditions are privilege levels that are required so that a vulnerability can be exploited. When an atomic attack is successfully executed, a postcondition is obtained. Postconditions are privileges acquired as a result of a successful attack. Both the Pre- and Postconditions are transformed from pre- and postcondition rules which are collected by experts.
+
+
+
+Nodes in our attack graph model are composed as a combination of (docker image and privilege level), while edges are a connection between node pairs with a vulnerability as a descriptor. Once an attacker exploits a given vulnerability, he gains the privileges for the new container and an edge is added to the attack graph.
+
+Our attack graph generator is composed of three main components: Topology Parser, Vulnerability Parser and Attack Graph Parser(Fig. \ref{AttackGraphSystem}). The Topology Parser reads the underlying topology of the system and converts it to a more machine readable format, the Vulnerability Parser generates the vulnerabilities for each of the images and the Attack Graph Parser from the topology and vulnerabilities files generates the attack graph. 
+
+<INSERT IMAGE PRIVILEGES><REF new paper>
 
 <INSERT IMAGE EXAMPLE>
 
 <INSERT IMAGE ATTACK GRAPH>
 
 
-\subsubsection{Preprocessing}
-In our preprocessing step, we use Clair in order to generate the vulnerabilities for a given container. Clair provides the CVE-ID, description and attack vector. Attack vector is an entity that descriptes which conditions and effects are connected to this vulnerability. Clairctl is a wrapper that we use in order to analyze a docker image. 
+In the following subsections, we first look into the required technical system specifications, we then describe each of the parsers in more detail and at the end examine the characteristics of the Breath-First Search used by the Attack Graph Parser.
 
-Additionaly, we parse the attack vectors from the vulnerability database to generate attack rules. We use rules annotated
+\subsubsection{Technical Details}
+Our system is developed for Docker 17.12.1-ce and Docker Compose 1.19.0. The code is written in Python 3.6, and we use Clair and Clairctl for vulnerabilities generation.
 
-docker-compose.yml is used for extraction of the topology of the system. The containers that have published ports are connected to the outside.
+We developed this system to be used exclusively with a specific version of Docker and Docker-Compose. However, please note that the main algorithm is easily extendable  to accommodate other microservice architectures if the appropriate Topology and Vulnerability parsers are provided and conform to the input of the attack graph generator.
+
+\subsubsection{Topology Parser}
+The topology of Docker containers can be described in either runtime, or by using Docker Compose. In our case, since we are doing static attack graph analysis, we use Docker Compose. Docker Compose provides us with a docker-compose.yml which is used for extraction of the topology of the system. Even docker-compose.yml are different, based on the version. For example older versions use the deprecated keyword link, while newer ones use exclusively networks. In this work, we use the keyword networks as a statement that a connection between two containers exists.
+
+However, in the majority of cases, in order for an application to be useful, it has to communicate with the outside world. The containers that have published ports are connected to the outside.
+
 Some containers have privileged access. That means that an attacker with access to these containers, has also access to the docker daemon. This can be done by us
 
-This results in a list of container vulnerabilities with their preconditions and postconditions.
+
+\subsubsection{Vulnerability Parser}
+In the preprocessing step, we use Clair to generate the vulnerabilities of a given container. Clair provides CVE-ID, description and attack vector for each vulnerability. Attack vector is an entity that describes which conditions and effects are connected to this vulnerability. The fields in the attack vector as described by the National Vulnerability Database(NVD) are: Access Vector(Local, Adjacent Network and Network), Access Complexity(Low, Medium, High), Authentication(None, Single, Multiple), Confidentiality Impact(None, Partial, Complete), Integrity Impact(None, Partial, Complete) and Availability Impact(None Partial Complete). However, Clair does not provide with an easy to use interface to analyze a docker image. As a result, we use Clairctl(Clair wrapper) in order to analyze a complete docker image.
+
+
+\subsubsection{Attack Graph Parser}
+After the topology file is extracted and the vulnerabilities for each container are generated, we continue with the attack graph generation.
+
+We here first preprocess the vulnerabilities and convert them into sets of pre- and postconditions. In order to do this, we match the attack vectors acquired earlier from the vulnerability database and keywords of the descriptions of each vulnerability to generate attack rules. When a subset of attack vector fields and description keywords match a given rule, we use the pre- or postcondition of that rule. If more than one rule match, we take the one with the highest privilege level for the preconditions and the lowest privilege level for the postconditions. If no rule matches we take None as a precondition and ADMIN(OS) as a postcondition.This results in a list of container vulnerabilities with their preconditions and postconditions.
 \subsubsection{Breadth-First Search}
 
-After the preprocessing step is done, the vulnerabilties are parsed and their pre- and postconditions are extracted, together with the topology are feed into the Bradth-First Search algorithm(BFS).
-Breadth-first search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before going deeper in the graph.
+After the preprocessing step is done, the vulnerabilities are parsed and their pre- and postconditions are extracted. Together with the topology, they are feed into the Breadth-First Search algorithm(BFS).
+Breadth-first search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before going deeper in the graph. Pseudocode of our modified Breath First Search is given on (Figure.)
 
-Some properties of BFS:
 
-Completeness: Breadth First Search is complete i.e. if there is a solution, breadth-first search will find it regardless of the kind of graph.
-
-Termination - monotonicity properties
-- complexity
-time complexity O(|N| + |E|) where |N| is the number of nodes and |E| is the number of edges in the attack graph.
-memory complexity
-We use a modification of the breadth first search algorithm to find the nodes and the edges of the attack graph.
 \begin{algorithm}
 	\SetAlgoLined
-	\KwData{topology, container\_exploitability,
-	privileged\_access}
+	\KwData{topology, cont\_expl,
+	priv\_acc}
 	\KwResult{nodes, edges}
-	nodes, edges, queue, passed\_nodes = list(), dict\{\}, Queue(), []\;
-	queue.put(goal\_container)\;
-	
-	nodes = get\_nodes()\;
-	\While{! queue.isEmpty()}{
-		ending\_node = queue.get()\;
-		passed\_nodes[ending\_node] = True\;
-		cont\_exp\_end = container\_exploitability[ending\_node]\;
-		neighbours = topology[ending\_node]\;
-	    \For{neighbour in neighbours}{
-	    	\If{neighbour == "outside"}{
-	    		
-	    			edges.append(create\_edges())\;
-	    			continue\;
+	nodes, edges, passed\_nodes = [], [], [] \\
+	queue = Queue() \\
+	queue.put("outside" + "ADMIN") \\
 
+	\While{! queue.isEmpty()}{
+		curr\_node = queue.get() \\
+		curr\_cont = get\_cont(curr\_node) \\
+		curr\_priv = get\_priv(curr\_node) \\
+		neighbours = topology[curr\_cont] \\
+	    \For{neigh in neighbours}{
+	    	\If{curr\_cont == docker\_host}
+	    	{
+	    		end = neigh + "ADMIN" \\
+	    		create\_edge(curr\_node, end) \\
 	    		}
-	        \If{! passed\_nodes[neighbour]}
-	        {queue.put(neighbour)\;}
-            \If{neighbour == goal\_container}{
-            	continue\;}
-            edges.append(create\_edges())
+	        \If{neigh == docker\_host and priv\_acc[curr\_cont]}
+	        { 	
+	        	end = neigh + "ADMIN" \\
+	        	create\_edge(curr\_node, end) \\
+	        	queue.put(end) \\
+	        	passed\_nodes.add(end)    	
+	        	}
+            \If{neigh != outside and neigh != docker\_host}{
+            	precond = cont\_expl[neigh][precond] \\
+            	postcond = cont\_expl[neigh][postcond] \\
+            	\For{vul in vuls}{
+            		\If{$curr_priv > precond[vul]$}{	
+            	end = neigh + post\_cond[vul]\\
+            	create\_edge(curr\_node, end\_node)\\
+            	\If{end\_node not in passed\_nodes}{
+            		queue.put(end\_node)\\
+            		passed\_nodes.add(end\_node)
+            		}}
+            	}
+                }
 	    	}
-	
+	    nodes = update\_nodes()\\
+	    edges = update\_edges() \\
 	}
 
 \caption{Breadth-first search algorithm for generating an attack graph.}
 \end{algorithm}
 
 The algorithm requires the topology and a dictionary of the exploitable vulnerabilities as an input and the output is made up of the nodes and the edges that make the attack graph. 
-The algorithm first initializes the nodes, edges, queue and the passed nodes. Afterwards it generates the nodes which are a combination of the image name and the exploitable vulnerability.
-Then into a while loop we iterate through every node, check its neighbours and add the edges. If the neighbour was not passed, then we add it to the queue. The algorithm terminates when the queue is empty.
+The algorithm first initializes the nodes, edges, queue and the passed nodes. Afterwards it generates the nodes which are a combination of the image name and the privilege level.
+Then into a while loop we iterate through every node, check its neighbors and add the edges. If the neighbor was not passed, then we add it to the queue. The algorithm terminates when the queue is empty.
 
-\section{EXPERIMENTS}
+Breath First Search is characterized by the following properties:
+
+\begin{itemize}
+ \item Completeness: Breadth First Search is complete i.e. if there is a solution, breadth-first search will find it regardless of the kind of graph.
+ \item Termination: This follows from its monotonicity property. Each edge is traversed only once.
+ \item Time Complexity: is $O(|N| + |E|)$ where $|N|$ is the number of nodes and $|E|$ is the number of edges in the attack graph.
+\end{itemize}
+\section{EVALUATION}
 
 In this section, we will conduct few experiments in order to test the scalability of our system with different number of containers and links between them.
 
@@ -170,10 +213,33 @@ Throughout the experiments, the biggest time bottleneck is the preprocessing ste
 
 The following experiments were perfomed. We used the Samba(reference) and Phpmailer(reference) examples which were taken from . Where we artificially made clique of 1, 5, 20, 50, 100, 500 and 1000 containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair.
 
-On the table(Table I) we can see the results of our experiments. In each of the experiments the number of Phpcontainer is constant, while the number of Samba containers is increasing in a clique fashion. There are also two artifitial containers("outside" that represents the outside world from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are present). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is: 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and clique of the Phpmailer and samba containers n*(n+1)/2. For example_5, the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clicque edges(5*6/2=15).
+On the table(Table I) we can see the results of our experiments. In each of the experiments the number of Phpcontainer is constant, while the number of Samba containers is increasing in a clique fashion. There are also two artifitial containers("outside" that represents the outside world from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are present). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is: 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and clique of the Phpmailer and samba containers n*(n+1)/2. For example\_5, the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clicque edges(5*6/2=15).
 
-We also performed testing on a real example- atsea sample shop app(reference). The system is composed of the containers app, database, payment_gateway and reverse_proxy.
+We also performed testing on a real example- atsea sample shop app(reference). The system is composed of the containers app, database, payment\_gateway and reverse\_proxy.
 
+\begin{table*}[t]
+	\begin{center}
+		\begin{tabular}{ |c|p{30mm}|p{20mm}|c|c|p{45mm}| } 
+			\hline
+			Name & Description & Technology stack & No. Containers & No. vuln. & Github link \\\hline 
+			
+			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & https://github.com/Oreste-Luci/netflix-oss-example \\\hline
+			
+			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 & https://github.com/dockersamples/atsea-sample-shop-app \\\hline
+			
+			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 & https://github.com/dockersamples/javaee-demo \\\hline
+			
+			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 & https://github.com/opsxcq/exploit-CVE-2016-10033
+			https://github.com/opsxcq/exploit-CVE-2017-7494 \\\hline
+			
+			
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\caption{List of randomly selected examples that were analyzed with our attack graph generation system.}
+	
+\end{table*}[t]
 
 \begin{table*}[t]
 \begin{center}
@@ -185,21 +251,21 @@ We also performed testing on a real example- atsea sample shop app(reference). T
 		
 		No. of Samba containers & 1 & 5 & 20 & 50 & 100 & 500 & 1000 \\ 
 		
-		No. of nodes in topology & 4 & 8 & 23 & 53 & 103 & 503 & 1003\\ 
+		No. of nodes in topology & 4 & 8 & 23 & 53 & 103 & 503 & n\\ 
 		
-	    No. of edges in topology & 4 & 22 & 232 & 1327 & 5152 & 125752 & 501502 \\ 
+	    No. of edges in topology & 6 & 28 & 253 & 1378 & 5253 & 126253 & n \\ 
 		
-		No. nodes in attack graph & 5 & 13 & 43 & 103 & 203 & 1003 & 2003 \\ 
+		No. nodes in attack graph & 5 & 13 & 43 & 103 & 203 & 1003 & n \\ 
 		
-		No. edges in attack graph & 4 & 12 & 42 & 102 & 202 & 1002 & 2002 \\ 
+		No. edges in attack graph & 8 & 68 & 863 & 5153 & 20303 & 501503 & n \\ 
 		
-		Topology parsing time & 0.0052 & 0.0096 & 0.0257 & 0.0638 & 0.1185 & 0.8763 & 1.8723 \\ 
+		Topology parsing time & 0.0082 & 0.0094 & 0.02879 & 0.0563 & 0.1241 & 0.7184 & n \\ 
 		
-		Vulnerabilities preprocessing time & 14.7317 & 15.1778 & 15.5593 & 17.1801 & 16.6612 & 23.8188 & 28.1352 \\ 
+		Vulnerabilities preprocessing time & 0.2551 & 0.2840 & 0.5377 & 0.9128 & 1.6648 & 6.9961 & n \\ 
 		
-		Breadth-First Search time & 0.0017 & 0.0106 & 0.1043 & 0.6128 & 2.1841 & 55.1850 & 193.2329 \\ 
+		Breadth-First Search time & 0.0019 & 0.0209 & 0.2763 & 1.6524 & 6.5527 & 165.3634 & n \\ 
 		
-		Total time & 14.7387 & 15.1981 & 15.6895 & 17.8567 & 18.9638 & 79.8802 & 223.2404 \\ 
+		Total time & 0.2654 & 0.3144 & 0.8429 & 2.6216 & 8.3417 & 173.0781 & n \\ 
 		\hline
 	\end{tabular}
 \end{center}
