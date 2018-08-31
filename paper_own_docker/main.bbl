@@ -1,0 +1,174 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{12}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{??}{cla}{[n. d.]a}]%
+        {clairctl}
+ \bibinfo{year}{[n. d.]}\natexlab{a}.
+\newblock \bibinfo{title}{Clairctl}.
+\newblock \bibinfo{howpublished}{\url{https://github.com/jgsqware/clairctl}}.
+\newblock
+\newblock
+\shownote{Accessed: 2018-08-31.}
+
+
+\bibitem[\protect\citeauthoryear{??}{cla}{[n. d.]b}]%
+        {clair}
+ \bibinfo{year}{[n. d.]}\natexlab{b}.
+\newblock \bibinfo{title}{CoreOS Clair}.
+\newblock \bibinfo{howpublished}{\url{https://github.com/coreos/clair}}.
+\newblock
+\newblock
+\shownote{Accessed: 2018-08-31.}
+
+
+\bibitem[\protect\citeauthoryear{??}{php}{[n. d.]}]%
+        {phpmailer}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{PHPMailer < 5.2.18 Remote Code Execution}.
+\newblock
+  \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2016-10033}}.
+\newblock
+\newblock
+\shownote{Accessed: 2018-08-31.}
+
+
+\bibitem[\protect\citeauthoryear{??}{sam}{[n. d.]}]%
+        {samba}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{SambaCry RCE exploit for Samba 4.5.9}.
+\newblock
+  \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2017-7494}}.
+\newblock
+\newblock
+\shownote{Accessed: 2018-08-31.}
+
+
+\bibitem[\protect\citeauthoryear{??}{net}{[n. d.]}]%
+        {netflixoss}
+ \bibinfo{year}{[n. d.]}\natexlab{}.
+\newblock \bibinfo{title}{Spring Cloud - Netflix OSS Example}.
+\newblock
+  \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
+\newblock
+\newblock
+\shownote{Accessed: 2018-08-31.}
+
+
+\bibitem[\protect\citeauthoryear{Aksu, Bicakci, Dilek, Ozbayoglu,
+  et~al\mbox{.}}{Aksu et~al\mbox{.}}{2018}]%
+        {aksu2018automated}
+\bibfield{author}{\bibinfo{person}{M~Ugur Aksu}, \bibinfo{person}{Kemal
+  Bicakci}, \bibinfo{person}{M~Hadi Dilek}, \bibinfo{person}{A~Murat
+  Ozbayoglu}, {et~al\mbox{.}}} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Automated Generation Of Attack Graphs Using NVD}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the Eighth ACM Conference on Data
+  and Application Security and Privacy}}. ACM, \bibinfo{pages}{135--142}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Booth, Rike, and Witte}{Booth
+  et~al\mbox{.}}{2013}]%
+        {booth2013national}
+\bibfield{author}{\bibinfo{person}{Harold Booth}, \bibinfo{person}{Doug Rike},
+  {and} \bibinfo{person}{Gregory~A Witte}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{The National Vulnerability Database (NVD):
+  Overview}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ingols, Lippmann, and Piwowarski}{Ingols
+  et~al\mbox{.}}{2006}]%
+        {ingols2006practical}
+\bibfield{author}{\bibinfo{person}{Kyle Ingols}, \bibinfo{person}{Richard
+  Lippmann}, {and} \bibinfo{person}{Keith Piwowarski}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Practical attack graph generation for network
+  defense}. In \bibinfo{booktitle}{\emph{Computer Security Applications
+  Conference, 2006. ACSAC'06. 22nd Annual}}. IEEE, \bibinfo{pages}{121--130}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Merkel}{Merkel}{2014}]%
+        {merkel2014docker}
+\bibfield{author}{\bibinfo{person}{Dirk Merkel}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Docker: lightweight linux containers for consistent
+  development and deployment}.
+\newblock \bibinfo{journal}{\emph{Linux Journal}} \bibinfo{volume}{2014},
+  \bibinfo{number}{239} (\bibinfo{year}{2014}), \bibinfo{pages}{2}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ou, Boyer, and McQueen}{Ou
+  et~al\mbox{.}}{2006}]%
+        {ou2006scalable}
+\bibfield{author}{\bibinfo{person}{Xinming Ou}, \bibinfo{person}{Wayne~F
+  Boyer}, {and} \bibinfo{person}{Miles~A McQueen}.}
+  \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{A scalable approach to attack graph generation}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 13th ACM conference on Computer
+  and communications security}}. ACM, \bibinfo{pages}{336--345}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ritchey and Ammann}{Ritchey and
+  Ammann}{2000}]%
+        {ritchey2000using}
+\bibfield{author}{\bibinfo{person}{Ronald~W Ritchey} {and}
+  \bibinfo{person}{Paul Ammann}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Using model checking to analyze network
+  vulnerabilities}. In \bibinfo{booktitle}{\emph{Security and Privacy, 2000.
+  S\&P 2000. Proceedings. 2000 IEEE Symposium on}}. IEEE,
+  \bibinfo{pages}{156--165}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sheyner, Haines, Jha, Lippmann, and
+  Wing}{Sheyner et~al\mbox{.}}{2002}]%
+        {sheyner2002automated}
+\bibfield{author}{\bibinfo{person}{Oleg Sheyner}, \bibinfo{person}{Joshua
+  Haines}, \bibinfo{person}{Somesh Jha}, \bibinfo{person}{Richard Lippmann},
+  {and} \bibinfo{person}{Jeannette~M Wing}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Automated generation and analysis of attack
+  graphs}. In \bibinfo{booktitle}{\emph{null}}. IEEE, \bibinfo{pages}{273}.
+\newblock
+
+
+\end{thebibliography}

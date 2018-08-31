@@ -1,0 +1,45 @@
+\section{EVALUATION}
+
+In real-world microservice architectures, many containers are interconnected to each other. This raises the need for a scalable attack graph system. In this section, we first have a look at how others evaluate their systems. We then conduct few experiments in order to test the scalability of our system with different number of containers, and connections in both artificial and real networks. All of the experiments were performed on a Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz with 8GB of RAM running Ubuntu 16.04.3 LTS.
+
+Extensive scalability study of attack graph generators  is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Characteristics that usually vary in this sort of evaluation are the number of nodes, their interconnectedness and the amount of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In our case we compare our system to existing work by treating every container as a computer, and any physical connection between two computers as a connection between two containers. 
+
+\begin{table*}
+	\begin{center}
+		\begin{tabular}{ |p{20mm}|p{25mm}|p{20mm}|p{10mm}|c|p{15mm}|p{45mm}| } 
+			\hline
+			Name & Description & Technology stack & No. Containers & No. vuln. & Attack Graph generation time & Github link \\\hline 
+			
+			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & 0.5120 sec. & https://github.com/Oreste-Luci/netflix-oss-example \\\hline
+			
+			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 & 0.2761 sec. & https://github.com/dockersamples/atsea-sample-shop-app \\\hline
+			
+			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 & 0.2613 sec. & https://github.com/dockersamples/javaee-demo \\\hline
+			
+			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 & 0.2570 sec. & https://github.com/opsxcq/exploit-CVE-2016-10033
+			https://github.com/opsxcq/exploit-CVE-2017-7494 \\\hline
+			
+			
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\caption{List of randomly selected examples that were analyzed with our attack graph generation system.}
+	\label{table_technologies}
+	
+\end{table*}
+
+Seyner in his work tests the system in both a small and extended examples \cite{sheyner2002automated}. The attack graph in the larger example has 5948 nodes and 68364 edges. The time needed for NuSMV to execute this configuration is 2 hours, but the model checking part took 4 minutes. Sheyner claims that the performance bottleneck is inside the graph generation procedure. 
+
+Ingols tested his system on a network of 250 hosts. He afterwards continued his study on a simulated network of 50000 hosts in under 4 minutes \cite{ingols2006practical}. Although this method yields better performance than the aforementioned approach, this evaluation is based on the Multiple Prerequisite graph, which is different from ours. In addition to this, missing explanation of how the hosts are connected, does not make it directly comparable to our method.
+
+Ou provides some more extended study where he tests his system on more examples \cite{ou2006scalable}. He mentions that the asymptotic CPU time is between $O(n^2)$ and $O(n^3)$, where n is the number of hosts. The performance of the system for 1000 fully connected nodes takes more than 1000 seconds. He also provides an evaluation where he MulVAL clearly outperforms the Sheyner's system.
+
+In our scalability experiments we use Samba \cite{samba} and Phpmailer \cite{phpmailer} containers which were taken from their respective Github repositories. We then extended this example and artificially made cliques of 5, 20, 50, 100, 500 and 1000 Samba containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair.
+
+On Table \ref{table_scalability} we can see the results of our experiments. In each of these experiments the number of Phpmailer containers stays constant, while the number of Samba containers is increasing. This increase is done in a fully connected fashion, a node of each additional container is connected to every existing container. In addition, there are also two additional artificial containers("outside" that represents the environment from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are present). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is a a combination of: 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and clique of the Phpmailer and samba containers n*(n+1)/2. For example\_5, the number of containers would be 8(1 Phpmailer, 1 outside, 1 docker host and 5 Samba containers) the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clique edges(5*6/2=15).
+
+Throughout the experiments, for the smaller configurations, the biggest time bottleneck is the preprocessing step. However this step increases in linear fashion because the container files are analyzed only once by Clair. The attack graph generation for the smaller examples is considerably less than the preprocessing time. Starting from example\_500, we can notice sharp increase in BDF execution time to 165 seconds. For the previous example with example\_100, needed attack graph generation time is 6.5 seconds.
+
+We also performed tests on some real examples as described on table \ref{table_technologies} and extend our system to different types of technologies, number of containers and vulnerabilities. The examples are as follows: NetflixOSS, Atsea Sample Shop App, and JavaEE demo. These examples are different from the synthetic ones presented above, since they contain less and different containers. They are connected in a more linear fashion in contrast to the full connection provided in the previous example. For example, in order for an attacker to reach a database, he needs to gain suitable privilege levels of multiple intermediate containers in several steps.
+
