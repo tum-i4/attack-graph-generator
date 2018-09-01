@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -90,6 +90,18 @@
 \shownote{Accessed: 2018-08-31.}
 
 
+\bibitem[\protect\citeauthoryear{Ahmadvand and Ibrahim}{Ahmadvand and
+  Ibrahim}{2016}]%
+        {ahmadvand2016requirements}
+\bibfield{author}{\bibinfo{person}{Mohsen Ahmadvand} {and}
+  \bibinfo{person}{Amjad Ibrahim}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Requirements reconciliation for scalable and secure
+  microservice (de) composition}. In \bibinfo{booktitle}{\emph{Requirements
+  Engineering Conference Workshops (REW), IEEE International}}. IEEE,
+  \bibinfo{pages}{68--73}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Aksu, Bicakci, Dilek, Ozbayoglu,
   et~al\mbox{.}}{Aksu et~al\mbox{.}}{2018}]%
         {aksu2018automated}
@@ -145,6 +157,17 @@
 \newblock \showarticletitle{A scalable approach to attack graph generation}. In
   \bibinfo{booktitle}{\emph{Proceedings of the 13th ACM conference on Computer
   and communications security}}. ACM, \bibinfo{pages}{336--345}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Papazoglou}{Papazoglou}{2003}]%
+        {papazoglou2003service}
+\bibfield{author}{\bibinfo{person}{Mike~P Papazoglou}.}
+  \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Service-oriented computing: Concepts,
+  characteristics and directions}. In \bibinfo{booktitle}{\emph{Web Information
+  Systems Engineering, 2003. WISE 2003. Proceedings of the Fourth International
+  Conference on}}. IEEE, \bibinfo{pages}{3--12}.
 \newblock
 
 

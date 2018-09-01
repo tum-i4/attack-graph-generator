@@ -45,6 +45,8 @@ Warning--no key, author in netflixoss
 Warning--no author, editor, organization, or key in netflixoss
 Warning--empty author in netflixoss
 Warning--empty year in netflixoss
+Warning--empty publisher in ahmadvand2016requirements
+Warning--empty address in ahmadvand2016requirements
 Warning--empty publisher in aksu2018automated
 Warning--empty address in aksu2018automated
 Warning--empty institution in booth2013national
@@ -52,8 +54,10 @@ Warning--empty publisher in ingols2006practical
 Warning--empty address in ingols2006practical
 Warning--empty publisher in ou2006scalable
 Warning--empty address in ou2006scalable
+Warning--empty publisher in papazoglou2003service
+Warning--empty address in papazoglou2003service
 Warning--empty publisher in ritchey2000using
 Warning--empty address in ritchey2000using
 Warning--empty publisher in sheyner2002automated
 Warning--empty address in sheyner2002automated
-(There were 55 warnings)
+(There were 59 warnings)

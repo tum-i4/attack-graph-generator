@@ -1,22 +1,18 @@
 \section{EVALUATION}
 
-In real-world microservice architectures, many containers are interconnected to each other. This raises the need for a scalable attack graph system. In this section, we first have a look at how others evaluate their systems. We then conduct few experiments in order to test the scalability of our system with different number of containers, and connections in both artificial and real networks. All of the experiments were performed on a Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz with 8GB of RAM running Ubuntu 16.04.3 LTS.
-
-Extensive scalability study of attack graph generators  is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Characteristics that usually vary in this sort of evaluation are the number of nodes, their interconnectedness and the amount of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In our case we compare our system to existing work by treating every container as a computer, and any physical connection between two computers as a connection between two containers. 
-
 \begin{table*}
 	\begin{center}
-		\begin{tabular}{ |p{20mm}|p{25mm}|p{20mm}|p{10mm}|c|p{15mm}|p{45mm}| } 
+		\begin{tabular}{ |p{20mm}|p{25mm}|p{20mm}|p{10mm}|c|p{60mm}| } 
 			\hline
-			Name & Description & Technology stack & No. Containers & No. vuln. & Attack Graph generation time & Github link \\\hline 
+			Name & Description & Technology stack & No. Containers & No. vuln. & Github link \\\hline 
 			
-			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & 0.5120 sec. & https://github.com/Oreste-Luci/netflix-oss-example \\\hline
+			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & https://github.com/Oreste-Luci/netflix-oss-example \\\hline
 			
-			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 & 0.2761 sec. & https://github.com/dockersamples/atsea-sample-shop-app \\\hline
+			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 &  https://github.com/dockersamples/atsea-sample-shop-app \\\hline
 			
-			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 & 0.2613 sec. & https://github.com/dockersamples/javaee-demo \\\hline
+			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 &  https://github.com/dockersamples/javaee-demo \\\hline
 			
-			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 & 0.2570 sec. & https://github.com/opsxcq/exploit-CVE-2016-10033
+			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 &  https://github.com/opsxcq/exploit-CVE-2016-10033
 			https://github.com/opsxcq/exploit-CVE-2017-7494 \\\hline
 			
 			
@@ -24,10 +20,17 @@ Extensive scalability study of attack graph generators  is rare in current liter
 		\end{tabular}
 	\end{center}
 	
-	\caption{List of randomly selected examples that were analyzed with our attack graph generation system.}
+	\caption{Microservice architecture examples analyzed by the attack graph generator.}
 	\label{table_technologies}
 	
 \end{table*}
+
+	
+In real-world microservice architectures, many containers are interconnected to each other. This raises the need for a scalable attack graph system. In this section, we first have a look at how others evaluate their systems. We then conduct few experiments in order to test the scalability of our system with different number of containers, and connections in both artificial and real networks. All of the experiments were performed on a Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz with 8GB of RAM running Ubuntu 16.04.3 LTS.
+
+Extensive scalability study of attack graph generators  is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Characteristics that usually vary in this sort of evaluation are the number of nodes, their interconnectedness and the amount of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In our case we compare our system to existing work by treating every container as a computer, and any physical connection between two computers as a connection between two containers. 
+
+
 
 Seyner in his work tests the system in both a small and extended examples \cite{sheyner2002automated}. The attack graph in the larger example has 5948 nodes and 68364 edges. The time needed for NuSMV to execute this configuration is 2 hours, but the model checking part took 4 minutes. Sheyner claims that the performance bottleneck is inside the graph generation procedure. 
 
@@ -36,6 +39,41 @@ Ingols tested his system on a network of 250 hosts. He afterwards continued his 
 Ou provides some more extended study where he tests his system on more examples \cite{ou2006scalable}. He mentions that the asymptotic CPU time is between $O(n^2)$ and $O(n^3)$, where n is the number of hosts. The performance of the system for 1000 fully connected nodes takes more than 1000 seconds. He also provides an evaluation where he MulVAL clearly outperforms the Sheyner's system.
 
 In our scalability experiments we use Samba \cite{samba} and Phpmailer \cite{phpmailer} containers which were taken from their respective Github repositories. We then extended this example and artificially made cliques of 5, 20, 50, 100, 500 and 1000 Samba containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair.
+
+\begin{table*}
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| } 
+			\hline
+			Statistics & example\_20 & example\_50 & example\_100 & example\_500 & example\_1000 \\ 
+			
+			No. of Phpmailer containers & 1 & 1 & 1 & 1 & 1 \\ 
+			
+			No. of Samba containers & 20 & 50 & 100 & 500 & 1000 \\ 
+			
+			No. of nodes in topology & 23 & 53 & 103 & 503 & 1003\\ 
+			
+			No. of edges in topology & 253 & 1378 & 5253 & 126253 & 502503 \\ 
+			
+			No. nodes in attack graph & 43 & 103 & 203 & 1003 & 2003 \\ 
+			
+			No. edges in attack graph & 863 & 5153 & 20303 & 501503 & 2003003 \\ 
+			
+			Topology parsing time & 0.02879 & 0.0563 & 0.1241 & 0.7184 & 2.3664 \\ 
+			
+			Vulnerabilities preprocessing time & 0.5377 & 0.9128 & 1.6648 & 6.9961 & 15.0639 \\ 
+			
+			Breadth-First Search time & 0.2763 & 1.6524 & 6.5527 & 165.3634 & 767.5539 \\ 
+			
+			Total time & 0.8429 & 2.6216 & 8.3417 & 173.0781 & 784.9843 \\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\caption{Table with number of topology and attack graph elements and executing times of the main attack graph generator components. The times are given in seconds.}
+	
+	\label{table_scalability}
+\end{table*}
+The examples are composed of two containers: Phpmailer and Samba. The Phpmailer container has 181, while the Samba container has 367 vulnerabilities. The topology time is the time required to generate the graph topology. The vulnerabilities preprocessing time is the time required to convert the vulnerabilities into sets of pre- and postconditions. The Breath-First Search is the main component that generates the attack graph. All of the components are executed five times for each of the examples and their final time is averaged. The times are given in seconds. The total time contains the topology parsing, the attack graph generation and some minor processes. However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is therefore not in the scope of this analysis.
 
 On Table \ref{table_scalability} we can see the results of our experiments. In each of these experiments the number of Phpmailer containers stays constant, while the number of Samba containers is increasing. This increase is done in a fully connected fashion, a node of each additional container is connected to every existing container. In addition, there are also two additional artificial containers("outside" that represents the environment from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are present). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is a a combination of: 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and clique of the Phpmailer and samba containers n*(n+1)/2. For example\_5, the number of containers would be 8(1 Phpmailer, 1 outside, 1 docker host and 5 Samba containers) the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clique edges(5*6/2=15).
 
