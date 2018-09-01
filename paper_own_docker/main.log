@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  31 AUG 2018 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  1 SEP 2018 09:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -1131,8 +1131,9 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 109.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.2pt on input line 109.
- (chapters/introduction.tex) (chapters/background.tex)
-(chapters/method.tex
+ (chapters/introduction.tex) (chapters/background.tex
+(chapters/background_attack_graphs.tex) (chapters/background_microservices.tex)
+) (chapters/method.tex
 <./images/AttackGraphSystem.jpg, id=53, 184.5294pt x 78.0516pt>
 File: ./images/AttackGraphSystem.jpg Graphic file (type jpg)
 <use ./images/AttackGraphSystem.jpg>
@@ -1337,12 +1338,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7EA83FCA5263DA563D669B3286692EE5;1295.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 7EA83FCA5263DA563D669B3286692EE5;1295
+(rerunfilecheck)             After:  BCA8E066FAECF8EDBFB398F8193C45BD;1227.
  ) 
 Here is how much of TeX's memory you used:
- 19316 strings out of 495203
- 297406 string characters out of 3181196
+ 19322 strings out of 495203
+ 297774 string characters out of 3181196
  421724 words of memory out of 3000000
  21726 multiletter control sequences out of 15000+200000
  199055 words of font info for 366 fonts, out of 3000000 for 9000
@@ -1372,7 +1380,7 @@ all/fonts/type1/public/txfonts/rtxmi.pfb></home/stevica/.miktex/texmfs/install/
 fonts/type1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts
 /type1/public/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1
 /public/newtx/zxlri.pfb>
-Output written on main.pdf (6 pages, 609072 bytes).
+Output written on main.pdf (6 pages, 609068 bytes).
 PDF statistics:
  246 PDF objects out of 1000 (max. 8388607)
  47 named destinations out of 1000 (max. 500000)
