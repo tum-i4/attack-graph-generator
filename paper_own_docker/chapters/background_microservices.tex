@@ -1,6 +1,12 @@
 \subsection{Microservices}
 \label{chap:microservices}
-mention Service Oriented Architecture \cite{ahmadvand2016requirements} \cite{papazoglou2003service} (cite Amjads paper and original paper), difference to monolithic systems. Wide attack surface.
+
+As a typical real world software grows bigger, there is an every growing need to decompose it an organizied structure to promote scaling, reusability and readability. A software application whose modules cannot be executed independently is called a monolith. It is caracterized by tight coupling, vertical scaling and strong dependence. Service Oriented Architecture addresses these issues. Service Oriented Architecture is a paradigm in which components provide services that are used by other components through a networking protocol. \cite{papazoglou2003service} However in a typical SOA, the services are monolithic and a new concept is required. \cite{ahmadvand2016requirements}
+In microservices paradigm, multiple services are split into very basic units and they are task oriented. According to , a microservice is a cohesive, independent process interacting via messages. There microservicies constitute a distributed architecture called a microservice architecture.
+Microservice architectures provide us with the benefits of having more heterogenious technologies, cheaper scalling, resilience, organizational alignment, and composability among other things \cite{newman2015building}. However they add additional complexity and have a wider attack surface, since a lot of services need to communicate with each other. They promote service reuse through third party software. Data needs to be transferred and stored securely .
+
+
+
 - Formalize microservices. 
 - Provide definition from literature
 - When people started using them and why

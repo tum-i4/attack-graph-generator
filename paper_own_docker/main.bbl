@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -145,6 +145,16 @@
   development and deployment}.
 \newblock \bibinfo{journal}{\emph{Linux Journal}} \bibinfo{volume}{2014},
   \bibinfo{number}{239} (\bibinfo{year}{2014}), \bibinfo{pages}{2}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Newman}{Newman}{2015}]%
+        {newman2015building}
+\bibfield{author}{\bibinfo{person}{Sam Newman}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Building microservices: designing
+  fine-grained systems}}.
+\newblock \bibinfo{publisher}{" O'Reilly Media, Inc."}.
 \newblock
 
 
