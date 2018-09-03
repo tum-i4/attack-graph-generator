@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,57 +37,47 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
-\bibitem[\protect\citeauthoryear{??}{cla}{[n. d.]a}]%
+\bibitem[\protect\citeauthoryear{??}{cla}{2018a}]%
         {clairctl}
- \bibinfo{year}{[n. d.]}\natexlab{a}.
+ \bibinfo{year}{2018}\natexlab{a}.
 \newblock \bibinfo{title}{Clairctl}.
 \newblock \bibinfo{howpublished}{\url{https://github.com/jgsqware/clairctl}}.
 \newblock
-\newblock
-\shownote{Accessed: 2018-08-31.}
 
 
-\bibitem[\protect\citeauthoryear{??}{cla}{[n. d.]b}]%
+\bibitem[\protect\citeauthoryear{??}{cla}{2018b}]%
         {clair}
- \bibinfo{year}{[n. d.]}\natexlab{b}.
+ \bibinfo{year}{2018}\natexlab{b}.
 \newblock \bibinfo{title}{CoreOS Clair}.
 \newblock \bibinfo{howpublished}{\url{https://github.com/coreos/clair}}.
 \newblock
-\newblock
-\shownote{Accessed: 2018-08-31.}
 
 
-\bibitem[\protect\citeauthoryear{??}{php}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{??}{php}{2018}]%
         {phpmailer}
- \bibinfo{year}{[n. d.]}\natexlab{}.
+ \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{PHPMailer < 5.2.18 Remote Code Execution}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2016-10033}}.
 \newblock
-\newblock
-\shownote{Accessed: 2018-08-31.}
 
 
-\bibitem[\protect\citeauthoryear{??}{sam}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{??}{sam}{2018}]%
         {samba}
- \bibinfo{year}{[n. d.]}\natexlab{}.
+ \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{SambaCry RCE exploit for Samba 4.5.9}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2017-7494}}.
 \newblock
-\newblock
-\shownote{Accessed: 2018-08-31.}
 
 
-\bibitem[\protect\citeauthoryear{??}{net}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{??}{net}{2018}]%
         {netflixoss}
- \bibinfo{year}{[n. d.]}\natexlab{}.
+ \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{Spring Cloud - Netflix OSS Example}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
 \newblock
-\newblock
-\shownote{Accessed: 2018-08-31.}
 
 
 \bibitem[\protect\citeauthoryear{Ahmadvand and Ibrahim}{Ahmadvand and
@@ -122,6 +112,39 @@
 \newblock \bibinfo{booktitle}{\emph{The National Vulnerability Database (NVD):
   Overview}}.
 \newblock \bibinfo{type}{{T}echnical {R}eport}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Deraison}{Deraison}{1999}]%
+        {deraison1999nessus}
+\bibfield{author}{\bibinfo{person}{Renaud Deraison}.}
+  \bibinfo{year}{1999}\natexlab{}.
+\newblock \bibinfo{title}{Nessus scanner}.
+\newblock
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dragoni, Giallorenzo, Lafuente, Mazzara,
+  Montesi, Mustafin, and Safina}{Dragoni et~al\mbox{.}}{2017}]%
+        {dragoni2017microservices}
+\bibfield{author}{\bibinfo{person}{Nicola Dragoni}, \bibinfo{person}{Saverio
+  Giallorenzo}, \bibinfo{person}{Alberto~Lluch Lafuente},
+  \bibinfo{person}{Manuel Mazzara}, \bibinfo{person}{Fabrizio Montesi},
+  \bibinfo{person}{Ruslan Mustafin}, {and} \bibinfo{person}{Larisa Safina}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Microservices: yesterday, today, and tomorrow}.
+\newblock In \bibinfo{booktitle}{\emph{Present and Ulterior Software
+  Engineering}}. \bibinfo{publisher}{Springer}, \bibinfo{pages}{195--216}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Farmer and Spafford}{Farmer and
+  Spafford}{1990}]%
+        {farmer1990cops}
+\bibfield{author}{\bibinfo{person}{Daniel Farmer} {and}
+  \bibinfo{person}{Eugene~H Spafford}.} \bibinfo{year}{1990}\natexlab{}.
+\newblock \showarticletitle{The COPS security checker system}.
+\newblock  (\bibinfo{year}{1990}).
 \newblock
 
 

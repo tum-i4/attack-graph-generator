@@ -31,19 +31,6 @@ Real-world microservice architectures are composed of many containers that run d
 \label{chap:heterogenious_systems}
 Modern microservice architectures use an abundance of different technologies, number of containers, various connectivity and number of vulnerabilities. Therefore it is of immense importance to show that the attack graph generator works in such heterogenious scenarios. In order to do this we ran our system on some real and slightly modified Github examples as described on Table \ref{table_technologies} composed of different types of technologies, number of containers and vulnerabilities. The examples are as follows: NetflixOSS, Atsea Sample Shop App, and JavaEE demo. NetflixOSS is a microservice system provided by Netflix that is composed of 10 containers and uses Spring Cloud, Netflix Ribbon, Netflix Eureka etc. Atsea Sample Shop App is an e-commerce sample web application composed of 4 containers and that uses Spring Boot, React, NGINX and PostgreSQL. JavaEE demo is a sample application for browsing movies that is composed of only 2 containers and uses JavaEE, React and Tomcat EE. We ran the attack graph generator and checked for correctness of the resulting attack graph based on domain knowledge. After running the attack graph generator, the structure of the resulting attack graphs (especially in the Netflix case) was quite linear. This linearity is because each container is connected to few other containers to reduce unnecessary communication and increase encapsulation. So based on this connectivity an attacker needs to perform multiple intermediate steps in order to reach the target container. Additionally we noted that the running time of our system for each of these examples was short, and additional tests to test the scalability were needed. Phpmailer and Samba is an artificial example that we use and extend in the following subsection to perform these scalability tests.
 	
-
-\subsection{Scalability evaluation}
-\label{chap:scalability_eval}
-Extensive scalability study of attack graph generators  is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Parameters that usually vary in this sort of evaluation are the number of nodes, their connectivity and the amount of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In this case we compare our system to existing work by treating every container as a host machine, and any physical connection between two machines as a connection between two containers. In the following text, we first look at three works and their scalability evaluation results. After this comparison, we present the scalability results of our system.
-
-Seyner in his work tests the system in both a small and extended examples \cite{sheyner2002automated}. The attack graph in the larger example has 5948 nodes and 68364 edges. The time needed for NuSMV to execute this configuration is 2 hours, but the model checking part took 4 minutes. Sheyner claims that the performance bottleneck is inside the graph generation procedure. 
-
-Ingols tested his system on a network of 250 hosts. He afterwards continued his study on a simulated network of 50000 hosts in under 4 minutes \cite{ingols2006practical}. Although this method yields better performance than the aforementioned approach, this evaluation is based on the Multiple Prerequisite graph, which is different from ours. In addition to this, missing explanation of how the hosts are connected, does not make it directly comparable to our method.
-
-Ou provides some more extended study where he tests his system on more examples \cite{ou2006scalable}. He mentions that the asymptotic CPU time is between $O(n^2)$ and $O(n^3)$, where n is the number of hosts. The performance of the system for 1000 fully connected nodes takes more than 1000 seconds to execute. He also provides an evaluation where he MulVAL clearly outperforms the Sheyner's system.
-
-
-
 \begin{table*}
 	\begin{center}
 		\begin{tabular}{ |c|c|c|c|c|c| } 
@@ -77,6 +64,20 @@ Ou provides some more extended study where he tests his system on more examples 
 	
 	\label{table_scalability}
 \end{table*}
+
+\subsection{Scalability evaluation}
+\label{chap:scalability_eval}
+Extensive scalability study of attack graph generators  is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Parameters that usually vary in this sort of evaluation are the number of nodes, their connectivity and the amount of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In this case we compare our system to existing work by treating every container as a host machine, and any physical connection between two machines as a connection between two containers. In the following text, we first look at three works and their scalability evaluation results. After this comparison, we present the scalability results of our system.
+
+Seyner in his work tests the system in both a small and extended examples \cite{sheyner2002automated}. The attack graph in the larger example has 5948 nodes and 68364 edges. The time needed for NuSMV to execute this configuration is 2 hours, but the model checking part took 4 minutes. Sheyner claims that the performance bottleneck is inside the graph generation procedure. 
+
+Ingols tested his system on a network of 250 hosts. He afterwards continued his study on a simulated network of 50000 hosts in under 4 minutes \cite{ingols2006practical}. Although this method yields better performance than the aforementioned approach, this evaluation is based on the Multiple Prerequisite graph, which is different from ours. In addition to this, missing explanation of how the hosts are connected, does not make it directly comparable to our method.
+
+Ou provides some more extended study where he tests his system on more examples \cite{ou2006scalable}. He mentions that the asymptotic CPU time is between $O(n^2)$ and $O(n^3)$, where n is the number of hosts. The performance of the system for 1000 fully connected nodes takes more than 1000 seconds to execute. He also provides an evaluation where he MulVAL clearly outperforms the Sheyner's system.
+
+
+
+
 
 In our scalability experiments we use Samba \cite{samba} and Phpmailer \cite{phpmailer} containers which were taken from their respective Github repositories. We extended this example and artificially made fully connected topologies of 20, 50, 100, 500 and 1000 Samba containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair. In our tests, we report the total execution time as well as its components times: Topology parsing time, Vulnerability preprocessing time and Breath-First Search time. The total time contains the topology parsing, the attack graph generation and some minor utility processes. The Topology parsing time is the time required to generate the graph topology. The Vulnerability preprocessing time is the time required to convert the vulnerabilities into sets of pre- and postconditions. The Breath-First Search time is the time needed for Breadth-First Search to traverse the topology and  generate the attack graph after the previous steps are done. All of the components are executed five times for each of the examples and their final time is averaged. The times are given in seconds.  However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is therefore not in the scope of this analysis.
 

@@ -18,83 +18,94 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{papazoglou2003service}
 \citation{ahmadvand2016requirements}
+\citation{dragoni2017microservices}
 \citation{newman2015building}
+\citation{deraison1999nessus}
+\citation{farmer1990cops}
+\citation{clair}
+\citation{sheyner2002automated}
+\citation{ingols2006practical}
 \providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}INTRODUCTION}{1}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}BACKGROUND}{1}{section.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Attack Graphs}{1}{subsection.2.1}}
-\newlabel{chap:attack_graphs}{{2.1}{1}{Attack Graphs}{subsection.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Microservices}{1}{subsection.2.2}}
-\newlabel{chap:microservices}{{2.2}{1}{Microservices}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Microservices}{1}{subsection.2.1}}
+\newlabel{chap:microservices}{{2.1}{1}{Microservices}{subsection.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Vulnerability Scanners}{1}{subsection.2.2}}
+\newlabel{chap:vulnerability_scanners}{{2.2}{1}{Vulnerability Scanners}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Attack Graphs}{1}{subsection.2.3}}
+\newlabel{chap:attack_graphs}{{2.3}{1}{Attack Graphs}{subsection.2.3}{}}
 \citation{merkel2014docker}
 \citation{aksu2018automated}
 \citation{aksu2018automated}
 \citation{netflixoss}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }}{2}{figure.caption.5}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{AttackGraphSystem}{{1}{2}{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}METHOD}{2}{section.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Mapping attack graphs from network to microservice perspective}{2}{subsection.3.1}}
 \newlabel{chap:mapping}{{3.1}{2}{Mapping attack graphs from network to microservice perspective}{subsection.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }}{2}{figure.caption.5}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{AttackGraphSystem}{{1}{2}{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }{figure.caption.5}{}}
 \citation{clair}
 \citation{clairctl}
-\citation{booth2013national}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }}{3}{figure.caption.6}}
 \newlabel{TopologyGraph}{{2}{3}{Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Technical Details}{3}{subsection.3.2}}
 \newlabel{chap:technical}{{3.2}{3}{Technical Details}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Topology Parser}{3}{subsection.3.3}}
-\newlabel{chap:topology_p}{{3.3}{3}{Topology Parser}{subsection.3.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }}{3}{figure.caption.7}}
 \newlabel{AttackGraph}{{3}{3}{Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Vulnerability Parser}{3}{subsection.3.4}}
-\newlabel{chap:vulnerability_p}{{3.4}{3}{Vulnerability Parser}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Topology Parser}{3}{subsection.3.3}}
+\newlabel{chap:topology_p}{{3.3}{3}{Topology Parser}{subsection.3.3}{}}
+\citation{booth2013national}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Breadth-first search algorithm for generating an attack graph.\relax }}{4}{algocf.1}}
 \newlabel{BFSalgorithm}{{1}{4}{Topology Parser}{algocf.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Vulnerability Parser}{4}{subsection.3.4}}
+\newlabel{chap:vulnerability_p}{{3.4}{4}{Vulnerability Parser}{subsection.3.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Attack Graph Parser}{4}{subsection.3.5}}
 \newlabel{chap:attack_graph_p}{{3.5}{4}{Attack Graph Parser}{subsection.3.5}{}}
 \newlabel{chap:bfs}{{3.5.1}{4}{Breadth-First Search}{subsubsection.3.5.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Breadth-First Search}{4}{subsubsection.3.5.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}EVALUATION}{4}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Heterogenious microservice systems evaluation}{4}{subsection.4.1}}
-\newlabel{chap:heterogenious_systems}{{4.1}{4}{Heterogenious microservice systems evaluation}{subsection.4.1}{}}
 \citation{sheyner2002automated}
 \citation{ingols2006practical}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator.\relax }}{5}{table.caption.9}}
+\newlabel{table_technologies}{{1}{5}{Microservice architecture examples analyzed by the attack graph generator.\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Heterogenious microservice systems evaluation}{5}{subsection.4.1}}
+\newlabel{chap:heterogenious_systems}{{4.1}{5}{Heterogenious microservice systems evaluation}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scalability evaluation}{5}{subsection.4.2}}
+\newlabel{chap:scalability_eval}{{4.2}{5}{Scalability evaluation}{subsection.4.2}{}}
 \citation{ou2006scalable}
 \citation{samba}
 \citation{phpmailer}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator.\relax }}{5}{table.caption.9}}
-\newlabel{table_technologies}{{1}{5}{Microservice architecture examples analyzed by the attack graph generator.\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scalability evaluation}{5}{subsection.4.2}}
-\newlabel{chap:scalability_eval}{{4.2}{5}{Scalability evaluation}{subsection.4.2}{}}
 \citation{ingols2006practical}
 \citation{ritchey2000using}
-\citation{ou2006scalable}
-\citation{ingols2006practical}
-\citation{aksu2018automated}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }}{6}{table.caption.10}}
 \newlabel{table_scalability}{{2}{6}{Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }{table.caption.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{6}{section.5}}
+\citation{ou2006scalable}
+\citation{ingols2006practical}
+\citation{aksu2018automated}
 \citation{ingols2006practical}
 \citation{aksu2018automated}
 \bibstyle{ACM-Reference-Format}
 \bibdata{sample-bibliography}
-\bibcite{clairctl}{{1}{[n. d.]a}{{cla}}{{??}}}
-\bibcite{clair}{{2}{[n. d.]b}{{cla}}{{??}}}
-\bibcite{phpmailer}{{3}{[n. d.]}{{php}}{{??}}}
-\bibcite{samba}{{4}{[n. d.]}{{sam}}{{??}}}
-\bibcite{netflixoss}{{5}{[n. d.]}{{net}}{{??}}}
+\bibcite{clairctl}{{1}{2018a}{{cla}}{{??}}}
+\bibcite{clair}{{2}{2018b}{{cla}}{{??}}}
+\bibcite{phpmailer}{{3}{2018}{{php}}{{??}}}
+\bibcite{samba}{{4}{2018}{{sam}}{{??}}}
+\bibcite{netflixoss}{{5}{2018}{{net}}{{??}}}
 \bibcite{ahmadvand2016requirements}{{6}{2016}{{Ahmadvand and Ibrahim}}{{Ahmadvand and Ibrahim}}}
 \bibcite{aksu2018automated}{{7}{2018}{{Aksu et~al\unhbox \voidb@x \hbox {.}}}{{Aksu, Bicakci, Dilek, Ozbayoglu, et~al\unhbox \voidb@x \hbox {.}}}}
 \bibcite{booth2013national}{{8}{2013}{{Booth et~al\unhbox \voidb@x \hbox {.}}}{{Booth, Rike, and Witte}}}
-\bibcite{ingols2006practical}{{9}{2006}{{Ingols et~al\unhbox \voidb@x \hbox {.}}}{{Ingols, Lippmann, and Piwowarski}}}
-\bibcite{merkel2014docker}{{10}{2014}{{Merkel}}{{Merkel}}}
-\bibcite{newman2015building}{{11}{2015}{{Newman}}{{Newman}}}
-\bibcite{ou2006scalable}{{12}{2006}{{Ou et~al\unhbox \voidb@x \hbox {.}}}{{Ou, Boyer, and McQueen}}}
-\bibcite{papazoglou2003service}{{13}{2003}{{Papazoglou}}{{Papazoglou}}}
-\bibcite{ritchey2000using}{{14}{2000}{{Ritchey and Ammann}}{{Ritchey and Ammann}}}
-\bibcite{sheyner2002automated}{{15}{2002}{{Sheyner et~al\unhbox \voidb@x \hbox {.}}}{{Sheyner, Haines, Jha, Lippmann, and Wing}}}
+\bibcite{deraison1999nessus}{{9}{1999}{{Deraison}}{{Deraison}}}
+\bibcite{dragoni2017microservices}{{10}{2017}{{Dragoni et~al\unhbox \voidb@x \hbox {.}}}{{Dragoni, Giallorenzo, Lafuente, Mazzara, Montesi, Mustafin, and Safina}}}
+\bibcite{farmer1990cops}{{11}{1990}{{Farmer and Spafford}}{{Farmer and Spafford}}}
+\bibcite{ingols2006practical}{{12}{2006}{{Ingols et~al\unhbox \voidb@x \hbox {.}}}{{Ingols, Lippmann, and Piwowarski}}}
+\bibcite{merkel2014docker}{{13}{2014}{{Merkel}}{{Merkel}}}
+\bibcite{newman2015building}{{14}{2015}{{Newman}}{{Newman}}}
+\bibcite{ou2006scalable}{{15}{2006}{{Ou et~al\unhbox \voidb@x \hbox {.}}}{{Ou, Boyer, and McQueen}}}
+\bibcite{papazoglou2003service}{{16}{2003}{{Papazoglou}}{{Papazoglou}}}
+\bibcite{ritchey2000using}{{17}{2000}{{Ritchey and Ammann}}{{Ritchey and Ammann}}}
+\bibcite{sheyner2002automated}{{18}{2002}{{Sheyner et~al\unhbox \voidb@x \hbox {.}}}{{Sheyner, Haines, Jha, Lippmann, and Wing}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{8.37pt}
