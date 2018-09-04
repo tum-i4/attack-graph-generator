@@ -10,27 +10,43 @@ Warning--to sort, need author or key in netflixoss
 Warning--no key, author in clairctl
 Warning--no author, editor, organization, or key in clairctl
 Warning--to sort, need author or key in clairctl
-Warning--no key, author in samba
-Warning--no author, editor, organization, or key in samba
-Warning--to sort, need author or key in samba
+Warning--no key, author in atsea
+Warning--no author, editor, organization, or key in atsea
+Warning--to sort, need author or key in atsea
+Warning--no key, author in java
+Warning--no author, editor, organization, or key in java
+Warning--to sort, need author or key in java
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--to sort, need author or key in phpmailer
+Warning--no key, author in samba
+Warning--no author, editor, organization, or key in samba
+Warning--to sort, need author or key in samba
+Warning--no key, author in atsea
+Warning--no key, author in atsea
 Warning--no key, author in clairctl
 Warning--no key, author in clairctl
 Warning--no key, author in clair
+Warning--no key, author in java
+Warning--no key, author in java
 Warning--no key, author in netflixoss
 Warning--no key, author in netflixoss
 Warning--no key, author in phpmailer
 Warning--no key, author in phpmailer
 Warning--no key, author in samba
 Warning--no key, author in samba
+Warning--no key, author in atsea
+Warning--no author, editor, organization, or key in atsea
+Warning--empty author in atsea
 Warning--no key, author in clairctl
 Warning--no author, editor, organization, or key in clairctl
 Warning--empty author in clairctl
 Warning--no key, author in clair
 Warning--no author, editor, organization, or key in clair
 Warning--empty author in clair
+Warning--no key, author in java
+Warning--no author, editor, organization, or key in java
+Warning--empty author in java
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--empty author in phpmailer
@@ -60,4 +76,4 @@ Warning--empty publisher in ritchey2000using
 Warning--empty address in ritchey2000using
 Warning--empty publisher in sheyner2002automated
 Warning--empty address in sheyner2002automated
-(There were 59 warnings)
+(There were 75 warnings)
