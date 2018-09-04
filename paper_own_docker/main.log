@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  4 SEP 2018 17:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  4 SEP 2018 21:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -1131,38 +1131,48 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 109.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.2pt on input line 109.
- (chapters/introduction.tex) (chapters/background.tex
-(chapters/background_microservices.tex) (chapters/vulnerability_scanners.tex)
-(chapters/background_attack_graphs.tex [1.1{/home/stevica/.miktex/texmfs/data/p
-dftex/config/pdftex.map}
+ (chapters/introduction.tex
+Overfull \hbox (11.32756pt too wide) in paragraph at lines 5--9
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) https://blog.acolyer.org/2017/04/03/a-study
+-of-security-vulnerabilities-
+ []
 
-])) (chapters/method.tex
-<./images/AttackGraphSystem.png, id=137, 250.23488pt x 148.1535pt>
-File: ./images/AttackGraphSystem.png Graphic file (type png)
-<use ./images/AttackGraphSystem.png>
-Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 7.
-(pdftex.def)             Requested size: 225.20929pt x 133.33691pt.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 24.
- [2.2 <./images/AttackGraphSystem.png>]
-<./images/Topology_graph.png, id=156, 169.8345pt x 173.448pt>
+
+Overfull \hbox (3.88531pt too wide) in paragraph at lines 5--9
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) on-docker-hub/ http://dance.csc.ncsu.edu/pa
+pers/codaspy17.pdf [[]] 
+ []
+
+) (chapters/background.tex (chapters/background_microservices.tex)
+(chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex
+[1.1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
+
+]))
+(chapters/method.tex
+<./images/Topology_graph.png, id=146, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
-Package pdftex.def Info: ./images/Topology_graph.png  used on input line 28.
+Package pdftex.def Info: ./images/Topology_graph.png  used on input line 14.
 (pdftex.def)             Requested size: 169.83408pt x 173.44757pt.
-<./images/Attack_graph.png, id=157, 164.86594pt x 202.8077pt>
+<./images/Attack_graph.png, id=150, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
-Package pdftex.def Info: ./images/Attack_graph.png  used on input line 34.
+Package pdftex.def Info: ./images/Attack_graph.png  used on input line 26.
 (pdftex.def)             Requested size: 164.86551pt x 202.80719pt.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 29.
+ [2.2 <./images/Topology_graph.png>]
+<./images/AttackGraphSystem.png, id=165, 250.23488pt x 148.1535pt>
+File: ./images/AttackGraphSystem.png Graphic file (type png)
+<use ./images/AttackGraphSystem.png>
+Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 39.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3.3 <./images/Topology_graph.png> <./images/Attack_graph.png>]
+(pdftex.def)             Requested size: 225.20929pt x 133.33691pt.
+ [3.3 <./images/Attack_graph.png> <./images/AttackGraphSystem.png>]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 102.
+(Font)              scaled to size 9.0pt on input line 104.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 123.
+(Font)              scaled to size 9.0pt on input line 125.
 ) (chapters/evaluation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Technology
@@ -1209,7 +1219,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/Oreste-Luci/netflix-os
 s-
  []
@@ -1230,7 +1240,7 @@ Underfull \hbox (badness 2253) in paragraph at lines 12--12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/dockersamples/atsea-
  []
 
@@ -1245,7 +1255,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--14
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/dockersamples/javaee-
  []
 
@@ -1285,21 +1295,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--16
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/opsxcq/exploit-CVE-201
 6-
  []
 
 [4.4]
-Underfull \vbox (badness 1466) has occurred while \output is active []
+Underfull \vbox (badness 1242) has occurred while \output is active []
 
- [5.5])
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5.5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
 (chapters/related_work.tex
-Underfull \vbox (badness 3019) has occurred while \output is active []
+Underfull \vbox (badness 2653) has occurred while \output is active []
 
  [6.6])
 (chapters/conclusion.tex) (chapters/future_work.tex) (main.bbl
-Underfull \vbox (badness 3168) has occurred while \output is active []
+Underfull \vbox (badness 2269) has occurred while \output is active []
 
 ) [7.7]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
@@ -1312,10 +1328,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 731FE255AF5B069B81148ADD4D493363;3036.
  ) 
 Here is how much of TeX's memory you used:
- 19409 strings out of 495203
- 299769 string characters out of 3181196
- 412799 words of memory out of 3000000
- 21778 multiletter control sequences out of 15000+200000
+ 19419 strings out of 495203
+ 299941 string characters out of 3181196
+ 412048 words of memory out of 3000000
+ 21787 multiletter control sequences out of 15000+200000
  200500 words of font info for 378 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,24n,94p,2076b,557s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1343,9 +1359,9 @@ all/fonts/type1/public/txfonts/rtxmi.pfb></home/stevica/.miktex/texmfs/install/
 fonts/type1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts
 /type1/public/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1
 /public/newtx/zxlri.pfb>
-Output written on main.pdf (7 pages, 604951 bytes).
+Output written on main.pdf (7 pages, 606044 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
  56500 words of extra memory for PDF output out of 61914 (max. 10000000)
 

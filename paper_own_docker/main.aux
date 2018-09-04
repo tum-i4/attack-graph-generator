@@ -16,6 +16,7 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{shu2017study}
 \citation{papazoglou2003service}
 \citation{ahmadvand2016requirements}
 \citation{dragoni2017microservices}
@@ -28,6 +29,7 @@
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}INTRODUCTION}{1}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}BACKGROUND}{1}{section.2}}
+\newlabel{chap:background}{{2}{1}{BACKGROUND}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Microservices}{1}{subsection.2.1}}
 \newlabel{chap:microservices}{{2.1}{1}{Microservices}{subsection.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Vulnerability Scanners}{1}{subsection.2.2}}
@@ -41,20 +43,21 @@
 \citation{aksu2018automated}
 \citation{booth2013national}
 \citation{aksu2018automated}
-\citation{netflixoss}
 \@writefile{toc}{\contentsline {section}{\numberline {3}METHOD}{2}{section.3}}
+\newlabel{chap:method}{{3}{2}{METHOD}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Mapping attack graphs from network to microservice perspective}{2}{subsection.3.1}}
 \newlabel{chap:mapping}{{3.1}{2}{Mapping attack graphs from network to microservice perspective}{subsection.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }}{2}{figure.caption.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }}{2}{figure.caption.5}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{AttackGraphSystem}{{1}{2}{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }{figure.caption.5}{}}
+\newlabel{TopologyGraph}{{1}{2}{Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }{figure.caption.5}{}}
+\citation{netflixoss}
 \citation{merkel2014docker}
 \citation{clair}
 \citation{clairctl}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }}{3}{figure.caption.6}}
-\newlabel{TopologyGraph}{{2}{3}{Example topology graph. The topology graph is a subset of a real topology graph from the Netflix OSS example. Each node denote container(plus Docker Deamon and Outside) and each edge denotes a connection between two containers.\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }}{3}{figure.caption.7}}
-\newlabel{AttackGraph}{{3}{3}{Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }}{3}{figure.caption.6}}
+\newlabel{AttackGraph}{{2}{3}{Example resulting attack graph. This attack graph is a subset of a real attack graph from the Netflix OSS example. Nodes correspond to a pair of container plus privilege, while edges are atomic attacks.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }}{3}{figure.caption.7}}
+\newlabel{AttackGraphSystem}{{3}{3}{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Technical Details}{3}{subsection.3.2}}
 \newlabel{chap:technical}{{3.2}{3}{Technical Details}{subsection.3.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Topology Parser}{3}{subsection.3.3}}
@@ -71,6 +74,7 @@
 \newlabel{chap:bfs}{{3.5.1}{4}{Breadth-first Search}{subsubsection.3.5.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Breadth-first Search}{4}{subsubsection.3.5.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}EVALUATION}{4}{section.4}}
+\newlabel{chap:eval}{{4}{4}{EVALUATION}{section.4}{}}
 \citation{netflixoss}
 \citation{atsea}
 \citation{java}
@@ -98,6 +102,7 @@
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }}{6}{table.caption.10}}
 \newlabel{table_scalability}{{2}{6}{Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }{table.caption.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{6}{section.5}}
+\newlabel{chap:related_work}{{5}{6}{RELATED WORK}{section.5}{}}
 \citation{combe2016docker,dragoni2017microservices}
 \citation{ingols2006practical}
 \citation{aksu2018automated}
@@ -126,12 +131,15 @@
 \bibcite{papazoglou2003service}{{20}{2003}{{Papazoglou}}{{Papazoglou}}}
 \bibcite{ritchey2000using}{{21}{2000}{{Ritchey and Ammann}}{{Ritchey and Ammann}}}
 \bibcite{sheyner2002automated}{{22}{2002}{{Sheyner et~al\unhbox \voidb@x \hbox {.}}}{{Sheyner, Haines, Jha, Lippmann, and Wing}}}
+\bibcite{shu2017study}{{23}{2017}{{Shu et~al\unhbox \voidb@x \hbox {.}}}{{Shu, Gu, and Enck}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{8.37pt}
 \newlabel{tocindent2}{12.41998pt}
 \newlabel{tocindent3}{19.89899pt}
 \@writefile{toc}{\contentsline {section}{\numberline {6}CONCLUSION}{7}{section.6}}
+\newlabel{chap:conclusion}{{6}{7}{CONCLUSION}{section.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}FUTURE WORK}{7}{section.7}}
+\newlabel{chap:future_work}{{7}{7}{FUTURE WORK}{section.7}{}}
 \@writefile{toc}{\contentsline {section}{References}{7}{section*.12}}
 \newlabel{TotPages}{{7}{7}{}{page.7}{}}

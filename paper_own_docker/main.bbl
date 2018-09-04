@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{22}
+\begin{thebibliography}{23}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -44,6 +44,8 @@
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/dockersamples/atsea-sample-shop-app}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{cla}{2018a}]%
@@ -52,6 +54,8 @@
 \newblock \bibinfo{title}{Clairctl}.
 \newblock \bibinfo{howpublished}{\url{https://github.com/jgsqware/clairctl}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{cla}{2018b}]%
@@ -60,6 +64,8 @@
 \newblock \bibinfo{title}{CoreOS Clair}.
 \newblock \bibinfo{howpublished}{\url{https://github.com/coreos/clair}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{jav}{2018}]%
@@ -69,6 +75,8 @@
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/dockersamples/javaee-demo}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{php}{2018}]%
@@ -78,6 +86,8 @@
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2016-10033}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{sam}{2018}]%
@@ -87,6 +97,8 @@
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2017-7494}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{??}{net}{2018}]%
@@ -96,6 +108,8 @@
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
 \newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
 
 
 \bibitem[\protect\citeauthoryear{Ahmadvand and Ibrahim}{Ahmadvand and
@@ -266,6 +280,16 @@
   {and} \bibinfo{person}{Jeannette~M Wing}.} \bibinfo{year}{2002}\natexlab{}.
 \newblock \showarticletitle{Automated generation and analysis of attack
   graphs}. In \bibinfo{booktitle}{\emph{null}}. IEEE, \bibinfo{pages}{273}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Shu, Gu, and Enck}{Shu et~al\mbox{.}}{2017}]%
+        {shu2017study}
+\bibfield{author}{\bibinfo{person}{Rui Shu}, \bibinfo{person}{Xiaohui Gu},
+  {and} \bibinfo{person}{William Enck}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{A study of security vulnerabilities on docker hub}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the Seventh ACM on Conference on
+  Data and Application Security and Privacy}}. ACM, \bibinfo{pages}{269--280}.
 \newblock
 
 

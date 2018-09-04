@@ -1,20 +1,20 @@
-
 \section{EVALUATION}
+\label{chap:eval}
 
 \begin{table*}
 	\begin{center}
-		\begin{tabular}{ |p{20mm}|p{25mm}|p{20mm}|p{10mm}|c|p{60mm}| } 
+		\begin{tabular}{ p{20mm}p{25mm}p{20mm}p{10mm}cp{60mm} } 
 			\hline
 			Name & Description & Technology stack & No. Containers & No. vuln. & Github link \\\hline 
 			
-			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & https://github.com/Oreste-Luci/netflix-oss-example \\\hline
+			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & https://github.com/Oreste-Luci/netflix-oss-example \\
 			
-			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 &  https://github.com/dockersamples/atsea-sample-shop-app \\\hline
+			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 &  https://github.com/dockersamples/atsea-sample-shop-app \\
 			
-			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 &  https://github.com/dockersamples/javaee-demo \\\hline
+			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 &  https://github.com/dockersamples/javaee-demo \\
 			
 			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 &  https://github.com/opsxcq/exploit-CVE-2016-10033
-			https://github.com/opsxcq/exploit-CVE-2017-7494 \\\hline
+			https://github.com/opsxcq/exploit-CVE-2017-7494 \\
 			
 			
 			\hline
@@ -34,9 +34,9 @@ Modern microservice architectures use an abundance of different technologies, nu
 
 \begin{table*}
 	\begin{center}
-		\begin{tabular}{ |c|c|c|c|c|c| } 
+		\begin{tabular}{ cccccc } 
 			\hline
-			Statistics & example\_20 & example\_50 & example\_100 & example\_500 & example\_1000 \\ 
+			Statistics & example\_20 & example\_50 & example\_100 & example\_500 & example\_1000 \\ \hline
 			
 			No. of Phpmailer containers & 1 & 1 & 1 & 1 & 1 \\ 
 			
@@ -68,17 +68,18 @@ Modern microservice architectures use an abundance of different technologies, nu
 
 \subsection{Scalability evaluation}
 \label{chap:scalability_eval}
+
 Extensive scalability study of attack graph generators is rare in current literature and many parameters contribute to the complexity of a comprehensive analysis. Parameters that usually vary in this sort of evaluation are the number of nodes, their connectivity and the number of vulnerabilities per container. All of these components contribute to the execution time of a given algorithm. Even though the definitions of an attack graph vary, we hope to reach a comprehensive comparison with current methods. In this case, we compare our system to existing work by treating every container as a host machine, and any physical connection between two machines as a connection between two containers. In the following text, we first look at three works and their scalability evaluation results. After this comparison, we present the scalability results of our system.
 
 Sheyner et al. test their system in both small and extended examples. The attack graph in the larger example has 5948 nodes and 68364 edges. The time needed for NuSMV to execute this configuration is 2 hours, but the model checking part took 4 minutes. The authors claim that the performance bottleneck is inside the graph generation procedure \cite{sheyner2002automated}. 
 
-Ingols et al. tested their system on a network of 250 hosts. He afterward continued his study on a simulated network of 50000 hosts in under 4 minutes \cite{ingols2006practical}. Although this method yields better performance than the aforementioned approach, this evaluation is based on the Multiple Prerequisite graph, which is different from ours. In addition to this, missing an explanation of how the hosts are connected, does not make it directly comparable to our method.
+Ingols et al. tested their system on a network of 250 hosts. They afterward continued the study on a simulated network of 50000 hosts in under 4 minutes \cite{ingols2006practical}. Although this method yields better performance than the aforementioned approach, this evaluation is based on the Multiple Prerequisite graph, which is different from ours. In addition to this, missing an explanation of how the hosts are connected, does not make it directly comparable to our method.
 
 Ou et al. provide some more extended study where they test their system(MulVAL) on more examples. They mention that the asymptotic CPU time is between $O(n^2)$ and $O(n^3)$, where n is the number of hosts. The performance of the system for 1000 fully connected nodes takes more than 1000 seconds to execute. The authors also provide an evaluation where he MulVAL clearly outperforms the Sheyner's system \cite{ou2006scalable}.
 
-In our scalability experiments we use Samba \cite{samba} and Phpmailer \cite{phpmailer} containers which were taken from their respective Github repositories. We extended this example and artificially made fully connected topologies of 20, 50, 100, 500 and 1000 Samba containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair. In our tests, we report the total execution time as well as its components times: Topology parsing time, Vulnerability preprocessing time and Breath-first Search time. The total time contains the topology parsing, the attack graph generation and some minor utility processes. The Topology parsing time is the time required to generate the graph topology. The Vulnerability preprocessing time is the time required to convert the vulnerabilities into sets of pre- and postconditions. The Breath-first Search time is the time needed for Breadth-first Search to traverse the topology and generate the attack graph after the previous steps are done. All of the components are executed five times for each of the examples and their final time is averaged. The times are given in seconds.  However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is therefore not in the scope of this analysis.
+In our scalability experiments we use Samba \cite{samba} and Phpmailer \cite{phpmailer} containers which were taken from their respective Github repositories. We extended this example and artificially made fully connected topologies of 20, 50, 100, 500 and 1000 Samba containers to test the scalability of the system. The Phpmailer container has 181 vulnerabilities, while the Samba container has 367 vulnerabilities detected by Clair. In our tests, we report the total execution time as well as its components times: Topology parsing time, Vulnerability preprocessing time and Breath-first Search time. The total time contains the topology parsing, the attack graph generation and some minor utility processes. The Topology parsing time is the time required to generate the graph topology. The Vulnerability preprocessing time is the time needed to convert the vulnerabilities into sets of pre- and postconditions. The Breath-first Search time is the time needed for Breadth-first Search to traverse the topology and generate the attack graph after the previous steps are done. All of the components are executed five times for each of the examples and their final time is averaged. The times are given in seconds.  However, the total time does not include the vulnerability analysis by Clair. Evaluation of Clair can depend on multiple factors and it is therefore not in the scope of this analysis.
 
-Table \ref{table_scalability} shows the results of our experiments. In each of these experiments, the number of Phpmailer containers stays constant, while the number of Samba containers is increasing. This increase is done in a fully connected fashion, where a node of each container is connected to every other container. In addition, there are also two additional artificial containers("outside" that represents the environment from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are hosted). Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is a combination of 1 edge("outside"-"Phpmailer"), n edges("docker host" to all of the containers) and a clique of the Phpmailer and Samba containers n*(n+1)/2. For example\_5, the number of containers would be 8(1 Phpmailer, 1 outside, 1 docker host and 5 Samba containers) the number of edges in the topology graph would be 32: 1 outside edge, 6 docker host edges(n=6, 1 Phpmailer and 5 Sambas) and 25 clique edges(5*6/2=15).
+Table \ref{table_scalability} shows the results of our experiments. In each of these experiments, the number of Phpmailer containers stays constant, while the number of Samba containers is increasing. This increase is done in a fully connected fashion, where a node of each container is connected to every other container. In addition, there are also two additional artificial containers: "outside" that represents the environment from where the attacker can attack and the "docker host", i.e. the docker daemon where the containers are hosted. Therefore the number of nodes in the topology graph is the sum of: "outside", "docker host", number of Phpmailer containers and number of Samba containers. The number of edges of the topology graph is a combination of one edge ("outside"-"Phpmailer"), n edges ("docker host" to all of the containers) and n*(n+1)/2 edges of between Phpmailer and Samba containers. For example\_20, the number of containers is 23 (one Phpmailer, one "outside", one "docker host" and 20 Samba containers) the number of edges in the topology graph would be 253: one outside edge, 21 docker host edges (one toward Phpmailer and 20 toward the Samba containers) and 231 between-container edges (21*22/2=231).
 
 Throughout the experiments, for the smaller configurations, the biggest time bottleneck is the preprocessing step. However, this step increases in a linear fashion because the container files are analyzed only once by Clair. The attack graph generation for the smaller examples is considerably less than the preprocessing time. Starting from example\_500, we can notice a sharp increase in BDF execution time to 165 seconds. For the previous example with example\_100, needed attack graph generation time is 6.5 seconds.
 
