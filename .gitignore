@@ -3,3 +3,8 @@ paper_own_docker/main.aux
 paper_own_docker/main.log
 paper_own_docker/main.pdf
 paper_own_docker/main.synctex.gz
+*.log
+*.aux
+*.pdf
+paper_own_docker/main.pdf
+*.gz
