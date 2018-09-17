@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{23}
+\begin{thebibliography}{31}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -68,12 +68,64 @@
 \shownote{Retrieved September 4 2018.}
 
 
+\bibitem[\protect\citeauthoryear{??}{doc}{2018}]%
+        {dockercompose}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Docker Compose}.
+\newblock \bibinfo{howpublished}{\url{https://docs.docker.com/compose/}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{web}{2018}]%
+        {webcam}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Docker Compose}.
+\newblock
+  \bibinfo{howpublished}{\url{http://obrown.io/2016/02/15/privileged-containers.html}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{lib}{2018}]%
+        {libvirt}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Docker Compose}.
+\newblock
+  \bibinfo{howpublished}{\url{https://developers.redhat.com/blog/2014/11/06/introducing-a-super-privileged-container-concept/}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
 \bibitem[\protect\citeauthoryear{??}{jav}{2018}]%
         {java}
  \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{Java EE application migration}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/dockersamples/javaee-demo}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{net}{2018a}]%
+        {netflixeureka}
+ \bibinfo{year}{2018}\natexlab{a}.
+\newblock \bibinfo{title}{Netflix Eureka}.
+\newblock \bibinfo{howpublished}{\url{https://github.com/Netflix/eureka}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{net}{2018b}]%
+        {netflixzuul}
+ \bibinfo{year}{2018}\natexlab{b}.
+\newblock \bibinfo{title}{Netflix Zuul}.
+\newblock \bibinfo{howpublished}{\url{https://github.com/Netflix/zuul}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
@@ -101,12 +153,23 @@
 \shownote{Retrieved September 4 2018.}
 
 
-\bibitem[\protect\citeauthoryear{??}{net}{2018}]%
+\bibitem[\protect\citeauthoryear{??}{net}{2018c}]%
         {netflixoss}
- \bibinfo{year}{2018}\natexlab{}.
+ \bibinfo{year}{2018}\natexlab{c}.
 \newblock \bibinfo{title}{Spring Cloud - Netflix OSS Example}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{spr}{2018}]%
+        {springcloudnetflix}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Spring Cloud Netflix}.
+\newblock
+  \bibinfo{howpublished}{\url{https://cloud.spring.io/spring-cloud-netflix/}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
@@ -133,6 +196,18 @@
 \newblock \showarticletitle{Automated Generation Of Attack Graphs Using NVD}.
   In \bibinfo{booktitle}{\emph{Proceedings of the Eighth ACM Conference on Data
   and Application Security and Privacy}}. ACM, \bibinfo{pages}{135--142}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ammann, Wijesekera, and Kaushik}{Ammann
+  et~al\mbox{.}}{2002}]%
+        {ammann2002scalable}
+\bibfield{author}{\bibinfo{person}{Paul Ammann}, \bibinfo{person}{Duminda
+  Wijesekera}, {and} \bibinfo{person}{Saket Kaushik}.}
+  \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Scalable, graph-based network vulnerability
+  analysis}. In \bibinfo{booktitle}{\emph{Proceedings of the 9th ACM Conference
+  on Computer and Communications Security}}. ACM, \bibinfo{pages}{217--224}.
 \newblock
 
 
@@ -201,6 +276,19 @@
   \bibinfo{person}{Eugene~H Spafford}.} \bibinfo{year}{1990}\natexlab{}.
 \newblock \showarticletitle{The COPS security checker system}.
 \newblock  (\bibinfo{year}{1990}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gummaraju, Desikan, and Turner}{Gummaraju
+  et~al\mbox{.}}{2015}]%
+        {gummaraju2015over}
+\bibfield{author}{\bibinfo{person}{Jayanth Gummaraju}, \bibinfo{person}{Tarun
+  Desikan}, {and} \bibinfo{person}{Yoshio Turner}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Over 30\% of official images in docker hub contain
+  high priority security vulnerabilities}.
+\newblock In \bibinfo{booktitle}{\emph{Technical Report}}.
+  \bibinfo{publisher}{BanyanOps}.
 \newblock
 
 

@@ -1,15 +1,39 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: ACM-Reference-Format.bst
 Database file #1: sample-bibliography.bib
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "internet"
+Warning--I didn't find a database entry for "smartcity"
+Warning--I didn't find a database entry for "bibid"
+Warning--I didn't find a database entry for "nw"
+Warning--I didn't find a database entry for "kordysurvey"
 Warning--no key, author in clair
 Warning--no author, editor, organization, or key in clair
 Warning--to sort, need author or key in clair
 Warning--no key, author in netflixoss
 Warning--no author, editor, organization, or key in netflixoss
 Warning--to sort, need author or key in netflixoss
+Warning--no key, author in springcloudnetflix
+Warning--no author, editor, organization, or key in springcloudnetflix
+Warning--to sort, need author or key in springcloudnetflix
+Warning--no key, author in netflixzuul
+Warning--no author, editor, organization, or key in netflixzuul
+Warning--to sort, need author or key in netflixzuul
+Warning--no key, author in netflixeureka
+Warning--no author, editor, organization, or key in netflixeureka
+Warning--to sort, need author or key in netflixeureka
+Warning--no key, author in dockercompose
+Warning--no author, editor, organization, or key in dockercompose
+Warning--to sort, need author or key in dockercompose
 Warning--no key, author in clairctl
 Warning--no author, editor, organization, or key in clairctl
 Warning--to sort, need author or key in clairctl
+Warning--no key, author in webcam
+Warning--no author, editor, organization, or key in webcam
+Warning--to sort, need author or key in webcam
+Warning--no key, author in libvirt
+Warning--no author, editor, organization, or key in libvirt
+Warning--to sort, need author or key in libvirt
 Warning--no key, author in atsea
 Warning--no author, editor, organization, or key in atsea
 Warning--to sort, need author or key in atsea
@@ -27,14 +51,24 @@ Warning--no key, author in atsea
 Warning--no key, author in clairctl
 Warning--no key, author in clairctl
 Warning--no key, author in clair
+Warning--no key, author in dockercompose
+Warning--no key, author in dockercompose
 Warning--no key, author in java
 Warning--no key, author in java
-Warning--no key, author in netflixoss
+Warning--no key, author in libvirt
+Warning--no key, author in libvirt
+Warning--no key, author in netflixeureka
+Warning--no key, author in netflixeureka
+Warning--no key, author in netflixzuul
 Warning--no key, author in netflixoss
 Warning--no key, author in phpmailer
 Warning--no key, author in phpmailer
 Warning--no key, author in samba
 Warning--no key, author in samba
+Warning--no key, author in springcloudnetflix
+Warning--no key, author in springcloudnetflix
+Warning--no key, author in webcam
+Warning--no key, author in webcam
 Warning--no key, author in atsea
 Warning--no author, editor, organization, or key in atsea
 Warning--empty author in atsea
@@ -44,9 +78,24 @@ Warning--empty author in clairctl
 Warning--no key, author in clair
 Warning--no author, editor, organization, or key in clair
 Warning--empty author in clair
+Warning--no key, author in dockercompose
+Warning--no author, editor, organization, or key in dockercompose
+Warning--empty author in dockercompose
+Warning--no key, author in webcam
+Warning--no author, editor, organization, or key in webcam
+Warning--empty author in webcam
+Warning--no key, author in libvirt
+Warning--no author, editor, organization, or key in libvirt
+Warning--empty author in libvirt
 Warning--no key, author in java
 Warning--no author, editor, organization, or key in java
 Warning--empty author in java
+Warning--no key, author in netflixeureka
+Warning--no author, editor, organization, or key in netflixeureka
+Warning--empty author in netflixeureka
+Warning--no key, author in netflixzuul
+Warning--no author, editor, organization, or key in netflixzuul
+Warning--empty author in netflixzuul
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--empty author in phpmailer
@@ -56,15 +105,21 @@ Warning--empty author in samba
 Warning--no key, author in netflixoss
 Warning--no author, editor, organization, or key in netflixoss
 Warning--empty author in netflixoss
+Warning--no key, author in springcloudnetflix
+Warning--no author, editor, organization, or key in springcloudnetflix
+Warning--empty author in springcloudnetflix
 Warning--empty publisher in ahmadvand2016requirements
 Warning--empty address in ahmadvand2016requirements
 Warning--empty publisher in aksu2018automated
 Warning--empty address in aksu2018automated
+Warning--empty publisher in ammann2002scalable
+Warning--empty address in ammann2002scalable
 Warning--empty institution in booth2013national
 Warning--empty address in dragoni2017microservices
 Warning--no journal in farmer1990cops
 Warning--no number and no volume in farmer1990cops
 Warning--page numbers missing in both pages and numpages fields in farmer1990cops
+Warning--empty address in gummaraju2015over
 Warning--empty publisher in ingols2006practical
 Warning--empty address in ingols2006practical
 Warning--empty address in newman2015building
@@ -78,4 +133,4 @@ Warning--empty publisher in sheyner2002automated
 Warning--empty address in sheyner2002automated
 Warning--empty publisher in shu2017study
 Warning--empty address in shu2017study
-(There were 77 warnings)
+(There were 132 warnings)

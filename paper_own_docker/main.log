@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  4 SEP 2018 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  17 SEP 2018 17:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -798,9 +798,14 @@ LaTeX Info: Redefining \smaller on input line 151.
 \algocf@algoframe=\box40
 \algocf@algobox=\box41
 )
+(/home/stevica/.miktex/texmfs/install/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count145
+\c@subtable=\count146
+)
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 39.
 
-\c@theorem=\count145
+\c@theorem=\count147
 
 Excluding comment 'screenonly' Include comment 'printonly'
 Include comment 'anonsuppress' (main.aux)
@@ -926,7 +931,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/home/stevica/.miktex/texmfs/install/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count146
+\c@section@level=\count148
 )
 LaTeX Info: Redefining \ref on input line 39.
 LaTeX Info: Redefining \pageref on input line 39.
@@ -938,16 +943,16 @@ LaTeX Info: Redefining \nameref on input line 39.
 
 (/home/stevica/.miktex/texmfs/install/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
+\scratchcounter=\count149
 \scratchdimen=\dimen162
 \scratchbox=\box43
-\nofMPsegments=\count148
-\nofMParguments=\count149
+\nofMPsegments=\count150
+\nofMParguments=\count151
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count150
+\MPscratchCnt=\count152
 \MPscratchDim=\dimen163
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
+\MPnumerator=\count153
+\makeMPintoPDFobject=\count154
 \everyMPtoPDFconversion=\toks33
 ) (/home/stevica/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -996,8 +1001,8 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@mv@tabular=\count153
-\c@mv@boldtabular=\count154
+\c@mv@tabular=\count155
+\c@mv@boldtabular=\count156
 (/home/stevica/.miktex/texmfs/install/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -1132,53 +1137,97 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.2pt on input line 109.
  (chapters/introduction.tex
-Overfull \hbox (11.32756pt too wide) in paragraph at lines 5--9
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 9.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 9.
+
+
+Package natbib Warning: Citation `internet' on page 1 undefined on input line 9
+.
+
+
+Package natbib Warning: Citation `smartcity' on page 1 undefined on input line 
+9.
+
+
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 12.
+
+
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `nw' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `kordysurvey' on page 1 undefined on input lin
+e 17.
+
+[1.1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
+
+]
+Overfull \hbox (11.32756pt too wide) in paragraph at lines 33--37
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) https://blog.acolyer.org/2017/04/03/a-study
 -of-security-vulnerabilities-
  []
 
 
-Overfull \hbox (3.88531pt too wide) in paragraph at lines 5--9
+Overfull \hbox (3.88531pt too wide) in paragraph at lines 33--37
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) on-docker-hub/ http://dance.csc.ncsu.edu/pa
 pers/codaspy17.pdf [[]] 
  []
 
 ) (chapters/background.tex (chapters/background_microservices.tex)
 (chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex
-[1.1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
-]))
-(chapters/method.tex
-<./images/Topology_graph.png, id=146, 169.8345pt x 173.448pt>
-File: ./images/Topology_graph.png Graphic file (type png)
-<use ./images/Topology_graph.png>
-Package pdftex.def Info: ./images/Topology_graph.png  used on input line 14.
-(pdftex.def)             Requested size: 169.83408pt x 173.44757pt.
-<./images/Attack_graph.png, id=150, 164.86594pt x 202.8077pt>
-File: ./images/Attack_graph.png Graphic file (type png)
-<use ./images/Attack_graph.png>
-Package pdftex.def Info: ./images/Attack_graph.png  used on input line 26.
-(pdftex.def)             Requested size: 164.86551pt x 202.80719pt.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 29.
- [2.2 <./images/Topology_graph.png>]
-<./images/AttackGraphSystem.png, id=165, 250.23488pt x 148.1535pt>
-File: ./images/AttackGraphSystem.png Graphic file (type png)
-<use ./images/AttackGraphSystem.png>
-Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 39.
-
-(pdftex.def)             Requested size: 225.20929pt x 133.33691pt.
- [3.3 <./images/Attack_graph.png> <./images/AttackGraphSystem.png>]
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 104.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 125.
-) (chapters/evaluation.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) Technology
  []
 
+)) (chapters/method.tex
+<./images/Topology_graph.png, id=141, 169.8345pt x 173.448pt>
+File: ./images/Topology_graph.png Graphic file (type png)
+<use ./images/Topology_graph.png>
+Package pdftex.def Info: ./images/Topology_graph.png  used on input line 8.
+(pdftex.def)             Requested size: 151.89003pt x 155.12515pt.
 
+Overfull \hbox (12.0pt too wide) in paragraph at lines 6--12
+ [][] 
+ []
+
+<./images/Attack_graph.png, id=142, 164.86594pt x 202.8077pt>
+File: ./images/Attack_graph.png Graphic file (type png)
+<use ./images/Attack_graph.png>
+Package pdftex.def Info: ./images/Attack_graph.png  used on input line 15.
+(pdftex.def)             Requested size: 151.89003pt x 186.85147pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 13--19
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 24.
+[2.2]
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 38.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3.3 <./images/Topology_graph.png> <./images/Attack_graph.png>]
+<./images/AttackGraphSystem.png, id=193, 257.91356pt x 154.02544pt>
+File: ./images/AttackGraphSystem.png Graphic file (type png)
+<use ./images/AttackGraphSystem.png>
+Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 49.
+
+(pdftex.def)             Requested size: 232.12004pt x 138.62158pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+[4.4 <./images/AttackGraphSystem.png>]) (chapters/evaluation.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
@@ -1189,39 +1238,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) Combination of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) Spring Cloud,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) Net-flix Rib-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) bon, Spring
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) Cloud Net-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) flix, Net-flix's
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github .
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/Oreste-Luci/netflix-os
-s-
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) com / Oreste-[]Luci /
  []
 
 
@@ -1230,115 +1253,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) Spring Boot,
- []
-
-
-Underfull \hbox (badness 2253) in paragraph at lines 12--12
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) Re-ac-t, NG-INX,
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/dockersamples/atsea-
- []
-
-
-Underfull \hbox (badness 2088) in paragraph at lines 14--14
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) Java EE ap-pli-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) ca-tion, Re-ac-t,
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/dockersamples/javaee-
+[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
-Underfull \hbox (badness 6775) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) wo sep-a-rate con-
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
-Underfull \hbox (badness 2042) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) for the s-cal-a-bil-i-ty
- []
-
-
-Overfull \hbox (4.5844pt too wide) in paragraph at lines 16--16
-[]\T1/LinuxLibertineT-TLF/m/n/9 (-20) PHPMailer(email
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) cre-ation and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) trans-fer class
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) ba(SMB/CIFS
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) net-work-ing
+Underfull \hbox (badness 1484) in paragraph at lines 16--16
+[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) PHPMailer(email cre-ation
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 16--18
-[]\T1/LinuxLibertineT-TLF/m/n/9 (+20) https://github.com/opsxcq/exploit-CVE-201
-6-
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
-[4.4]
-Underfull \vbox (badness 1242) has occurred while \output is active []
+[5.5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5.5]
+ [6.6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
 (chapters/related_work.tex
-Underfull \vbox (badness 2653) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6.6])
+ [7.7])
 (chapters/conclusion.tex) (chapters/future_work.tex) (main.bbl
-Underfull \vbox (badness 2269) has occurred while \output is active []
+Underfull \hbox (badness 1337) in paragraph at lines 94--101
+[]\T1/LinuxLibertineT-TLF/m/n/7 (+20) 2018.  Dock-er Com-pose.  []$https : / / 
+developers . redhat . com / blog / 2014 / 11 / 06 /
+ []
 
-) [7.7]
+
+Underfull \vbox (badness 5622) has occurred while \output is active []
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+[8.8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
-
-(main.aux)
+ (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 731FE255AF5B069B81148ADD4D493363;3036.
+(rerunfilecheck)             Checksum: 2ECB23B11C51B7420ABAFE11EB66AC01;2467.
  ) 
 Here is how much of TeX's memory you used:
- 19419 strings out of 495203
- 299941 string characters out of 3181196
- 412048 words of memory out of 3000000
- 21787 multiletter control sequences out of 15000+200000
- 200500 words of font info for 378 fonts, out of 3000000 for 9000
+ 19549 strings out of 495203
+ 302453 string characters out of 3181196
+ 419842 words of memory out of 3000000
+ 21870 multiletter control sequences out of 15000+200000
+ 209365 words of font info for 400 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,24n,94p,2076b,557s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,24n,94p,2846b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_oexx6f.e
-nc}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_25tcsq.
-enc}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/newtx/libertinealt.en
-c}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}{/home/stev
+nc}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/newtx/libertinealt.enc
+}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}{/home/stevi
+ca/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/home/stev
 ica/.miktex/texmfs/install/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/home/stevi
 ca/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/home/stev
 ica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/home/ste
@@ -1359,9 +1350,9 @@ all/fonts/type1/public/txfonts/rtxmi.pfb></home/stevica/.miktex/texmfs/install/
 fonts/type1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts
 /type1/public/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1
 /public/newtx/zxlri.pfb>
-Output written on main.pdf (7 pages, 606044 bytes).
+Output written on main.pdf (8 pages, 630835 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 56500 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 410 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 56988 words of extra memory for PDF output out of 61914 (max. 10000000)
 
