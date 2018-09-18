@@ -129,33 +129,46 @@ def get_attack_vector(attack_vector_files):
 def add_edge(nodes,
              edges,
              node_start,
+             node_start_priv,
              node_end,
-             edge_desc):
+             node_end_priv,
+             edge_desc,
+             passed_edges):
     """Adding an edge to the attack graph and checking if nodes already exist."""
 
-    # Checks if the opposite edge is already in the collection. If it is, dont add the edge.
-    for key in edges.keys():
+    
+    """for key in edges.keys():
         if key.endswith(node_start):
             container = node_end.split("(")[0]
             if key.startswith(container):
-                return nodes, edges
+                return nodes, edges, passed_edges"""
 
-    if node_start not in nodes:
-        nodes.append(node_start)
+    # Checks if the opposite edge is already in the collection. If it is, dont add the edge.
+    node_start_full = node_start + "(" + node_start_priv + ")"
+    node_end_full = node_end+ "(" + node_end_priv + ")"
+
+    node = passed_edges.get(node_end + "|" + node_start_full)
+    if node == None:
+        passed_edges[ node_start + "|" + node_end_full ] = True
+    else:
+        return nodes, edges, passed_edges
+
+    if node_start_full not in nodes:
+        nodes.add(node_start_full)
 
     if node_end not in nodes:
-        nodes.append(node_end)
+        nodes.add(node_end_full)
 
-    key = node_start+"|"+node_end
+    key = node_start_full + "|" + node_end_full 
 
-    if key in edges.keys():
-        edge = edges[key]
+    edge = edges.get(key)
+    if edge == None:
+        edges[key] = [edge_desc]
+    else:
         edge.append(edge_desc)
         edges[key] = edge
-    else:
-        edges[key] = [edge_desc]
 
-    return nodes, edges
+    return nodes, edges, passed_edges
 
 def breadth_first_search(topology,
                          container_exploitability,
@@ -165,13 +178,14 @@ def breadth_first_search(topology,
 
     # This is where the nodes and edges are going to be stored.
     edges = {}
-    nodes = []
+    nodes = set()
     passed_nodes = {}
+    passed_edges = {}
 
     # Creating the passed nodes array.
-    for container in topology:
-        for privilege in ["0", "1", "2", "3", "4"]:
-            passed_nodes[container+"|"+privilege] = False
+    #for container in topology:
+    #    for privilege in ["0", "1", "2", "3", "4"]:
+    #        passed_nodes[container+"|"+privilege] = False
 
     # Putting the attacker in the queue
     queue = Queue()
@@ -195,24 +209,30 @@ def breadth_first_search(topology,
         for neighbour in neighbours:
 
             # Checks if the attacker has access to the docker host.
-            if current_node == "docker host" and not passed_nodes[neighbour+"|4"]:
+            if current_node == "docker host" and passed_nodes.get(neighbour+"|4") != None:
 
                 # Add the edge
-                nodes, edges = add_edge(nodes,
-                                        edges,
-                                        current_node+"(ADMIN)",
-                                        neighbour+"(ADMIN)",
-                                        "root access")
+                nodes, edges, passed_edges = add_edge(nodes,
+                                                      edges,
+                                                      current_node,
+                                                      "ADMIN",
+                                                      neighbour,
+                                                      "ADMIN",
+                                                      "root access",
+                                                      passed_edges)
 
             # Checks if the container has privileged access.
             elif neighbour == "docker host" and priviledged_access[current_node]:
 
                 # Add the edge
-                nodes, edges = add_edge(nodes,
-                                        edges,
-                                        current_node+"("+get_priv(priv_current)+")",
-                                        neighbour+"(ADMIN)",
-                                        "privileged")
+                nodes, edges, passed_edges = add_edge(nodes,
+                                                      edges,
+                                                      current_node,
+                                                      get_priv(priv_current),
+                                                      neighbour,
+                                                      "ADMIN",
+                                                      "privileged",
+                                                      passed_edges)
 
                 queue.put(neighbour+"|4")
                 passed_nodes[neighbour+"|4"] = True
@@ -229,18 +249,21 @@ def breadth_first_search(topology,
                         (neighbour == current_node and priv_current < postcond[vul])):
 
                         # Add the edge
-                        nodes, edges = add_edge(nodes,
-                                                edges,
-                                                current_node + \
-                                                "(" + get_priv(priv_current) + ")",
-                                                neighbour + "(" + get_priv(postcond[vul]) + ")",
-                                                vul)
+                        nodes, edges, passed_edges = add_edge(nodes,
+                                                              edges,
+                                                              current_node,
+                                                              get_priv(priv_current),
+                                                              neighbour,
+                                                              get_priv(postcond[vul]),
+                                                              vul,
+                                                              passed_edges)
 
                         # If the neighbour was not passed or it has a lower privilege...
-                        if not passed_nodes[neighbour+"|"+str(postcond[vul])]:
+                        passed_nodes_key = neighbour + "|" + str(postcond[vul])
+                        if passed_nodes.get(passed_nodes_key) == None:
                             # ... put it in the queue
-                            queue.put(neighbour+"|"+str(postcond[vul]))
-                            passed_nodes[neighbour+"|"+str(postcond[vul])] = True
+                            queue.put(passed_nodes_key)
+                            passed_nodes[passed_nodes_key] = True
 
     duration_bdf = time.time()-bds_start
     print("Breadth-first-search took "+str(duration_bdf)+" seconds.")
@@ -476,11 +499,11 @@ def generate_attack_graph(attack_vector_path,
 
     print("Start with attack graph generation...")
 
-    print("Vulnerabilities preprocessing started.")
-    time_start = time.time()
-
     # Read the attack vector files.
     attack_vector_files = reader.read_attack_vector_files(attack_vector_path)
+
+    print("Vulnerabilities preprocessing started.")
+    time_start = time.time()
 
     # Read the service to image mapping.
     mapping_names = top_par.get_mapping_service_to_image_names(example_folder)
