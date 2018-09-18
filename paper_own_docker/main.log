@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  18 SEP 2018 20:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  18 SEP 2018 22:10
 entering extended mode
 **./main.tex
 (main.tex
@@ -1116,11 +1116,10 @@ tim
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- Excluding 'CCSXML' comment.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 105.
+(Font)              scaled to size 17.28pt on input line 106.
 LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
-nput line 105.
+nput line 106.
 
 ("C:\Users\Ibrahim Amjad\AppData\Roaming\MiKTeX\2.9\tex\latex\libertine\t1linux
 biolinumt-tlf.fd"
@@ -1128,19 +1127,19 @@ File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Lin
 uxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 105.
+(Font)              scaled to size 17.28pt on input line 106.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 105.
+(Font)              scaled to size 17.28pt on input line 106.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 105.
+(Font)              scaled to size 12.0pt on input line 106.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 105.
+(Font)              scaled to size 10.0pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 105.
+(Font)              scaled to size 10.0pt on input line 106.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1155,9 +1154,9 @@ cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 105.
+(Font)              scaled to size 7.0pt on input line 106.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 105.
+ input line 106.
 
 ("C:\Users\Ibrahim Amjad\AppData\Roaming\MiKTeX\2.9\tex\latex\libertine\ts1linu
 xlibertinet-tlf.fd"
@@ -1165,51 +1164,59 @@ File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 105.
+(Font)              scaled to size 7.0pt on input line 106.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 105.
+(Font)              scaled to size 9.0pt on input line 106.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 105.
+(Font)              scaled to size 10.95pt on input line 106.
  (chapters/abstract.tex)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 105.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 105.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 105.
+(Font)              scaled to size 8.0pt on input line 106.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 105.
+(Font)              scaled to size 8.0pt on input line 106.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 105.
+(Font)              scaled to size 8.0pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 105.
+(Font)              scaled to size 8.0pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 105.
+(Font)              scaled to size 6.2pt on input line 106.
  (chapters/introduction.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 5.
+(Font)              scaled to size 9.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 5.
+(Font)              scaled to size 7.3pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 5.
+(Font)              scaled to size 5.5pt on input line 4.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 7.
 
 
 Package natbib Warning: Citation `Bottomley' on page 1 undefined on input line 
-8.
+7.
 
-[1.1{C:/Users/Ibrahim Amjad/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-]) (chapters/background.tex (chapters/background_microservices.tex)
+Overfull \hbox (8.434pt too wide) in paragraph at lines 7--8
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) cepts in the soft-ware en-gi-neer-ing com-m
+u-nity. The first is the \T1/LinuxLibertineT-TLF/m/it/9 (-20) container-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1.1{C:/Users/Ibrahim Amjad/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+])
+(chapters/background.tex (chapters/background_microservices.tex)
 (chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 10.
+(Font)              scaled to size 9.0pt on input line 11.
 
 [2.2])) (chapters/method.tex
-<./images/Topology_graph.png, id=185, 169.8345pt x 173.448pt>
+<./images/Topology_graph.png, id=184, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
 Package pdftex.def Info: ./images/Topology_graph.png  used on input line 8.
@@ -1219,7 +1226,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 6--12
  [][] 
  []
 
-<./images/Attack_graph.png, id=186, 164.86594pt x 202.8077pt>
+<./images/Attack_graph.png, id=185, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
 Package pdftex.def Info: ./images/Attack_graph.png  used on input line 15.
@@ -1232,7 +1239,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 13--19
 [3.3 <./images/Topology_graph.png> <./images/Attack_graph.png>]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 38.
-<./images/AttackGraphSystem.png, id=223, 257.91356pt x 154.02544pt>
+<./images/AttackGraphSystem.png, id=222, 257.91356pt x 154.02544pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
 <use ./images/AttackGraphSystem.png>
 Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 49.
@@ -1298,7 +1305,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--149
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
-[5.5]) (chapters/evaluation.tex
+
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [5.5])
+(chapters/evaluation.tex
 Underfull \vbox (badness 2653) has occurred while \output is active []
 
  [6.6]
@@ -1340,33 +1351,33 @@ Package natbib Warning: There were undefined citations.
 [9.9
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 116.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 116.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 116.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 116.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CC28000584466E77B373A5AABEFB8C8E;2461.
+(rerunfilecheck)             Checksum: 0EA5E5B3C1A7C4EAE4260D81EC1905A3;2461.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19333 strings out of 492973
- 297684 string characters out of 3135906
- 256416381 words of memory out of 259000000
- 22233 multiletter control sequences out of 15000+200000
- 165457 words of font info for 333 fonts, out of 3000000 for 9000
+ 19316 strings out of 492973
+ 297246 string characters out of 3135906
+ 256414700 words of memory out of 259000000
+ 22221 multiletter control sequences out of 15000+200000
+ 164383 words of font info for 329 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,24n,94p,2957b,2759s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,24n,94p,2957b,2757s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dv
 ips/libertine/lbtn_oexx6f.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.
 9/fonts/enc/dvips/newtx/libertinealt.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
 /dvips/base/8r.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc
 /dvips/libertine/lbtn_25tcsq.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX
-/2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/Ibrahim Amjad/AppData/
-Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/Ibrahim 
+/2.9/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/Ibrahim Amjad/AppData/
+Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/Ibrahim 
 Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/
 Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_7
 6gpa5.enc}<C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
@@ -1383,9 +1394,9 @@ s/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb>
 <C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/newtx/txs
 ys.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ne
 wtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 627287 bytes).
+Output written on main.pdf (9 pages, 625705 bytes).
 PDF statistics:
- 441 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 500000)
- 50324 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 440 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 49812 words of extra memory for PDF output out of 51595 (max. 10000000)
 
