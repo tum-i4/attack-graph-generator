@@ -6,7 +6,7 @@ examples-results-path: examples-results
 
 # online calculates vulnerabilites with clairctl
 # offline skips clairctl and assumes that the vulnerabilities are already calculated.
-mode: offline # Options {"online", "offline"}
+mode: online # Options {"online", "offline"}
 
 # This property states if topology and attack graphs are going to be produced.
 generate_graphs: True # Options {True, False}
