@@ -29,13 +29,13 @@ In our work, we try to translate already existing attack graph generation work f
 
 Docker is one of the most popular and used microservice frameworks currently available. In Docker, a distinction is being made between the terms image, container and service. An image is an executable package that includes everything needed to run an application, a container is a runtime instance of an image and service represents a container in production. A service only runs one image, but it codifies the way that image runs, what ports it should use, how many replicas of the container should run so the service has the capacity it needs \cite{merkel2014docker}. In our work, we treat these terms equally, since we are doing a static and not runtime attack graph analysis.
 
-Privileges play a central role in this attack graph generation. We model the privileges in a hierarchy. The privileges in ascending order are None, VOS(User), VOS(Admin), OS(User) and OS(Admin). VOS means that the privilege is exclusive to a virtual machine, while not affecting the host machine. However in our case, unlike hosts connected in a computer networks, these privileges are adapted to images and not virtual machines. On the other side, The keyword OS means that the host machine has been compromised. Since VOS are hosted on some machines, and their exploitation does not imply exploitation of the host machine, they are in the lower level of hierarchy \cite{aksu2018automated}. None means that no privilege is obtained, User that only a subset of user level privileges are available, while Admin grants control over the whole system.
+Privileges play a central role in this attack graph generation. We model the privileges in a hierarchy. The privileges in ascending order are None, VOS(User), VOS(Admin), OS(User) and OS(Admin). VOS means that the privilege is exclusive to a virtual machine, while not affecting the host machine. However in our case, unlike hosts connected in a computer network, these privileges are adapted to images and not virtual machines. On the other side, The keyword OS means that the host machine has been compromised. Since VOS are hosted on some machines, and their exploitation does not imply exploitation of the host machine, they are in the lower level of hierarchy \cite{aksu2018automated}. None means that no privilege is obtained, User that only a subset of user level privileges are available, while Admin grants control over the whole system.
 
 As mentioned above, nodes and edges are the basic building blocks of an attack graph. Nodes in this attack graph model are represented as a combination of docker images and their respective privilege levels, while edges are connections between node pairs accompanied by the vulnerabilities that are being exploited as descriptors. The starting node of an edge denotes the container from which the attack is performed and the privilege level that an attacker needs to have to exploit a given vulnerability. The end node of an edge is the container which is compromised and its privilege level obtained as a result of a successful vulnerability exploitation. In order for an attacker to exploit a given vulnerability, certain preconditions have to be met. Once an attacker exploits this vulnerability, he gains the privilege of the target container as a postcondition and an edge is added to the attack graph. Both the pre- and postconditions in this work are transformed from pre- and postcondition rules manually selected and evaluated by experts in existing work \cite{aksu2018automated}. The pre- and postcondition rules use the fields defined by NVD, as well as an occurrence of specific keywords from the CVEs descriptions \cite{booth2013national}.
 
 \subsubsection{Example}
 
-In order to show how the attack graph generation works in practice, we present a small example. The example is taken from the Netflix OSS Github repository. Netflix OSS example is a Spring Cloud based microservices architecture that enables Service Discovery (Eureka), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client Side Load Balancing (Ribbon) \cite{netflixoss, springcloudnetflix}. Displayed in Figure \ref{TopologyGraph} is a subset of the example topology. The topology consists of "Outside" node, "Docker daemon" node, Zuul, Eureka and other nodes. According to Netflix, Zuul is an edge service that provides dynamic routing, monitoring, resiliency, security, and more \cite{netflixzuul}, while Eureka is a REST (Representational State Transfer) based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers \cite{netflixeureka}. In Figure \ref{AttackGraph} we can see a part of the resulting attack graph. Parts of both graphs have been intentionally omitted to reduce complexity. An example path that an attacker would take could be to first attack the Zuul container by exploiting the CVE-2016-10249 vulnerability by crafting an image file, which triggers a heap-based buffer overflow\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2016-10249}} and gain USER privilege.  Then with this USER privilege, it can exploit the CVE-2015-7554 vulnerability on the same container via crafted field data in an extension tag in a TIFF image\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2015-7554}} to gain ADMIN privilege. Once the ADMIN privilege has been obtained on Zuul, the attacker can attack the Eureka container by exploiting CVE-2017-7600 via another crafted image\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2017-7600}} and gain ADMIN privilege. It is important to note that this is not the only path that the attacker can take in order to have ADMIN privileges on Eureka. Another path would be to exploit the CVE-2018-1124 vulnerability via creating entries in procfs by starting processes, which could result in crashes or arbitrary code execution\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2018-1124}}. This vulnerability can be exploited by having only USER privilege on Zuul to gain directly ADMIN privileges of the Eureka container. Our attack graph generator shows both paths since it is of an interest to see every possible route in which a container can be compromised.
+In order to show how the attack graph generation works in practice, we present a small example. The example is taken from the Netflix OSS Github repository. Netflix OSS example is a Spring Cloud-based microservices architecture that enables Service Discovery (Eureka), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client Side Load Balancing (Ribbon) \cite{netflixoss, springcloudnetflix}. Displayed in Figure \ref{TopologyGraph} is a subset of the example topology. The topology consists of "Outside" node, "Docker daemon" node, Zuul, Eureka and other nodes. According to Netflix, Zuul is an edge service that provides dynamic routing, monitoring, resiliency, security, and more \cite{netflixzuul}, while Eureka is a REST (Representational State Transfer) based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers \cite{netflixeureka}. In Figure \ref{AttackGraph} we can see a part of the resulting attack graph. Parts of both graphs have been intentionally omitted to reduce complexity. An example path that an attacker would take could be to first attack the Zuul container by exploiting the CVE-2016-10249 vulnerability by crafting an image file, which triggers a heap-based buffer overflow\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2016-10249}} and gain USER privilege.  Then with this USER privilege, it can exploit the CVE-2015-7554 vulnerability on the same container via crafted field data in an extension tag in a TIFF image\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2015-7554}} to gain ADMIN privilege. Once the ADMIN privilege has been obtained on Zuul, the attacker can attack the Eureka container by exploiting CVE-2017-7600 via another crafted image\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2017-7600}} and gain ADMIN privilege. It is important to note that this is not the only path that the attacker can take in order to have ADMIN privileges on Eureka. Another path would be to exploit the CVE-2018-1124 vulnerability via creating entries in procfs by starting processes, which could result in crashes or arbitrary code execution\footnote{\url{https://nvd.nist.gov/vuln/detail/CVE-2018-1124}}. This vulnerability can be exploited by having only USER privilege on Zuul to gain directly ADMIN privileges of the Eureka container. Our attack graph generator shows both paths since it is of an interest to see every possible route in which a container can be compromised.
 
 
 
@@ -53,17 +53,16 @@ In the following subsections, we first have a look into the system requirements,
 
 Our system is developed for Docker 17.12.1-ce and Docker Compose 1.19.0 \cite{merkel2014docker}. Docker Compose is a tool for defining and running multi-container Docker applications \cite{dockercompose}. It provides a static configuration file that specifies the system containers, networks, ports etc. The code is written in Python 3.6, and we use Clair \cite{clair} and Clairctl \cite{clairctl} for vulnerabilities scanning.
 
-We developed this system to be used with a specific version of Docker and Docker-Compose. This modular structure could however be easily extended to other versions of Docker-Compose, vulnerability scanners and microservice architectures by replacing the Vulnerability and Topology Parsers with custom ones and making sure that their outputs conform to the input of the Attack Graph Parser.
+We developed this system to be used with a specific version of Docker and Docker-Compose. This modular structure could, however, be easily extended to other versions of Docker-Compose, vulnerability scanners and microservice architectures by replacing the Vulnerability and Topology Parsers with custom ones and making sure that their outputs conform to the input of the Attack Graph Parser.
 
-\textbf{TODO} need to rewrite the previous paragraph \\
 \subsubsection{Topology Parser}
 \label{chap:topology_p}
 
-In order to generate an attack graph of a given system, we require an arrangement of its components and connections described by a system topology. The topology of Docker containers can be described at either runtime or statically by using Docker Compose. In our case, since we are doing static attack graph analysis, we use Docker Compose as our main tool in the beginning. Docker Compose provides a docker-compose.yml file which is used for extraction of the topology of the system. However different versions of docker-compose.yml, use different syntax. For example, older versions use the deprecated keyword "link", while newer ones use exclusively "networks", to denote a connection between two containers. In this work, we use the keyword "networks" as an indicator that a connection between two containers exists.
+In order to generate an attack graph of a given system, we require an arrangement of its components and connections described by a system topology. The topology of Docker containers can be described at either runtime or statically by using Docker Compose. In our case, since we are doing static attack graph analysis, we use Docker Compose as our main tool. Docker Compose provides a docker-compose.yml file which is used for extraction of the topology of the system. However different versions of docker-compose.yml, use different syntax. For example, older versions use the deprecated keyword "link", while newer ones use exclusively "networks", to denote a connection between two containers. In this work, we use the keyword "networks" as an indicator that a connection between two containers exists.
 
 However, in the majority of cases, in order for an application to be useful, it has to communicate with the outside world. This is usually done by using publishing ports. This is the case in both computer networks, as well as in microservice architectures.
 
-Another consideration that we take into account is the privileged access. Some containers require certain privileges over the docker daemon in order to function properly. For example a user may want to run some hardware (web-cam \cite{webcam}) or some applications that demand higher privilege levels (Libvirt \cite{libvirt}) from Docker. In Docker, this is usually done either by mounting the Docker socket or specifying the keyword "privileged" in the docker-compose.yml file. An attacker with access to these containers has also access to the Docker daemon. Once the attacker has access to the Docker daemon, he has potential access to the whole microservice system, since every container is controlled and hosted by the daemon.
+Another consideration that we take into account is the privileged access. Some containers require certain privileges over the docker daemon in order to function properly. For example, a user may want to run some hardware (web-cam \cite{webcam}) or some applications that demand higher privilege levels (Libvirt \cite{libvirt}) from Docker. In Docker, this is usually done either by mounting the Docker socket or specifying the keyword "privileged" in the docker-compose.yml file. An attacker with access to these containers has also access to the Docker daemon. Once the attacker has access to the Docker daemon, he has potential access to the whole microservice system, since every container is controlled and hosted by the daemon.
 
 \begin{algorithm}
 	\SetAlgoLined
@@ -86,36 +85,36 @@ Another consideration that we take into account is the privileged access. Some c
 				create\_edge(curr\_node, end) \\
 			}
 			\If{neigh == docker\_host and priv\_acc[curr\_cont]}
-			{ 	
+			{     
 				end = neigh + "ADMIN" \\
 				create\_edge(curr\_node, end) \\
 				queue.put(end) \\
-				passed\_nodes.add(end)    	
+				passed\_nodes.add(end)        
 			}
 			\If{neigh != outside and neigh != docker\_host}{
 				precond = cont\_expl[neigh][precond] \\
 				postcond = cont\_expl[neigh][postcond] \\
 				\For{vul in vuls}{
-					\If{$curr_priv > precond[vul]$}{	
+					\If{$curr_priv > precond[vul]$}{    
 						end = neigh + post\_cond[vul]\\
 						create\_edge(curr\_node, end\_node)\\
 						\If{end\_node not in passed\_nodes}{
 							queue.put(end\_node)\\
 							passed\_nodes.add(end\_node)
-						}}
-					}
+					}}
 				}
 			}
-			nodes = update\_nodes()\\
-			edges = update\_edges() \\
 		}
-		
-		\caption{Breadth-first Search algorithm for generating an attack graph.}
-		\label{BFSalgorithm}
-	\end{algorithm}
+		nodes = update\_nodes()\\
+		edges = update\_edges() \\
+	}
 	
+	\caption{Breadth-first Search algorithm for generating an attack graph.}
+	\label{BFSalgorithm}
+\end{algorithm}
 
-	
+
+
 \subsubsection{Vulnerability Parser}
 \label{chap:vulnerability_p}
 
@@ -133,9 +132,33 @@ After the topology file is extracted and the vulnerabilities for each container 
 After the preprocessing step is done, the vulnerabilities are parsed and their pre- and postconditions are extracted. Together with the topology, they are feed into the Breadth-first Search algorithm (BFS).
 Breadth-first Search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before diving deeper into the graph. Pseudocode of our modified Breadth-first Search is given in Algorithm \ref{BFSalgorithm}. The algorithm requires a topology and a dictionary of the exploitable vulnerabilities as an input and the output is made up of nodes and edges that make the attack graph. The algorithm first initializes the nodes, edges, queue and the passed nodes. Afterward, it generates the nodes which are a combination of the image name and the privilege level. Then into a while loop, it iterates through every node, checks its neighbors and adds the edges if the conditions are satisfied. If the neighbor was not passed, then it is added to the queue. The algorithm terminates when the queue is empty. Furthermore, BFS is characterized by the following properties:
 
+\begin{table*}[t]
+	\begin{center}
+		\begin{tabular}{ p{20mm}p{35mm}p{35mm}p{10mm}cp{35mm} } 
+			\hline
+			Name & Description & Technology stack & No. Containers & No. vuln. & Github link \\\hline 
+			
+			Netflix OSS & Combination of containers provided from Netflix. & Spring Cloud, Netflix Ribbon, Spring Cloud Netflix, Netflix's Eureka & 10 & 4111 & \url{https://github.com/Oreste-Luci/netflix-oss-example} \\
+			
+			Atsea Sample Shop App & An example online store application. & Spring Boot, React, NGINX, PostgreSQL & 4 & 120 & \url{https://github.com/dockersamples/atsea-sample-shop-app} \\
+			
+			JavaEE demo & An application for browsing movies along with other related functions. & Java EE application, React, Tomcat EE & 2 & 149 & \url{https://github.com/dockersamples/javaee-demo} \\
+			
+			PHPMailer and Samba & An artificial example created from two separate containers. We use an augmented version for the scalability tests. & PHPMailer(email creation and transfer class for PHP), Samba(SMB/CIFS networking protocol) & 2 & 548 &  \url{https://github.com/opsxcq/exploit-CVE-2016-10033}
+			\url{https://github.com/opsxcq/exploit-CVE-2017-7494} \\
+			
+			
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\caption{Microservice architecture examples analyzed by the attack graph generator.}
+	\label{table_technologies}
+	
+\end{table*}
+
 \begin{itemize}
 	\item Completeness: Breadth-first Search is complete i.e. if there is a solution, Breadth-first search will find it regardless of the kind of graph.
-	\item Termination: This follows from the monotonicity property. Monotonicity is ensured if it is assumed that an attacker will
-	never need to relinquish a state \cite{ingols2006practical, ou2006scalable, ammann2002scalable}. In this implementation, each edge is traversed only once, making sure that monotonicity is preserved.
+	\item Termination: This follows from the monotonicity property. Monotonicity is ensured if it is assumed that an attacker will never need to relinquish a state \cite{ingols2006practical, ou2006scalable, ammann2002scalable}. In this implementation, each edge is traversed only once, making sure that monotonicity is preserved.
 	\item Time Complexity: is $O(|N| + |E|)$ where $|N|$ is the number of nodes and $|E|$ is the number of edges in the attack graph.
 \end{itemize}

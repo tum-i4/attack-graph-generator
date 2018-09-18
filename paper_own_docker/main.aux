@@ -16,11 +16,14 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Unix ideas [115]:}
+\citation{[Microservices. Martin Fowler(2015)]}
 \citation{}
 \citation{ahmadvand2016requirements}
 \citation{internet}
 \citation{smartcity}
 \citation{bibid}
+\citation{what is the container hype}
 \citation{bibid}
 \citation{nw}
 \citation{bibid}
@@ -36,14 +39,16 @@
 \citation{shu2017study}
 \citation{papazoglou2003service}
 \citation{ahmadvand2016requirements}
+\citation{dragoni2017microservices,microservicesfrowler}
 \citation{dragoni2017microservices}
 \citation{newman2015building}
 \citation{combe2016docker,dragoni2017microservices}
+\citation{pahl2016microservices}
+\citation{booth2013national}
 \citation{deraison1999nessus,farmer1990cops,clair}
 \citation{sheyner2002automated,ingols2006practical}
 \citation{sheyner2002automated}
 \citation{ou2006scalable}
-\citation{ingols2006practical}
 \citation{ingols2006practical}
 \@writefile{toc}{\contentsline {section}{\numberline {2}BACKGROUND}{2}{section.2}}
 \newlabel{chap:background}{{2}{2}{BACKGROUND}{section.2}{}}
@@ -53,42 +58,49 @@
 \newlabel{chap:vulnerability_scanners}{{2.2}{2}{Vulnerability Scanners}{subsection.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Attack Graphs}{2}{subsection.2.3}}
 \newlabel{chap:attack_graphs}{{2.3}{2}{Attack Graphs}{subsection.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}METHOD}{2}{section.3}}
-\newlabel{chap:method}{{3}{2}{METHOD}{section.3}{}}
+\citation{ingols2006practical}
 \citation{merkel2014docker}
 \citation{aksu2018automated}
 \citation{aksu2018automated}
 \citation{booth2013national}
-\citation{netflixoss,springcloudnetflix}
-\citation{netflixzuul}
-\citation{netflixeureka}
+\@writefile{toc}{\contentsline {section}{\numberline {3}METHOD}{3}{section.3}}
+\newlabel{chap:method}{{3}{3}{METHOD}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Mapping attack graphs from network to microservice perspective}{3}{subsection.3.1}}
+\newlabel{chap:mapping}{{3.1}{3}{Mapping attack graphs from network to microservice perspective}{subsection.3.1}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{TopologyGraph}{{1a}{3}{\relax }{figure.caption.5}{}}
 \newlabel{sub@TopologyGraph}{{a}{3}{\relax }{figure.caption.5}{}}
 \newlabel{AttackGraph}{{1b}{3}{\relax }{figure.caption.5}{}}
 \newlabel{sub@AttackGraph}{{b}{3}{\relax }{figure.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Two numerical solutions}}{3}{figure.caption.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Mapping attack graphs from network to microservice perspective}{3}{subsection.3.1}}
-\newlabel{chap:mapping}{{3.1}{3}{Mapping attack graphs from network to microservice perspective}{subsection.3.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Example}{3}{subsubsection.3.1.1}}
+\citation{netflixoss,springcloudnetflix}
+\citation{netflixzuul}
+\citation{netflixeureka}
 \citation{merkel2014docker}
 \citation{dockercompose}
 \citation{clair}
 \citation{clairctl}
 \citation{webcam}
 \citation{libvirt}
-\citation{clair}
-\citation{booth2013national}
-\citation{clairctl}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Example}{4}{subsubsection.3.1.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Attack Graph Generation for Docker Networks}{4}{subsection.3.2}}
 \newlabel{chap:technical}{{3.2}{4}{Attack Graph Generation for Docker Networks}{subsection.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }}{4}{figure.caption.6}}
 \newlabel{AttackGraphSystem}{{2}{4}{Our Attack Graph System. The rectangles denote the main components of the system: Topology Parser, Vulnerability Parser and Attack Graph Parser. The arrows describe the flow of the system and the files are the intermediate products.\relax }{figure.caption.6}{}}
 \newlabel{chap:topology_p}{{3.2.1}{4}{Topology Parser}{subsubsection.3.2.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Topology Parser}{4}{subsubsection.3.2.1}}
-\newlabel{chap:vulnerability_p}{{3.2.2}{4}{Vulnerability Parser}{subsubsection.3.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Vulnerability Parser}{4}{subsubsection.3.2.2}}
+\citation{clair}
+\citation{booth2013national}
+\citation{clairctl}
 \citation{ingols2006practical,ou2006scalable,ammann2002scalable}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Breadth-first Search algorithm for generating an attack graph.\relax }}{5}{algocf.1}}
+\newlabel{BFSalgorithm}{{1}{5}{Topology Parser}{algocf.1}{}}
+\newlabel{chap:vulnerability_p}{{3.2.2}{5}{Vulnerability Parser}{subsubsection.3.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Vulnerability Parser}{5}{subsubsection.3.2.2}}
+\newlabel{chap:attack_graph_p}{{3.2.3}{5}{Attack Graph Generator}{subsubsection.3.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Attack Graph Generator}{5}{subsubsection.3.2.3}}
+\newlabel{chap:bfs}{{3.2.3}{5}{Breadth-first Search}{section*.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Breadth-first Search}{5}{section*.8}}
 \citation{netflixoss}
 \citation{atsea}
 \citation{java}
@@ -97,23 +109,17 @@
 \citation{aksu2018automated}
 \citation{phpmailer}
 \citation{samba}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Breadth-first Search algorithm for generating an attack graph.\relax }}{5}{algocf.1}}
-\newlabel{BFSalgorithm}{{1}{5}{Topology Parser}{algocf.1}{}}
-\newlabel{chap:attack_graph_p}{{3.2.3}{5}{Attack Graph Generator}{subsubsection.3.2.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Attack Graph Generator}{5}{subsubsection.3.2.3}}
-\newlabel{chap:bfs}{{3.2.3}{5}{Breadth-first Search}{section*.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Breadth-first Search}{5}{section*.8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}EVALUATION}{5}{section.4}}
-\newlabel{chap:eval}{{4}{5}{EVALUATION}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Use Cases}{5}{subsection.4.1}}
-\newlabel{chap:heterogenious_systems}{{4.1}{5}{Use Cases}{subsection.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator.\relax }}{6}{table.caption.9}}
+\newlabel{table_technologies}{{1}{6}{Microservice architecture examples analyzed by the attack graph generator.\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}EVALUATION}{6}{section.4}}
+\newlabel{chap:eval}{{4}{6}{EVALUATION}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Use Cases}{6}{subsection.4.1}}
+\newlabel{chap:heterogenious_systems}{{4.1}{6}{Use Cases}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scalability evaluation}{6}{subsection.4.2}}
+\newlabel{chap:scalability_eval}{{4.2}{6}{Scalability evaluation}{subsection.4.2}{}}
 \citation{sheyner2002automated}
 \citation{ingols2006practical}
 \citation{ou2006scalable}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator.\relax }}{6}{table.caption.9}}
-\newlabel{table_technologies}{{1}{6}{Microservice architecture examples analyzed by the attack graph generator.\relax }{table.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scalability evaluation}{6}{subsection.4.2}}
-\newlabel{chap:scalability_eval}{{4.2}{6}{Scalability evaluation}{subsection.4.2}{}}
 \citation{samba}
 \citation{phpmailer}
 \citation{ingols2006practical,sheyner2002automated,ritchey2000using,ou2006scalable}
@@ -125,8 +131,6 @@
 \citation{aksu2018automated}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }}{7}{table.caption.10}}
 \newlabel{table_scalability}{{2}{7}{Scalability experiments with the graph characteristics and execution times. The times are given in seconds.\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{7}{section.5}}
-\newlabel{chap:related_work}{{5}{7}{RELATED WORK}{section.5}{}}
 \citation{combe2016docker,dragoni2017microservices}
 \citation{ingols2006practical}
 \citation{aksu2018automated}
@@ -169,6 +173,8 @@
 \newlabel{tocindent1}{4.185pt}
 \newlabel{tocindent2}{10.34999pt}
 \newlabel{tocindent3}{18.198pt}
+\@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{8}{section.5}}
+\newlabel{chap:related_work}{{5}{8}{RELATED WORK}{section.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}CONCLUSION}{8}{section.6}}
 \newlabel{chap:conclusion}{{6}{8}{CONCLUSION}{section.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}FUTURE WORK}{8}{section.7}}

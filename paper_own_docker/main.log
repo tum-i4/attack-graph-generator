@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  17 SEP 2018 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  18 SEP 2018 17:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -1137,57 +1137,78 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.2pt on input line 109.
  (chapters/introduction.tex
+
+Package natbib Warning: Citation `Unix ideas [115]:' on page 1 undefined on inp
+ut line 5.
+
+
+Package natbib Warning: Citation `[Microservices. Martin Fowler(2015)]' on page
+ 1 undefined on input line 5.
+
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 9.
+(Font)              scaled to size 9.0pt on input line 5.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 9.
+(Font)              scaled to size 7.3pt on input line 5.
 
-
-Package natbib Warning: Citation `internet' on page 1 undefined on input line 9
+Package natbib Warning: Citation `internet' on page 1 undefined on input line 5
 .
 
 
 Package natbib Warning: Citation `smartcity' on page 1 undefined on input line 
-9.
+5.
 
 
-Package natbib Warning: Citation `bibid' on page 1 undefined on input line 12.
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 8.
 
 
-Package natbib Warning: Citation `bibid' on page 1 undefined on input line 14.
+Package natbib Warning: Citation `what is the container hype' on page 1 undefin
+ed on input line 8.
 
 
-Package natbib Warning: Citation `nw' on page 1 undefined on input line 14.
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 8.
 
 
-Package natbib Warning: Citation `bibid' on page 1 undefined on input line 14.
+Package natbib Warning: Citation `nw' on page 1 undefined on input line 8.
+
+
+Package natbib Warning: Citation `bibid' on page 1 undefined on input line 8.
 
 
 Package natbib Warning: Citation `kordysurvey' on page 1 undefined on input lin
-e 17.
+e 11.
 
 [1.1{/home/stevica/.miktex/texmfs/data/pdftex/config/pdftex.map}
 
 ]
-Overfull \hbox (11.32756pt too wide) in paragraph at lines 33--37
+Overfull \hbox (11.32756pt too wide) in paragraph at lines 27--31
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) https://blog.acolyer.org/2017/04/03/a-study
 -of-security-vulnerabilities-
  []
 
 
-Overfull \hbox (3.88531pt too wide) in paragraph at lines 33--37
+Overfull \hbox (3.88531pt too wide) in paragraph at lines 27--31
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) on-docker-hub/ http://dance.csc.ncsu.edu/pa
 pers/codaspy17.pdf [[]] 
  []
 
-) (chapters/background.tex (chapters/background_microservices.tex)
-(chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+) (chapters/background.tex (chapters/background_microservices.tex
 
- []
+Package natbib Warning: Citation `microservicesfrowler' on page 2 undefined on 
+input line 4.
 
-)) (chapters/method.tex
-<./images/Topology_graph.png, id=141, 169.8345pt x 173.448pt>
+
+Package natbib Warning: Citation `pahl2016microservices' on page 2 undefined on
+ input line 4.
+
+) (chapters/vulnerability_scanners.tex
+Underfull \vbox (badness 4660) has occurred while \output is active []
+
+)
+(chapters/background_attack_graphs.tex
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 12.
+ [2.2])) (chapters/method.tex
+<./images/Topology_graph.png, id=159, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
 Package pdftex.def Info: ./images/Topology_graph.png  used on input line 8.
@@ -1197,7 +1218,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 6--12
  [][] 
  []
 
-<./images/Attack_graph.png, id=142, 164.86594pt x 202.8077pt>
+<./images/Attack_graph.png, id=160, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
 Package pdftex.def Info: ./images/Attack_graph.png  used on input line 15.
@@ -1207,86 +1228,75 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 13--19
  [][] 
  []
 
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 24.
-[2.2]
+[3.3 <./images/Topology_graph.png> <./images/Attack_graph.png>]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 38.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3.3 <./images/Topology_graph.png> <./images/Attack_graph.png>]
-<./images/AttackGraphSystem.png, id=193, 257.91356pt x 154.02544pt>
+<./images/AttackGraphSystem.png, id=197, 257.91356pt x 154.02544pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
 <use ./images/AttackGraphSystem.png>
 Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 49.
 
 (pdftex.def)             Requested size: 232.12004pt x 138.62158pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-[4.4 <./images/AttackGraphSystem.png>]) (chapters/evaluation.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
+ [4.4 <./images/AttackGraphSystem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) com / Oreste-[]Luci /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Atsea Sam-ple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 16--16
+Underfull \hbox (badness 1484) in paragraph at lines 147--147
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) PHPMailer(email cre-ation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
-[5.5]
+) (chapters/evaluation.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [5.5]
+Underfull \vbox (badness 2653) has occurred while \output is active []
 
  [6.6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1303,7 +1313,7 @@ developers . redhat . com / blog / 2014 / 11 / 06 /
  []
 
 
-Underfull \vbox (badness 5622) has occurred while \output is active []
+Underfull \vbox (badness 6001) has occurred while \output is active []
 
 )
 
@@ -1319,13 +1329,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2ECB23B11C51B7420ABAFE11EB66AC01;2467.
  ) 
 Here is how much of TeX's memory you used:
- 19549 strings out of 495203
- 302453 string characters out of 3181196
- 419842 words of memory out of 3000000
- 21870 multiletter control sequences out of 15000+200000
+ 19556 strings out of 495203
+ 302605 string characters out of 3181196
+ 415351 words of memory out of 3000000
+ 21875 multiletter control sequences out of 15000+200000
  209365 words of font info for 400 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,24n,94p,2846b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,24n,94p,2957b,627s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_oexx6f.e
 nc}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/newtx/libertinealt.enc
 }{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}{/home/stevi
@@ -1350,9 +1360,9 @@ all/fonts/type1/public/txfonts/rtxmi.pfb></home/stevica/.miktex/texmfs/install/
 fonts/type1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts
 /type1/public/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1
 /public/newtx/zxlri.pfb>
-Output written on main.pdf (8 pages, 630835 bytes).
+Output written on main.pdf (8 pages, 633415 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  56988 words of extra memory for PDF output out of 61914 (max. 10000000)
 
