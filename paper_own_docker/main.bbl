@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{31}
+\begin{thebibliography}{45}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -78,21 +78,10 @@
 \shownote{Retrieved September 4 2018.}
 
 
-\bibitem[\protect\citeauthoryear{??}{web}{2018}]%
-        {webcam}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Docker Compose}.
-\newblock
-  \bibinfo{howpublished}{\url{http://obrown.io/2016/02/15/privileged-containers.html}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
 \bibitem[\protect\citeauthoryear{??}{lib}{2018}]%
         {libvirt}
  \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Docker Compose}.
+\newblock \bibinfo{title}{Introducing a *Super* Privileged Container Concept}.
 \newblock
   \bibinfo{howpublished}{\url{https://developers.redhat.com/blog/2014/11/06/introducing-a-super-privileged-container-concept/}}.
 \newblock
@@ -137,6 +126,17 @@
 \newblock \bibinfo{title}{PHPMailer < 5.2.18 Remote Code Execution}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2016-10033}}.
+\newblock
+\newblock
+\shownote{Retrieved September 4 2018.}
+
+
+\bibitem[\protect\citeauthoryear{??}{web}{2018}]%
+        {webcam}
+ \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Privileged Docker Containers}.
+\newblock
+  \bibinfo{howpublished}{\url{http://obrown.io/2016/02/15/privileged-containers.html}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
@@ -211,17 +211,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Artz}{Artz}{2002}]%
-        {artz2002netspa}
-\bibfield{author}{\bibinfo{person}{Michael~Lyle Artz}.}
-  \bibinfo{year}{2002}\natexlab{}.
-\newblock \emph{\bibinfo{title}{Netspa: A network security planning
-  architecture}}.
-\newblock \bibinfo{thesistype}{Ph.D. Dissertation}.
-  \bibinfo{school}{Massachusetts Institute of Technology}.
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Booth, Rike, and Witte}{Booth
   et~al\mbox{.}}{2013}]%
         {booth2013national}
@@ -230,6 +219,52 @@
 \newblock \bibinfo{booktitle}{\emph{The National Vulnerability Database (NVD):
   Overview}}.
 \newblock \bibinfo{type}{{T}echnical {R}eport}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bottomley}{Bottomley}{[n. d.]}]%
+        {bottomely}
+\bibfield{author}{\bibinfo{person}{James Bottomley}.} \bibinfo{year}{[n.
+  d.]}\natexlab{}.
+\newblock \bibinfo{title}{What is All the Container Hype?}
+\newblock
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bui}{Bui}{2015}]%
+        {bui2015analysis}
+\bibfield{author}{\bibinfo{person}{Thanh Bui}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Analysis of docker security}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1501.02967}}
+  (\bibinfo{year}{2015}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Butzin, Golatowski, and Timmermann}{Butzin
+  et~al\mbox{.}}{2016}]%
+        {butzin2016microservices}
+\bibfield{author}{\bibinfo{person}{Bj{\"o}rn Butzin}, \bibinfo{person}{Frank
+  Golatowski}, {and} \bibinfo{person}{Dirk Timmermann}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Microservices approach for the internet of things}.
+  In \bibinfo{booktitle}{\emph{Emerging Technologies and Factory Automation
+  (ETFA), 2016 IEEE 21st International Conference on}}. IEEE,
+  \bibinfo{pages}{1--6}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Cerny, Donahoo, and Trnka}{Cerny
+  et~al\mbox{.}}{2018}]%
+        {cerny2018contextual}
+\bibfield{author}{\bibinfo{person}{Tomas Cerny}, \bibinfo{person}{Michael~J
+  Donahoo}, {and} \bibinfo{person}{Michal Trnka}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Contextual understanding of microservice
+  architecture: current and future directions}.
+\newblock \bibinfo{journal}{\emph{ACM SIGAPP Applied Computing Review}}
+  \bibinfo{volume}{17}, \bibinfo{number}{4} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{29--45}.
 \newblock
 
 
@@ -279,6 +314,27 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Fetzer}{Fetzer}{2016}]%
+        {fetzer2016building}
+\bibfield{author}{\bibinfo{person}{Christof Fetzer}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Building critical applications using
+  microservices}.
+\newblock \bibinfo{journal}{\emph{IEEE Security \& Privacy}}
+  \bibinfo{number}{6} (\bibinfo{year}{2016}), \bibinfo{pages}{86--89}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fowler}{Fowler}{2015}]%
+        {microservicesfrowler}
+\bibfield{author}{\bibinfo{person}{Martin Fowler}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Microservices resource guide}.
+\newblock \bibinfo{journal}{\emph{Martinfowler. com. Web}}  \bibinfo{volume}{1}
+  (\bibinfo{year}{2015}).
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Gummaraju, Desikan, and Turner}{Gummaraju
   et~al\mbox{.}}{2015}]%
         {gummaraju2015over}
@@ -301,6 +357,76 @@
 \newblock \showarticletitle{Practical attack graph generation for network
   defense}. In \bibinfo{booktitle}{\emph{Computer Security Applications
   Conference, 2006. ACSAC'06. 22nd Annual}}. IEEE, \bibinfo{pages}{121--130}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jaramillo, Nguyen, and Smart}{Jaramillo
+  et~al\mbox{.}}{2016}]%
+        {jaramillo2016leveraging}
+\bibfield{author}{\bibinfo{person}{David Jaramillo}, \bibinfo{person}{Duy~V
+  Nguyen}, {and} \bibinfo{person}{Robert Smart}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Leveraging microservices architecture by using
+  Docker technology}. In \bibinfo{booktitle}{\emph{SoutheastCon, 2016}}. IEEE,
+  \bibinfo{pages}{1--5}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jha, Sheyner, and Wing}{Jha
+  et~al\mbox{.}}{2002}]%
+        {jha2002two}
+\bibfield{author}{\bibinfo{person}{Somesh Jha}, \bibinfo{person}{Oleg Sheyner},
+  {and} \bibinfo{person}{Jeannette Wing}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Two formal analyses of attack graphs}. In
+  \bibinfo{booktitle}{\emph{Computer Security Foundations Workshop, 2002.
+  Proceedings. 15th IEEE}}. IEEE, \bibinfo{pages}{49--63}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kordy, Pi{\`e}tre-Cambac{\'e}d{\`e}s, and
+  Schweitzer}{Kordy et~al\mbox{.}}{2014}]%
+        {kordy2014dag}
+\bibfield{author}{\bibinfo{person}{Barbara Kordy}, \bibinfo{person}{Ludovic
+  Pi{\`e}tre-Cambac{\'e}d{\`e}s}, {and} \bibinfo{person}{Patrick Schweitzer}.}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{DAG-based attack and defense modeling: Don’t miss
+  the forest for the attack trees}.
+\newblock \bibinfo{journal}{\emph{Computer science review}}
+  \bibinfo{volume}{13} (\bibinfo{year}{2014}), \bibinfo{pages}{1--38}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kratzke}{Kratzke}{2017}]%
+        {kratzke2017microservices}
+\bibfield{author}{\bibinfo{person}{Nane Kratzke}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{About microservices, containers and their
+  underestimated impact on network performance}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1710.04049}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Krylovskiy, Jahn, and Patti}{Krylovskiy
+  et~al\mbox{.}}{2015}]%
+        {krylovskiy2015designing}
+\bibfield{author}{\bibinfo{person}{Alexandr Krylovskiy}, \bibinfo{person}{Marco
+  Jahn}, {and} \bibinfo{person}{Edoardo Patti}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Designing a smart city internet of things platform
+  with microservice architecture}. In \bibinfo{booktitle}{\emph{Future Internet
+  of Things and Cloud (FiCloud), 2015 3rd International Conference on}}. IEEE,
+  \bibinfo{pages}{25--30}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mauw and Oostdijk}{Mauw and Oostdijk}{2005}]%
+        {mauw2005foundations}
+\bibfield{author}{\bibinfo{person}{Sjouke Mauw} {and} \bibinfo{person}{Martijn
+  Oostdijk}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Foundations of attack trees}. In
+  \bibinfo{booktitle}{\emph{International Conference on Information Security
+  and Cryptology}}. Springer, \bibinfo{pages}{186--198}.
 \newblock
 
 
@@ -334,6 +460,15 @@
 \newblock \showarticletitle{A scalable approach to attack graph generation}. In
   \bibinfo{booktitle}{\emph{Proceedings of the 13th ACM conference on Computer
   and communications security}}. ACM, \bibinfo{pages}{336--345}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pahl and Jamshidi}{Pahl and Jamshidi}{2016}]%
+        {pahl2016microservices}
+\bibfield{author}{\bibinfo{person}{Claus Pahl} {and} \bibinfo{person}{Pooyan
+  Jamshidi}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Microservices: A Systematic Mapping Study.}. In
+  \bibinfo{booktitle}{\emph{CLOSER (1)}}. \bibinfo{pages}{137--146}.
 \newblock
 
 
@@ -371,6 +506,16 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Sheyner and Wing}{Sheyner and Wing}{2003}]%
+        {sheyner2003tools}
+\bibfield{author}{\bibinfo{person}{Oleg Sheyner} {and}
+  \bibinfo{person}{Jeannette Wing}.} \bibinfo{year}{2003}\natexlab{}.
+\newblock \showarticletitle{Tools for generating and analyzing attack graphs}.
+  In \bibinfo{booktitle}{\emph{International Symposium on Formal Methods for
+  Components and Objects}}. Springer, \bibinfo{pages}{344--371}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Shu, Gu, and Enck}{Shu et~al\mbox{.}}{2017}]%
         {shu2017study}
 \bibfield{author}{\bibinfo{person}{Rui Shu}, \bibinfo{person}{Xiaohui Gu},
@@ -378,6 +523,16 @@
 \newblock \showarticletitle{A study of security vulnerabilities on docker hub}.
   In \bibinfo{booktitle}{\emph{Proceedings of the Seventh ACM on Conference on
   Data and Application Security and Privacy}}. ACM, \bibinfo{pages}{269--280}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Wolff}{Wolff}{2016}]%
+        {wolff2016microservices}
+\bibfield{author}{\bibinfo{person}{Eberhard Wolff}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Microservices: flexible software
+  architecture}}.
+\newblock \bibinfo{publisher}{Addison-Wesley Professional}.
 \newblock
 
 
