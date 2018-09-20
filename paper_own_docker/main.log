@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  20 SEP 2018 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  20 SEP 2018 20:22
 entering extended mode
 **./main.tex
 (main.tex
@@ -1211,20 +1211,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ])
 (chapters/background.tex (chapters/background_microservices.tex)
-(chapters/vulnerability_scanners.tex
-
-Package natbib Warning: Citation `clair' on page 2 undefined on input line 4.
-
-) (chapters/background_attack_graphs.tex
+(chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 11.
- [2.2])) (chapters/method.tex
-<./images/Topology_graph.png, id=194, 169.8345pt x 173.448pt>
+(Font)              scaled to size 9.0pt on input line 8.
+
+[2.2])) (chapters/method.tex
+<./images/Topology_graph.png, id=195, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
 Package pdftex.def Info: ./images/Topology_graph.png  used on input line 25.
 (pdftex.def)             Requested size: 120.57375pt x 123.14099pt.
-<./images/Attack_graph.png, id=195, 164.86594pt x 202.8077pt>
+<./images/Attack_graph.png, id=196, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
 Package pdftex.def Info: ./images/Attack_graph.png  used on input line 32.
@@ -1235,6 +1232,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 41.
+
+Package natbib Warning: Citation `netflixoss' on page 3 undefined on input line
+ 41.
+
 [3.3]
 <./images/AttackGraphSystem.png, id=231, 257.91356pt x 154.02544pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
@@ -1243,36 +1244,42 @@ Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 55.
 
 (pdftex.def)             Requested size: 232.12004pt x 138.62158pt.
  [4.4 <./images/Topology_graph.png> <./images/Attack_graph.png> <./images/Attac
-kGraphSystem.png>] [5.5]) (chapters/evaluation.tex
-
-Package natbib Warning: Citation `clair' on page 6 undefined on input line 10.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+kGraphSystem.png>]) (chapters/evaluation.tex [5.5]
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) com / Oreste-[]Luci /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Atsea Sam-ple
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
@@ -1283,29 +1290,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
- []
-
-
-Underfull \hbox (badness 2875) in paragraph at lines 23--23
+Underfull \hbox (badness 2875) in paragraph at lines 21--21
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) tain-ers. We use an aug-
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 23--23
+Underfull \hbox (badness 1484) in paragraph at lines 21--21
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) PHPMailer(email cre-ation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--25
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
+
+
+Package natbib Warning: Citation `clair' on page 6 undefined on input line 34.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 2698) has occurred while \output is active []
@@ -1315,37 +1318,28 @@ Underfull \vbox (badness 2435) has occurred while \output is active []
 
 )
 (chapters/related_work.tex
-Underfull \vbox (badness 2435) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7.7]
-
-Package natbib Warning: Citation `clair' on page 8 undefined on input line 7.
-
-) (chapters/conclusion.tex
-Underfull \vbox (badness 4660) has occurred while \output is active []
-
-) (main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 53--60
+ [7.7])
+(chapters/conclusion.tex) (main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 42--49
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) 2018.  In-tro-duc-ing a *Su-per* Priv-i-l
 eged Con-tainer Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--60
+Underfull \hbox (badness 10000) in paragraph at lines 42--49
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) cept.  []$https : / / developers . redhat .
  com / blog / 2014 / 11 / 06 /
  []
 
 
-Underfull \hbox (badness 2435) in paragraph at lines 53--60
+Underfull \hbox (badness 2435) in paragraph at lines 42--49
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) introducing-[]a-[]super-[]privileged-[]cont
 ainer-[]concept/$[].   Re-trieved Sep-tem-
  []
 
-
-Underfull \vbox (badness 8132) has occurred while \output is active []
-
- [8.8])
+[8.8])
 
 Package natbib Warning: There were undefined citations.
 
@@ -1365,13 +1359,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19319 strings out of 492973
- 297510 string characters out of 3135906
- 256413756 words of memory out of 259000000
- 22203 multiletter control sequences out of 15000+200000
- 167547 words of font info for 345 fonts, out of 3000000 for 9000
+ 19313 strings out of 492973
+ 297500 string characters out of 3135906
+ 256413348 words of memory out of 259000000
+ 22194 multiletter control sequences out of 15000+200000
+ 168289 words of font info for 349 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,24n,94p,2974b,2752s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,24n,94p,2921b,2755s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dv
 ips/libertine/lbtn_oexx6f.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.
 9/fonts/enc/dvips/newtx/libertinealt.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
@@ -1395,9 +1389,9 @@ s/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb>
 <C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/newtx/txs
 ys.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ne
 wtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 623168 bytes).
+Output written on main.pdf (9 pages, 620361 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
+ 413 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
  49812 words of extra memory for PDF output out of 51595 (max. 10000000)
 

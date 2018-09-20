@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{39}
+\begin{thebibliography}{36}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,34 +37,12 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
-\bibitem[\protect\citeauthoryear{??}{ats}{2018}]%
-        {atsea}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{AtSea Shop Demonstration Application}.
-\newblock
-  \bibinfo{howpublished}{\url{https://github.com/dockersamples/atsea-sample-shop-app}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
 \bibitem[\protect\citeauthoryear{??}{lib}{2018}]%
         {libvirt}
  \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{Introducing a *Super* Privileged Container Concept}.
 \newblock
   \bibinfo{howpublished}{\url{https://developers.redhat.com/blog/2014/11/06/introducing-a-super-privileged-container-concept/}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{jav}{2018}]%
-        {java}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Java EE application migration}.
-\newblock
-  \bibinfo{howpublished}{\url{https://github.com/dockersamples/javaee-demo}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
@@ -87,17 +65,6 @@
 \newblock \bibinfo{title}{SambaCry RCE exploit for Samba 4.5.9}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2017-7494}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{net}{2018}]%
-        {netflixoss}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Spring Cloud - Netflix OSS Example}.
-\newblock
-  \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
