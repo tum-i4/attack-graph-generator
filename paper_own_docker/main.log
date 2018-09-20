@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  20 SEP 2018 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  20 SEP 2018 10:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -1107,90 +1107,89 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 11.
 
 [2.2])) (chapters/method.tex
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 21.
 <./images/Topology_graph.png, id=195, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
-Package pdftex.def Info: ./images/Topology_graph.png  used on input line 26.
+Package pdftex.def Info: ./images/Topology_graph.png  used on input line 25.
 (pdftex.def)             Requested size: 120.57375pt x 123.14099pt.
 <./images/Attack_graph.png, id=196, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
-Package pdftex.def Info: ./images/Attack_graph.png  used on input line 33.
+Package pdftex.def Info: ./images/Attack_graph.png  used on input line 32.
 (pdftex.def)             Requested size: 120.57375pt x 148.32689pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 41.
 [3.3]
-<./images/AttackGraphSystem.png, id=230, 257.91356pt x 154.02544pt>
+<./images/AttackGraphSystem.png, id=232, 257.91356pt x 154.02544pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
 <use ./images/AttackGraphSystem.png>
-Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 53.
+Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 52.
 
 (pdftex.def)             Requested size: 232.12004pt x 138.62158pt.
  [4.4 <./images/Topology_graph.png> <./images/Attack_graph.png> <./images/Attac
 kGraphSystem.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) com / Oreste-[]Luci /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Atsea Sam-ple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 151--151
+Underfull \hbox (badness 1484) in paragraph at lines 150--150
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) PHPMailer(email cre-ation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
+) (chapters/evaluation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2426) has occurred while \output is active []
-
- [5.5])
-(chapters/evaluation.tex
+ [5.5]
 Underfull \vbox (badness 2653) has occurred while \output is active []
 
  [6.6]
@@ -1241,11 +1240,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D0365CEE266AC8F1E96AF72EEE017875;2302.
  ) 
 Here is how much of TeX's memory you used:
- 19400 strings out of 495203
- 299135 string characters out of 3181196
+ 19403 strings out of 495203
+ 299210 string characters out of 3181196
  416860 words of memory out of 3000000
  21726 multiletter control sequences out of 15000+200000
- 165742 words of font info for 337 fonts, out of 3000000 for 9000
+ 166140 words of font info for 339 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,24n,94p,2957b,631s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_oexx6f.e
@@ -1268,7 +1267,7 @@ pe1/public/txfonts/rtxmi.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/
 public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/publi
 c/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/newt
 x/zxlri.pfb>
-Output written on main.pdf (9 pages, 627675 bytes).
+Output written on main.pdf (9 pages, 627121 bytes).
 PDF statistics:
  441 PDF objects out of 1000 (max. 8388607)
  93 named destinations out of 1000 (max. 500000)
