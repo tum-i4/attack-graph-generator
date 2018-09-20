@@ -4,30 +4,13 @@ Database file #1: sample-bibliography.bib
 Warning--entry type for "bottomely" isn't style-file defined
 --line 29 of file sample-bibliography.bib
 Warning--I didn't find a database entry for "Bottomley"
-Warning--no key, author in clair
-Warning--no author, editor, organization, or key in clair
-Warning--to sort, need author or key in clair
+Warning--I didn't find a database entry for "clair"
 Warning--no key, author in netflixoss
 Warning--no author, editor, organization, or key in netflixoss
 Warning--to sort, need author or key in netflixoss
 Warning--no key, author in springcloudnetflix
 Warning--no author, editor, organization, or key in springcloudnetflix
 Warning--to sort, need author or key in springcloudnetflix
-Warning--no key, author in netflixzuul
-Warning--no author, editor, organization, or key in netflixzuul
-Warning--to sort, need author or key in netflixzuul
-Warning--no key, author in netflixeureka
-Warning--no author, editor, organization, or key in netflixeureka
-Warning--to sort, need author or key in netflixeureka
-Warning--no key, author in dockercompose
-Warning--no author, editor, organization, or key in dockercompose
-Warning--to sort, need author or key in dockercompose
-Warning--no key, author in clairctl
-Warning--no author, editor, organization, or key in clairctl
-Warning--to sort, need author or key in clairctl
-Warning--no key, author in webcam
-Warning--no author, editor, organization, or key in webcam
-Warning--to sort, need author or key in webcam
 Warning--no key, author in libvirt
 Warning--no author, editor, organization, or key in libvirt
 Warning--to sort, need author or key in libvirt
@@ -45,18 +28,11 @@ Warning--no author, editor, organization, or key in samba
 Warning--to sort, need author or key in samba
 Warning--no key, author in atsea
 Warning--no key, author in atsea
-Warning--no key, author in clairctl
-Warning--no key, author in clairctl
-Warning--no key, author in clair
-Warning--no key, author in dockercompose
-Warning--no key, author in dockercompose
 Warning--no key, author in java
 Warning--no key, author in java
 Warning--no key, author in libvirt
 Warning--no key, author in libvirt
-Warning--no key, author in netflixeureka
-Warning--no key, author in netflixeureka
-Warning--no key, author in netflixzuul
+Warning--no key, author in netflixoss
 Warning--no key, author in netflixoss
 Warning--no key, author in phpmailer
 Warning--no key, author in phpmailer
@@ -64,38 +40,18 @@ Warning--no key, author in samba
 Warning--no key, author in samba
 Warning--no key, author in springcloudnetflix
 Warning--no key, author in springcloudnetflix
-Warning--no key, author in webcam
-Warning--no key, author in webcam
 Warning--no key, author in atsea
 Warning--no author, editor, organization, or key in atsea
 Warning--empty author in atsea
-Warning--no key, author in clairctl
-Warning--no author, editor, organization, or key in clairctl
-Warning--empty author in clairctl
-Warning--no key, author in clair
-Warning--no author, editor, organization, or key in clair
-Warning--empty author in clair
-Warning--no key, author in dockercompose
-Warning--no author, editor, organization, or key in dockercompose
-Warning--empty author in dockercompose
 Warning--no key, author in libvirt
 Warning--no author, editor, organization, or key in libvirt
 Warning--empty author in libvirt
 Warning--no key, author in java
 Warning--no author, editor, organization, or key in java
 Warning--empty author in java
-Warning--no key, author in netflixeureka
-Warning--no author, editor, organization, or key in netflixeureka
-Warning--empty author in netflixeureka
-Warning--no key, author in netflixzuul
-Warning--no author, editor, organization, or key in netflixzuul
-Warning--empty author in netflixzuul
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--empty author in phpmailer
-Warning--no key, author in webcam
-Warning--no author, editor, organization, or key in webcam
-Warning--empty author in webcam
 Warning--no key, author in samba
 Warning--no author, editor, organization, or key in samba
 Warning--empty author in samba
@@ -152,4 +108,4 @@ Warning--empty address in sheyner2003tools
 Warning--empty publisher in shu2017study
 Warning--empty address in shu2017study
 Warning--empty address in wolff2016microservices
-(There were 150 warnings)
+(There were 106 warnings)

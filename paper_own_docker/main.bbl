@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{45}
+\begin{thebibliography}{39}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -48,36 +48,6 @@
 \shownote{Retrieved September 4 2018.}
 
 
-\bibitem[\protect\citeauthoryear{??}{cla}{2018a}]%
-        {clairctl}
- \bibinfo{year}{2018}\natexlab{a}.
-\newblock \bibinfo{title}{Clairctl}.
-\newblock \bibinfo{howpublished}{\url{https://github.com/jgsqware/clairctl}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{cla}{2018b}]%
-        {clair}
- \bibinfo{year}{2018}\natexlab{b}.
-\newblock \bibinfo{title}{CoreOS Clair}.
-\newblock \bibinfo{howpublished}{\url{https://github.com/coreos/clair}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{doc}{2018}]%
-        {dockercompose}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Docker Compose}.
-\newblock \bibinfo{howpublished}{\url{https://docs.docker.com/compose/}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
 \bibitem[\protect\citeauthoryear{??}{lib}{2018}]%
         {libvirt}
  \bibinfo{year}{2018}\natexlab{}.
@@ -100,43 +70,12 @@
 \shownote{Retrieved September 4 2018.}
 
 
-\bibitem[\protect\citeauthoryear{??}{net}{2018a}]%
-        {netflixeureka}
- \bibinfo{year}{2018}\natexlab{a}.
-\newblock \bibinfo{title}{Netflix Eureka}.
-\newblock \bibinfo{howpublished}{\url{https://github.com/Netflix/eureka}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{net}{2018b}]%
-        {netflixzuul}
- \bibinfo{year}{2018}\natexlab{b}.
-\newblock \bibinfo{title}{Netflix Zuul}.
-\newblock \bibinfo{howpublished}{\url{https://github.com/Netflix/zuul}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
 \bibitem[\protect\citeauthoryear{??}{php}{2018}]%
         {phpmailer}
  \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{PHPMailer < 5.2.18 Remote Code Execution}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/opsxcq/exploit-CVE-2016-10033}}.
-\newblock
-\newblock
-\shownote{Retrieved September 4 2018.}
-
-
-\bibitem[\protect\citeauthoryear{??}{web}{2018}]%
-        {webcam}
- \bibinfo{year}{2018}\natexlab{}.
-\newblock \bibinfo{title}{Privileged Docker Containers}.
-\newblock
-  \bibinfo{howpublished}{\url{http://obrown.io/2016/02/15/privileged-containers.html}}.
 \newblock
 \newblock
 \shownote{Retrieved September 4 2018.}
@@ -153,9 +92,9 @@
 \shownote{Retrieved September 4 2018.}
 
 
-\bibitem[\protect\citeauthoryear{??}{net}{2018c}]%
+\bibitem[\protect\citeauthoryear{??}{net}{2018}]%
         {netflixoss}
- \bibinfo{year}{2018}\natexlab{c}.
+ \bibinfo{year}{2018}\natexlab{}.
 \newblock \bibinfo{title}{Spring Cloud - Netflix OSS Example}.
 \newblock
   \bibinfo{howpublished}{\url{https://github.com/Oreste-Luci/netflix-oss-example}}.
