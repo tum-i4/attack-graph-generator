@@ -45,12 +45,11 @@ In order to show how the attack graph generation works in practice, we present a
 \subsection{Attack Graph Generation for Docker Networks}
 \label{chap:technical}
 
- Figure \ref{AttackGraphSystem} gives an overview of the attack graph generator. In the figure, the rectangles denote the main components of the system, while the arrows describe the flow of the system and the files are the intermediate products. Our attack graph generator is composed of three main components: \textit{Topology Parser, Vulnerability Parser and Attack Graph Generator}. The Topology Parser reads the underlying topology of the system and converts it into to a format needed for our Attack Graph Generator, the Vulnerability Parser scans the vulnerabilities for each of the images and the Attack Graph Parser generates the attack graph from the topology and vulnerabilities files. In the following subsections, we first have a look into the system requirements, then describe each component in more details.
+ Figure \ref{AttackGraphSystem} gives an overview of the attack graph generator. In the figure, the rectangles denote the main components of the system, while the arrows describe the flow of the system and the files are the intermediate products. Our attack graph generator is composed of three main components: \textit{Topology Parser, Vulnerability Parser and Attack Graph Generator}. The Topology Parser reads the underlying topology of the system and converts it into to a format needed for our Attack Graph Generator, the Vulnerability Parser scans the vulnerabilities for each of the images and the Attack Graph Generator generates the attack graph from the topology and vulnerabilities files. In the following subsections, we first have a look into the system requirements, then describe each component in more details.
 
 The generator is developed and tested for Docker 17.12.1-ce and Docker Compose 1.19.0 \cite{merkel2014docker}. Docker Compose\footnote{\url{https://docs.docker.com/compose/}} is a tool for defining the orchestration of a multi-container applications. It provides a static configuration file that specifies the system containers, networks, and ports. Clair and ClairCtl \footnote{\url{https://github.com/coreos/clair}}  are used for vulnerabilities scanning. The generator is written in Python 3.6. Although we used  specific versions of the tools, the pipe and filter structure of the generator can be easily extended to other versions of Docker-Compose, vulnerability scanners and microservice architectures by replacing.
 
 
-\textbf{TODO rename the attack graph parser in the box to Attack graph Generator}
 \begin{figure}
 	\includegraphics[scale=0.9]{./images/AttackGraphSystem}
 	\caption{Overview of the Attack Graph Generator System}
@@ -79,25 +78,25 @@ In the preprocessing step, we use Clair to generate the vulnerabilities of a giv
 	\KwData{topology, cont\_expl,
 		priv\_acc}
 	\KwResult{nodes, edges}
-	nodes, edges, passed\_nodes = [], [], [] \\
-	queue = Queue() \\
-	queue.put("outside" + "ADMIN") \\
+	nodes, edges, passed\_nodes = [], [], [] \\ \label{alg:init_1}
+	queue = Queue() \\ \label{alg:init_2}
+	queue.put("outside" + "ADMIN") \\ \label{alg:attackNodeInit}
 	
-	\While{! queue.isEmpty()}{
-		curr\_node = queue.get() \\
+	\While{! queue.isEmpty()}{ \label{alg:while}
+		curr\_node = queue.get() \\ \label{alg:get_node}
 		curr\_cont = get\_cont(curr\_node) \\
 		curr\_priv = get\_priv(curr\_node) \\
 		neighbours = topology[curr\_cont] \\
-		\For{neigh in neighbours}{
+		\For{neigh in neighbours}{ \label{alg:neigh}
 			\If{curr\_cont == docker\_host}
 			{
 				end = neigh + "ADMIN" \\
-				create\_edge(curr\_node, end) \\
+				create\_edge(curr\_node, end) \\ \label{alg:daemonEdge}
 			}
 			\If{neigh == docker\_host and priv\_acc[curr\_cont]}
 			{     
 				end = neigh + "ADMIN" \\
-				create\_edge(curr\_node, end) \\
+				create\_edge(curr\_node, end) \\ \label{alg:privEdge}
 				queue.put(end) \\
 				passed\_nodes.add(end)        
 			}
@@ -107,9 +106,9 @@ In the preprocessing step, we use Clair to generate the vulnerabilities of a giv
 				\For{vul in vuls}{
 					\If{$curr_priv > precond[vul]$}{    
 						end = neigh + post\_cond[vul]\\
-						create\_edge(curr\_node, end\_node)\\
+						create\_edge(curr\_node, end\_node)\\ \label{alg:addEdge}
 						\If{end\_node not in passed\_nodes}{
-							queue.put(end\_node)\\
+							queue.put(end\_node)\\ \label{alg:putQueue}
 							passed\_nodes.add(end\_node)
 					}}
 				}
@@ -126,14 +125,13 @@ In the preprocessing step, we use Clair to generate the vulnerabilities of a giv
 \subsubsection{Attack Graph Generator}
 \label{chap:attack_graph_p}
 
-After the topology  is extracted and the vulnerabilities for each container are generated, we continue with the attack graph generation. Here, we first pre-process the vulnerabilities and convert them into sets of pre- and postconditions. In order to do this, we match the attack vectors acquired earlier from the vulnerability database and keywords of the descriptions of each vulnerability to generate attack rules. When a subset of attack vector fields and description keywords matches a given rule, we use the pre- or postcondition of that rule. If more than one rule matches, we take the one with the highest privilege level for the preconditions and the lowest privilege level for the postconditions. If no rule matches, we take None as a precondition and ADMIN(OS) as a postcondition. This results in a list of container vulnerabilities with their preconditions and postconditions. \textbf{TODO give an example of the attack rule and refer to the source of these rules}
+After the topology  is extracted and the vulnerabilities for each container are generated, we continue with the attack graph generation. Here, we first pre-process the vulnerabilities and convert them into sets of pre- and postconditions. In order to do this, we match the attack vectors acquired earlier from the vulnerability database and keywords of the descriptions of each vulnerability to generate attack rules. When a subset of attack vector fields and description keywords matches a given rule, we use the pre- or postcondition of that rule. An example precondition attack rule would be for a vulnerability to have either "gain root", "gain unrestricted, root shell access" or "obtain root" in its description and all of the Impacts from the NVD attack vector \cite{booth2013national} to be "COMPLETE" in order to gain the precondition OS(ADMIN) \cite{aksu2018automated}. If more than one rule matches, we take the one with the highest privilege level for the preconditions and the lowest privilege level for the postconditions. If no rule matches, we take None as a precondition and ADMIN(OS) as a postcondition. This results in a list of container vulnerabilities with their preconditions and postconditions.
 
 \paragraph{Breadth-first Search}
 \label{chap:bfs}
 
 After the preprocessing step is done, the vulnerabilities are parsed and their pre- and postconditions are extracted. Together with the topology, they are feed into a Breadth-first Search algorithm (BFS).
-Breadth-first Search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before diving deeper into the graph. A pseudo-code of our modified Breadth-first Search is given in Algorithm \ref{BFSalgorithm}. The algorithm requires a topology and a dictionary of the exploitable vulnerabilities as an input and the output is made up of nodes and edges that make the attack graph \textbf{TODO please explain what is cont expl, priv acc and refer to them in the text}. The algorithm first initializes the nodes, edges, queue and the passed nodes. Afterward, it generates the nodes which are a combination of the image name and the privilege level. Then into a while loop, it iterates through every node, checks its neighbors and adds the edges if the conditions are satisfied. If the neighbor was not passed, then it is added to the queue. The algorithm terminates when the queue is empty. Furthermore, BFS is characterized by the following properties.
-\textbf{TODO: add line numbers to the algo and refer to those numbers in the text.}
+Breadth-first Search is a popular search algorithm that traverses a graph by looking first at the neighbors of a given node, before diving deeper into the graph. A pseudo-code of our modified Breadth-first Search is given in Algorithm \ref{BFSalgorithm}. The algorithm requires a topology, a dictionary of the exploitable vulnerabilities and a list of nodes with privileged access as an input and the output is made up of nodes and edges that make the attack graph. Topology (Subsection \ref{chap:topology_p}) contains the information about the connectivity between the containers, cont\_expl (Subsections \ref{chap:vulnerability_p} and \ref{chap:attack_graph_p}) contains information regarding which vulnerabilities can be attacked (with their pre- and postconditions) and priv\_acc (Subsection \ref{chap:topology_p}) is the array of nodes that have high (ADMIN) permissions to the docker daemon. The algorithm first initializes the nodes, edges, queue and the passed nodes (Lines \ref{alg:init_1}, \ref{alg:init_2}). Afterward, it generates the attacker node (line \ref{alg:attackNodeInit}) from where the attack starts. The attacker node is a combination of the image name ("Outside") and the privilege level (ADMIN). Then into a while loop (Line \ref{alg:while}), it iterates through every node (Line \ref{alg:get_node}), checks its neighbors (Line \ref{alg:neigh}) and adds the edges if the conditions are satisfied (Lines \ref{alg:daemonEdge}, \ref{alg:privEdge}, \ref{alg:addEdge}). If the neighbor was not passed, then it is added to the queue (Line \ref{alg:putQueue}). The algorithm terminates when the queue is empty (Line \ref{alg:while}). Furthermore, BFS is characterized by the following properties.
 
 
 \begin{itemize}

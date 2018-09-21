@@ -38,6 +38,7 @@
 \citation{ingols2006practical,sheyner2002automated,sheyner2003tools,ou2006scalable}
 \citation{farmer1990cops}
 \citation{sheyner2002automated}
+\providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}INTRODUCTION}{1}{section.1}}
 \citation{microservicesfrowler}
@@ -85,20 +86,32 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Two numerical solutions}}{4}{figure.caption.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Attack Graph Generation for Docker Networks}{4}{subsection.3.2}}
 \newlabel{chap:technical}{{3.2}{4}{Attack Graph Generation for Docker Networks}{subsection.3.2}{}}
+\newlabel{chap:topology_p}{{3.2.1}{4}{Topology Parser}{subsubsection.3.2.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Overview of the Attack Graph Generator System\relax }}{4}{figure.caption.5}}
 \newlabel{AttackGraphSystem}{{2}{4}{Overview of the Attack Graph Generator System\relax }{figure.caption.5}{}}
-\newlabel{chap:topology_p}{{3.2.1}{4}{Topology Parser}{subsubsection.3.2.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Topology Parser}{4}{subsubsection.3.2.1}}
 \citation{booth2013national}
-\citation{ingols2006practical,ou2006scalable,ammann2002scalable}
+\citation{booth2013national}
+\citation{aksu2018automated}
 \newlabel{chap:vulnerability_p}{{3.2.2}{5}{Vulnerability Parser}{subsubsection.3.2.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Vulnerability Parser}{5}{subsubsection.3.2.2}}
 \newlabel{chap:attack_graph_p}{{3.2.3}{5}{Attack Graph Generator}{subsubsection.3.2.3}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Attack Graph Generator}{5}{subsubsection.3.2.3}}
 \newlabel{chap:bfs}{{3.2.3}{5}{Breadth-first Search}{section*.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{Breadth-first Search}{5}{section*.7}}
+\newlabel{alg:init_1}{{1}{5}{Vulnerability Parser}{AlgoLine.1.1}{}}
+\newlabel{alg:init_2}{{2}{5}{Vulnerability Parser}{AlgoLine.1.2}{}}
+\newlabel{alg:attackNodeInit}{{3}{5}{Vulnerability Parser}{AlgoLine.1.3}{}}
+\newlabel{alg:while}{{4}{5}{Vulnerability Parser}{AlgoLine.1.4}{}}
+\newlabel{alg:get_node}{{5}{5}{Vulnerability Parser}{AlgoLine.1.5}{}}
+\newlabel{alg:neigh}{{9}{5}{Vulnerability Parser}{AlgoLine.1.9}{}}
+\newlabel{alg:daemonEdge}{{12}{5}{Vulnerability Parser}{AlgoLine.1.12}{}}
+\newlabel{alg:privEdge}{{16}{5}{Vulnerability Parser}{AlgoLine.1.16}{}}
+\newlabel{alg:addEdge}{{26}{5}{Vulnerability Parser}{AlgoLine.1.26}{}}
+\newlabel{alg:putQueue}{{28}{5}{Vulnerability Parser}{AlgoLine.1.28}{}}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces BFS algorithm for attack graph generation\relax }}{5}{algocf.1}}
 \newlabel{BFSalgorithm}{{1}{5}{Vulnerability Parser}{algocf.1}{}}
+\citation{ingols2006practical,ou2006scalable,ammann2002scalable}
 \citation{clair}
 \citation{booth2013national}
 \citation{aksu2018automated}
@@ -114,6 +127,10 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scalability evaluation}{6}{subsection.4.2}}
 \newlabel{chap:scalability_eval}{{4.2}{6}{Scalability evaluation}{subsection.4.2}{}}
 \citation{ou2006scalable}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator\relax }}{7}{table.caption.8}}
+\newlabel{table_technologies}{{1}{7}{Microservice architecture examples analyzed by the attack graph generator\relax }{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Scalability results with the graph characteristics and execution times in seconds.\relax }}{7}{table.caption.9}}
+\newlabel{table_scalability}{{2}{7}{Scalability results with the graph characteristics and execution times in seconds.\relax }{table.caption.9}{}}
 \citation{ingols2006practical,sheyner2002automated,ritchey2000using,ou2006scalable}
 \citation{sheyner2002automated}
 \citation{sheyner2002automated}
@@ -121,10 +138,6 @@
 \citation{ou2006scalable}
 \citation{ingols2006practical}
 \citation{aksu2018automated}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Microservice architecture examples analyzed by the attack graph generator\relax }}{7}{table.caption.8}}
-\newlabel{table_technologies}{{1}{7}{Microservice architecture examples analyzed by the attack graph generator\relax }{table.caption.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Scalability results with the graph characteristics and execution times in seconds.\relax }}{7}{table.caption.9}}
-\newlabel{table_scalability}{{2}{7}{Scalability results with the graph characteristics and execution times in seconds.\relax }{table.caption.9}{}}
 \citation{combe2016docker,dragoni2017microservices}
 \citation{ingols2006practical}
 \citation{aksu2018automated}
@@ -152,6 +165,11 @@
 \bibcite{ingols2006practical}{{20}{2006}{{Ingols et~al\unhbox \voidb@x \hbox {.}}}{{Ingols, Lippmann, and Piwowarski}}}
 \bibcite{jaramillo2016leveraging}{{21}{2016}{{Jaramillo et~al\unhbox \voidb@x \hbox {.}}}{{Jaramillo, Nguyen, and Smart}}}
 \bibcite{jha2002two}{{22}{2002}{{Jha et~al\unhbox \voidb@x \hbox {.}}}{{Jha, Sheyner, and Wing}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{8}{section.5}}
+\newlabel{chap:related_work}{{5}{8}{RELATED WORK}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}CONCLUSIONS AND FUTURE WORK}{8}{section.6}}
+\newlabel{chap:conclusion}{{6}{8}{CONCLUSIONS AND FUTURE WORK}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{References}{8}{section*.11}}
 \bibcite{kordy2014dag}{{23}{2014}{{Kordy et~al\unhbox \voidb@x \hbox {.}}}{{Kordy, Pi{\`e}tre-Cambac{\'e}d{\`e}s, and Schweitzer}}}
 \bibcite{kratzke2017microservices}{{24}{2017}{{Kratzke}}{{Kratzke}}}
 \bibcite{krylovskiy2015designing}{{25}{2015}{{Krylovskiy et~al\unhbox \voidb@x \hbox {.}}}{{Krylovskiy, Jahn, and Patti}}}
@@ -159,11 +177,6 @@
 \bibcite{merkel2014docker}{{27}{2014}{{Merkel}}{{Merkel}}}
 \bibcite{newman2015building}{{28}{2015}{{Newman}}{{Newman}}}
 \bibcite{ou2006scalable}{{29}{2006}{{Ou et~al\unhbox \voidb@x \hbox {.}}}{{Ou, Boyer, and McQueen}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}RELATED WORK}{8}{section.5}}
-\newlabel{chap:related_work}{{5}{8}{RELATED WORK}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}CONCLUSIONS AND FUTURE WORK}{8}{section.6}}
-\newlabel{chap:conclusion}{{6}{8}{CONCLUSIONS AND FUTURE WORK}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{References}{8}{section*.11}}
 \bibcite{pahl2016microservices}{{30}{2016}{{Pahl and Jamshidi}}{{Pahl and Jamshidi}}}
 \bibcite{papazoglou2003service}{{31}{2003}{{Papazoglou}}{{Papazoglou}}}
 \bibcite{ritchey2000using}{{32}{2000}{{Ritchey and Ammann}}{{Ritchey and Ammann}}}
@@ -173,7 +186,7 @@
 \bibcite{wolff2016microservices}{{36}{2016}{{Wolff}}{{Wolff}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
-\newlabel{tocindent1}{4.62599pt}
-\newlabel{tocindent2}{11.44798pt}
+\newlabel{tocindent1}{4.185pt}
+\newlabel{tocindent2}{10.34999pt}
 \newlabel{tocindent3}{18.198pt}
 \newlabel{TotPages}{{9}{9}{}{page.9}{}}
