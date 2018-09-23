@@ -35,12 +35,14 @@
 %\editor{Theo D'Hondt}
 %\editor{Wolfgang De Meuter}
 
-
+\def\anonymous{}
 \begin{document}
-\title{Attack Graph Generation for Micro-service
+\title{Attack Graph Generation for Microservice
 	Architecture}
 
-
+\ifdefined\anonymous
+\author{Anonymized  author(s)}
+\else
 \author{Amjad Ibrahim}
 \affiliation{\institution{Technical University of Munich}}
 \email{amjad.ibrahim@tum.de}
@@ -54,8 +56,8 @@
 \email{alexander.pretschner@tum.de}
 
 % The default list of authors is too long for headers}
-\renewcommand{\shortauthors}{B. Trovato et al.}
-
+\renewcommand{\shortauthors}{A. Ibrahim et al.}
+\fi
 
 \begin{abstract}
 	
@@ -100,7 +102,7 @@
 \ccsdesc[100]{Networks~Network reliability}
 \fi
 
-\keywords{Attack Graph Generaton, Computer Security, Microservices}
+\keywords{Attack Graph Generaton, Microservices, Containers}
 
 
 \maketitle

@@ -4,40 +4,24 @@ Database file #1: sample-bibliography.bib
 Warning--entry type for "bottomely" isn't style-file defined
 --line 29 of file sample-bibliography.bib
 Warning--I didn't find a database entry for "Bottomley"
-Warning--I didn't find a database entry for "clair"
 Warning--I didn't find a database entry for "netflixoss"
-Warning--no key, author in springcloudnetflix
-Warning--no author, editor, organization, or key in springcloudnetflix
-Warning--to sort, need author or key in springcloudnetflix
-Warning--no key, author in libvirt
-Warning--no author, editor, organization, or key in libvirt
-Warning--to sort, need author or key in libvirt
+Warning--I didn't find a database entry for "springcloudnetflix"
 Warning--no key, author in samba
 Warning--no author, editor, organization, or key in samba
 Warning--to sort, need author or key in samba
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--to sort, need author or key in phpmailer
-Warning--no key, author in libvirt
-Warning--no key, author in libvirt
 Warning--no key, author in phpmailer
 Warning--no key, author in phpmailer
 Warning--no key, author in samba
 Warning--no key, author in samba
-Warning--no key, author in springcloudnetflix
-Warning--no key, author in springcloudnetflix
-Warning--no key, author in libvirt
-Warning--no author, editor, organization, or key in libvirt
-Warning--empty author in libvirt
 Warning--no key, author in phpmailer
 Warning--no author, editor, organization, or key in phpmailer
 Warning--empty author in phpmailer
 Warning--no key, author in samba
 Warning--no author, editor, organization, or key in samba
 Warning--empty author in samba
-Warning--no key, author in springcloudnetflix
-Warning--no author, editor, organization, or key in springcloudnetflix
-Warning--empty author in springcloudnetflix
 Warning--empty publisher in ahmadvand2016requirements
 Warning--empty address in ahmadvand2016requirements
 Warning--empty publisher in aksu2018automated
@@ -80,9 +64,7 @@ Warning--empty publisher in ritchey2000using
 Warning--empty address in ritchey2000using
 Warning--empty publisher in sheyner2002automated
 Warning--empty address in sheyner2002automated
-Warning--empty publisher in sheyner2003tools
-Warning--empty address in sheyner2003tools
 Warning--empty publisher in shu2017study
 Warning--empty address in shu2017study
 Warning--empty address in wolff2016microservices
-(There were 83 warnings)
+(There were 65 warnings)
