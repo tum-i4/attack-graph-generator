@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  23 SEP 2018 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  23 SEP 2018 17:24
 entering extended mode
 **./main.tex
 (main.tex
@@ -1208,11 +1208,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ])
 (chapters/background.tex (chapters/background_microservices.tex)
-(chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex)
+(chapters/vulnerability_scanners.tex) (chapters/background_attack_graphs.tex))
+(chapters/method.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 9.
+(Font)              scaled to size 9.0pt on input line 4.
+ [2.2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[2.2]) (chapters/method.tex
 <./images/Topology_graph.png, id=193, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
@@ -1229,16 +1231,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 41.
-
-Package natbib Warning: Citation `netflixoss' on page 3 undefined on input line
- 41.
-
-
-Package natbib Warning: Citation `springcloudnetflix' on page 3 undefined on in
-put line 41.
-
 [3.3]
-<./images/AttackGraphSystem.png, id=228, 254.30006pt x 153.12206pt>
+<./images/AttackGraphSystem.png, id=229, 254.30006pt x 153.12206pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
 <use ./images/AttackGraphSystem.png>
 Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 54.
@@ -1248,11 +1242,7 @@ Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 54.
 kGraphSystem.png>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 6.0pt on input line 81.
-
-Underfull \vbox (badness 2318) has occurred while \output is active []
-
- [5.5])
-(chapters/evaluation.tex
+) (chapters/evaluation.tex [5.5]
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
@@ -1312,24 +1302,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
-
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
- [6.6]
-Underfull \vbox (badness 2435) has occurred while \output is active []
-
-)
-(chapters/related_work.tex
+[6.6]) (chapters/related_work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7.7])
-(chapters/conclusion.tex) (main.bbl [8.8])
+(chapters/conclusion.tex) (main.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[9.9
-
-]
+[8.8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
  (main.aux)
@@ -1343,8 +1324,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19320 strings out of 492973
- 297226 string characters out of 3135906
+ 19319 strings out of 492973
+ 297217 string characters out of 3135906
  256413579 words of memory out of 259000000
  22178 multiletter control sequences out of 15000+200000
  167792 words of font info for 334 fonts, out of 3000000 for 9000
@@ -1373,9 +1354,9 @@ s/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb>
 <C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/newtx/txs
 ys.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ne
 wtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 626493 bytes).
+Output written on main.pdf (8 pages, 625245 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 121 named destinations out of 1000 (max. 500000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
  46228 words of extra memory for PDF output out of 51595 (max. 10000000)
 
