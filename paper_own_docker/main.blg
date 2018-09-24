@@ -4,8 +4,6 @@ Database file #1: sample-bibliography.bib
 Warning--entry type for "bottomely" isn't style-file defined
 --line 29 of file sample-bibliography.bib
 Warning--I didn't find a database entry for "Bottomley"
-Warning--I didn't find a database entry for "netflixoss"
-Warning--I didn't find a database entry for "springcloudnetflix"
 Warning--no key, author in samba
 Warning--no author, editor, organization, or key in samba
 Warning--to sort, need author or key in samba
@@ -67,4 +65,4 @@ Warning--empty address in sheyner2002automated
 Warning--empty publisher in shu2017study
 Warning--empty address in shu2017study
 Warning--empty address in wolff2016microservices
-(There were 65 warnings)
+(There were 63 warnings)

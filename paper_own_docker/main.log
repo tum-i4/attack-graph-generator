@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  23 SEP 2018 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.6.19)  24 SEP 2018 19:57
 entering extended mode
 **./main.tex
 (main.tex
@@ -1191,11 +1191,6 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 7.
 
-
-Package natbib Warning: Citation `Bottomley' on page 1 undefined on input line 
-7.
-
-
 Overfull \hbox (8.434pt too wide) in paragraph at lines 7--8
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) cepts in the soft-ware en-gi-neer-ing com-m
 u-nity. The first is the \T1/LinuxLibertineT-TLF/m/it/9 (-20) container-
@@ -1215,12 +1210,12 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
  [2.2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./images/Topology_graph.png, id=193, 169.8345pt x 173.448pt>
+<./images/Topology_graph.png, id=194, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
 Package pdftex.def Info: ./images/Topology_graph.png  used on input line 25.
 (pdftex.def)             Requested size: 120.57375pt x 123.14099pt.
-<./images/Attack_graph.png, id=194, 164.86594pt x 202.8077pt>
+<./images/Attack_graph.png, id=195, 164.86594pt x 202.8077pt>
 File: ./images/Attack_graph.png Graphic file (type png)
 <use ./images/Attack_graph.png>
 Package pdftex.def Info: ./images/Attack_graph.png  used on input line 32.
@@ -1232,7 +1227,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 41.
 [3.3]
-<./images/AttackGraphSystem.png, id=229, 254.30006pt x 153.12206pt>
+<./images/AttackGraphSystem.png, id=230, 254.30006pt x 153.12206pt>
 File: ./images/AttackGraphSystem.png Graphic file (type png)
 <use ./images/AttackGraphSystem.png>
 Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 54.
@@ -1302,18 +1297,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
-[6.6]) (chapters/related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[6.6]
+Underfull \vbox (badness 2435) has occurred while \output is active []
 
- [7.7])
-(chapters/conclusion.tex) (main.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-[8.8]
+)
+(chapters/related_work.tex [7.7]) (chapters/conclusion.tex) (main.bbl) [8.8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
- (main.aux)
+
+(main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1324,39 +1316,35 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19319 strings out of 492973
- 297217 string characters out of 3135906
+ 19304 strings out of 492973
+ 296953 string characters out of 3135906
  256413579 words of memory out of 259000000
  22178 multiletter control sequences out of 15000+200000
- 167792 words of font info for 334 fonts, out of 3000000 for 9000
+ 164249 words of font info for 321 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,27n,94p,2908b,2939s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,27n,94p,2888b,2939s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dv
-ips/libertine/lbtn_oexx6f.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.
-9/fonts/enc/dvips/newtx/libertinealt.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
-/dvips/base/8r.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc
-/dvips/libertine/lbtn_25tcsq.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX
-/2.9/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/Ibrahim Amjad/AppData/
-Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/Ibrahim 
-Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/
-Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_7
-6gpa5.enc}<C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/libertine/LinBiolinumT.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/libertine/LinBiolinumTB.pfb><C:/Users/Ibrahim Amjad/AppData/
-Roaming/MiKTeX/2.9/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/Ibr
-ahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/libertine/LinLibertine
-T.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/lib
-ertine/LinLibertineTB.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fo
-nts/type1/public/libertine/LinLibertineTI.pfb><C:/Users/Ibrahim Amjad/AppData/R
-oaming/MiKTeX/2.9/fonts/type1/public/newtx/fxlri-7letters.pfb><C:/Users/Ibrahim
- Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/User
-s/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/rtxr.pfb>
-<C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/newtx/txs
-ys.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ne
-wtx/zxlri.pfb>
-Output written on main.pdf (8 pages, 625245 bytes).
+ips/libertine/lbtn_oexx6f.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base
+/8r.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libe
+rtine/lbtn_25tcsq.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/
+enc/dvips/libertine/lbtn_naooyc.enc}{C:/Users/Ibrahim Amjad/AppData/Roaming/MiK
+TeX/2.9/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{C:/Users/Ibrahim Amjad/AppDa
+ta/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{C:/Users/Ibrah
+im Amjad/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<
+C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/libertine/
+LinBiolinumT.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1
+/public/libertine/LinBiolinumTB.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiK
+TeX/2.9/fonts/type1/public/libertine/LinBiolinumTI.pfb><C:/Users/Ibrahim Amjad/
+AppData/Roaming/MiKTeX/2.9/fonts/type1/public/libertine/LinLibertineT.pfb><C:/U
+sers/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/libertine/LinL
+ibertineTB.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
+ublic/libertine/LinLibertineTI.pfb><C:/Users/Ibrahim Amjad/AppData/Roaming/MiKT
+eX/2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/Ibrahim Amjad/AppData/Roam
+ing/MiKTeX/2.9/fonts/type1/public/newtx/txsys.pfb><C:/Users/Ibrahim Amjad/AppDa
+ta/Roaming/MiKTeX/2.9/fonts/type1/public/newtx/zxlri.pfb>
+Output written on main.pdf (8 pages, 541882 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
+ 446 PDF objects out of 1000 (max. 8388607)
  120 named destinations out of 1000 (max. 500000)
  46228 words of extra memory for PDF output out of 51595 (max. 10000000)
 
