@@ -5,6 +5,6 @@ paper_own_docker/main.pdf
 paper_own_docker/main.synctex.gz
 *.log
 *.aux
-*.pdf
 paper_own_docker/main.pdf
 *.gz
+
