@@ -1,10 +1,17 @@
-# Docker Attack Graph Generator
+# Attack Graph Generation for Microservice Architecture
 
+Microservices are increasingly dominating the field of service sys-
+tems, among their many characteristics are technology hetero-
+geneity, communicating small services, and automated deployment.
+Therefore, with the increase of utilizing third-party components
+distributed as images, the potential vulnerabilities existing in a
+microservice-based system increase.
+
+One of the most famous microservice architectures is Docker. This project generates attack graphs for Docker projects.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
 
 ### Prerequisites
 
@@ -13,16 +20,16 @@ It is tested on a virtual machine containing the above-mentioned operating syste
 
 Executing the program for the first time will download all of the needed libraries/components including:
 
--python3.6
--pip3
--docker-ce
--docker-compose
--go (also setting the path)
--clairctl
--graphviz
--yaml
--networkx
--numpy
+* python3.6
+* pip3
+* docker-ce
+* docker-compose
+* go (also setting the path)
+* clairctl
+* graphviz
+* yaml
+* networkx
+* numpy
 
 
 ### Installing and Running
@@ -50,5 +57,9 @@ $ sudo ./attack-graph-generator.sh ./examples/netflix-oss-example
 * Please note that on the first try, clair populates the database, so that is why the attack graph will be empty.
 * Also building the images in the vulnerability-parser takes more time, the first time it is built.
 
+## Authors
 
+## License
+
+## Acknowledgments
 
