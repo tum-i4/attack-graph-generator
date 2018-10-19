@@ -17,16 +17,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 This project works currently only on Ubuntu 16.04.4 LTS. Executing the program for the first time will download all of the needed libraries/components including:
 
-* [Python 3.6](https://www.python.org/downloads/)
-* pip3
-* docker-ce
-* docker-compose
-* go (also setting the path)
-* [clairctl](https://github.com/jgsqware/clairctl)
-* graphviz
-* yaml
-* networkx
-* numpy
+* [Python 3.6](https://www.python.org/downloads/) - a programming language.
+* [Pip](https://pypi.org/project/pip/) - a tool for installing Python packages.
+* [Docker Community Edition (CE)](https://docs.docker.com/install/linux/docker-ce/ubuntu/) - a computer program that performs operating-system-level virtualization, also known as "containerization".
+* [Docker Compose](https://docs.docker.com/compose/) - a tool for defining and running multi-container Docker applications.
+* [Go](https://github.com/golang/go) - an open source programming language that makes it easy to build simple, reliable, and efficient software.
+* [Clairctl](https://github.com/jgsqware/clairctl) - a lightweight command-line tool doing the bridge between Registries as Docker Hub, Docker Registry or Quay.io, and the CoreOS vulnerability tracker, Clair.
+* [Graphviz](https://www.graphviz.org/) - an open source graph visualization software.
+* [Yaml](http://yaml.org/) - a human-readable data serialization language.
+* [Networkx](https://networkx.github.io/) - a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+* [Numpy](http://www.numpy.org/) - a fundamental package for scientific computing with Python.
 
 ### Installing
 
@@ -68,4 +68,4 @@ Amjad Ibrahim amjad.ibrahim@tum.de
 
 ## Acknowledgments
 
-We would like to thank the teams of clair and clairctl for their vulnerabilities generator, which is an integral part of our system.
+We would like to thank the teams of [Clair](https://github.com/coreos/clair) and [Clairctl](https://github.com/jgsqware/clairctl) for their vulnerabilities generator, which is an integral part of our system.
