@@ -15,33 +15,33 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-It works currently only on Ubuntu 16.04.4 LTS.
-It is tested on a virtual machine containing the above-mentioned operating system from scratch.
+This project works currently only on Ubuntu 16.04.4 LTS. Executing the program for the first time will download all of the needed libraries/components including:
 
-Executing the program for the first time will download all of the needed libraries/components including:
-
-* python3.6
+* [Python 3.6](https://www.python.org/downloads/)
 * pip3
 * docker-ce
 * docker-compose
 * go (also setting the path)
-* clairctl
+* [clairctl](https://github.com/jgsqware/clairctl)
 * graphviz
 * yaml
 * networkx
 * numpy
 
+### Installing
 
-### Installing and Running
+All of the libraries/components indicated above are automatically installed during the first run of the program. For how to run the program, please refer to the commands bellow.
 
-In order to run the program, the following script should be run:
+### Running
+
+In order to run the program, the user needs to enter the home directory of the project and the following command on the terminal should be run:
 
 ```
 $ sudo ./attack-graph-generator.sh ./examples/atsea
 
 ```
 
-* The command starts the attack-graph-generator.sh script, generates an attack graph based on the system ./examples/atsea.
+* The command starts the attack-graph-generator.sh script and generates an attack graph based on the system ./examples/atsea.
 
 This command will download and install the required libraries and set up env variables when run for the first time. Then, it performs the attack graph analysis.
 In the config file, there is a possiblity to indicate online/offline mode. This means that offline mode does not use internet connection and we skip the vulnerabilities calculation step with clair. However we assume that the vulnerabilites files are already there and in the right location and they are produced by clair and named as such.
@@ -57,9 +57,15 @@ $ sudo ./attack-graph-generator.sh ./examples/netflix-oss-example
 * Please note that on the first try, clair populates the database, so that is why the attack graph will be empty.
 * Also building the images in the vulnerability-parser takes more time, the first time it is built.
 
+* It is tested on a virtual machine running on the above-mentioned operating system.
+
 ## Authors
+
+Stevica Bozhinoski stevica.bozhinoski@tum.de
+Amjad Ibrahim amjad.ibrahim@tum.de
 
 ## License
 
 ## Acknowledgments
 
+We would like to thank the teams of clair and clairctl for their vulnerabilities generator, which is an integral part of our system.
