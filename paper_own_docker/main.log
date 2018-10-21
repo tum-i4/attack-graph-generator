@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  21 OCT 2018 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  21 OCT 2018 18:36
 entering extended mode
 **./main.tex
 (main.tex
@@ -1101,8 +1101,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 1.
  [2.2]
-Underfull \vbox (badness 4660) has occurred while \output is active []
-
 <./images/Topology_graph.png, id=194, 169.8345pt x 173.448pt>
 File: ./images/Topology_graph.png Graphic file (type png)
 <use ./images/Topology_graph.png>
@@ -1120,7 +1118,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 41.
 
-Underfull \vbox (badness 2698) has occurred while \output is active []
+Underfull \vbox (badness 1082) has occurred while \output is active []
 
  [3.3]
 <./images/AttackGraphSystem.png, id=229, 254.30006pt x 153.12206pt>
@@ -1133,8 +1131,12 @@ Package pdftex.def Info: ./images/AttackGraphSystem.png  used on input line 54.
 [4.4 <./images/Topology_graph.png> <./images/Attack_graph.png> <./images/Attack
 GraphSystem.png>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 81.
-) (chapters/evaluation.tex [5.5]
+(Font)              scaled to size 6.0pt on input line 78.
+
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+)
+(chapters/evaluation.tex [5.5]
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
@@ -1213,17 +1215,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D0365CEE266AC8F1E96AF72EEE017875;2302.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 19379 strings out of 495203
- 298606 string characters out of 3181196
- 418994 words of memory out of 3000000
+ 19392 strings out of 495203
+ 298935 string characters out of 3181196
+ 420003 words of memory out of 3000000
  21682 multiletter control sequences out of 15000+200000
- 164522 words of font info for 323 fonts, out of 3000000 for 9000
+ 166183 words of font info for 332 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,27n,94p,2888b,807s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_oexx6f.e
@@ -1243,9 +1241,9 @@ ic/libertine/LinLibertineTI.pfb></home/stevica/.miktex/texmfs/install/fonts/typ
 e1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/pu
 blic/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/n
 ewtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 544710 bytes).
+Output written on main.pdf (9 pages, 544694 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
+ 452 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
  46228 words of extra memory for PDF output out of 51595 (max. 10000000)
 
