@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  21 OCT 2018 21:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  21 OCT 2018 22:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -1204,6 +1204,9 @@ Underfull \vbox (badness 2435) has occurred while \output is active []
 (chapters/related_work.tex [7.7]) (chapters/conclusion.tex) (main.bbl
 Underfull \vbox (badness 2698) has occurred while \output is active []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [8.8])
 [9.9
 
@@ -1241,7 +1244,7 @@ ic/libertine/LinLibertineTI.pfb></home/stevica/.miktex/texmfs/install/fonts/typ
 e1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/pu
 blic/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/n
 ewtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 544414 bytes).
+Output written on main.pdf (9 pages, 544325 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
