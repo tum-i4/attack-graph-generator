@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  21 OCT 2018 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.2.23)  1 NOV 2018 00:13
 entering extended mode
 **./main.tex
 (main.tex
@@ -1123,41 +1123,31 @@ kGraphSystem.png>]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 6.0pt on input line 78.
  [5.5]) (chapters/evaluation.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) No.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) com / Oreste-[]Luci /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) Atsea Sam-ple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 [][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
  []
@@ -1168,27 +1158,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 19--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+[][]$\T1/LinuxLibertineT-TLF/m/n/9 (+20) https : / / github . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+\T1/LinuxLibertineT-TLF/m/n/9 (+20) dockersamples /
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 21--21
 []\T1/LinuxLibertineT-TLF/m/n/9 (+20) PHPMailer(email cre-ation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \T1/LinuxLibertineT-TLF/m/n/9 (+20) exploit-[]CVE-[]2016-[]10033$[]
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2698) has occurred while \output is active []
 
  [6.6]
 Underfull \vbox (badness 2435) has occurred while \output is active []
 
 )
 (chapters/related_work.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2435) has occurred while \output is active []
 
  [7.7])
-(chapters/conclusion.tex) (main.bbl
+(chapters/conclusion.tex
+Underfull \vbox (badness 4660) has occurred while \output is active []
+
+) (main.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8.8])
@@ -1202,19 +1205,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D0365CEE266AC8F1E96AF72EEE017875;2302.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 19401 strings out of 495203
- 299166 string characters out of 3181196
+ 19398 strings out of 495203
+ 299088 string characters out of 3181196
  419996 words of memory out of 3000000
  21682 multiletter control sequences out of 15000+200000
- 167296 words of font info for 338 fonts, out of 3000000 for 9000
+ 166925 words of font info for 336 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,27n,94p,2987b,807s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,27n,94p,2988b,807s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_oexx6f.e
 nc}{/home/stevica/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc}{/home/ste
 vica/.miktex/texmfs/install/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/home/st
@@ -1232,7 +1231,7 @@ ic/libertine/LinLibertineTI.pfb></home/stevica/.miktex/texmfs/install/fonts/typ
 e1/public/txfonts/rtxr.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/pu
 blic/newtx/txsys.pfb></home/stevica/.miktex/texmfs/install/fonts/type1/public/n
 ewtx/zxlri.pfb>
-Output written on main.pdf (9 pages, 544540 bytes).
+Output written on main.pdf (9 pages, 544486 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
