@@ -1,0 +1,80 @@
+0
+00:00:00.01 --> 00:00:02.00
+Hello. In this video we demonstrate
+
+1
+00:00:02.01 --> 00:00:04.00
+how to install the Attack Graph Generator.
+
+2
+00:00:04.01 --> 00:00:07.00
+We first enter the directory where the program is saved.
+
+3
+00:00:13.01 --> 00:00:15.00
+We then enter the command for starting the program.
+
+4
+00:00:15.01 --> 00:00:17.00
+The program has to run in sudo mode.
+
+5
+00:00:17.01 --> 00:00:19.00
+Once the program is started, it automatically
+
+6
+00:00:19.01 --> 00:00:21.00
+downloads and installs the needed third-party components
+
+7
+00:00:21.01 --> 00:00:23.00
+needed for the program to run properly.
+
+8
+00:00:23.01 --> 00:00:25.00
+The user should press Y and Enter couple of times
+
+9
+00:00:25.01 --> 00:00:27.00
+to allow the components to be installed on the host machine.
+
+10
+00:00:27.01 --> 00:00:29.00
+The installation process should last couple of minutes.
+
+11
+00:00:29.01 --> 00:00:31.00
+Some of the parts in this video are intentionally skipped,
+
+12
+00:00:31.01 --> 00:00:33.00
+in order to reduce waiting time.
+
+13
+00:00:33.01 --> 00:00:35.00
+Some of the third-party components include:
+
+14
+00:00:35.01 --> 00:00:37.00
+python, pip, docker, docker-compose, go,
+
+15
+00:00:37.01 --> 00:00:39.00
+clairctl, graphviz, pyyaml, networkx and the examples.
+
+16
+00:01:39.01 --> 00:01:41.00
+Once all of the third-party components are downloaded and installed,
+
+17
+00:01:41.01 --> 00:01:43.00
+the attack graph generation procedure is automatically initialized.
+
+18
+00:01:43.01 --> 00:01:45.00
+For a walkthrough of running the program, please watch the second video.
+
+19
+00:01:45.01 --> 00:01:47.00
+Thank you for your attention.
+
