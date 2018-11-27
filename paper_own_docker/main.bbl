@@ -385,7 +385,8 @@
   Haines}, \bibinfo{person}{Somesh Jha}, \bibinfo{person}{Richard Lippmann},
   {and} \bibinfo{person}{Jeannette~M Wing}.} \bibinfo{year}{2002}\natexlab{}.
 \newblock \showarticletitle{Automated generation and analysis of attack
-  graphs}. In \bibinfo{booktitle}{\emph{null}}. IEEE, \bibinfo{pages}{273}.
+  graphs}. In \bibinfo{booktitle}{\emph{Proceedings-IEEE Symposium on Security
+  and Privacy}}. IEEE, \bibinfo{pages}{273}.
 \newblock
 
 

@@ -68,7 +68,18 @@ Another consideration is \textit{privileged access}\footnote{\url{http://obrown.
 \subsubsection{Vulnerability Parser}
 \label{chap:vulnerability_p}
 
-In the preprocessing step, we use Clair to generate the vulnerabilities for a given image. Clair is a vulnerability scanner that inspects a Docker image and generates its vulnerabilities by providing a \textit{CVE-ID}, a description and an attack vector for each vulnerability. An attack vector is an entity that describes which conditions and effects are connected to the given vulnerability. We collect the fields in the attack vector as defined by the NVD \cite{booth2013national}, i.e., Access Vector (Local, Adjacent Network, Network), Access Complexity (Low, Medium, High), Authentication (None, Single, Multiple), Confidentiality Impact (None, Partial, Complete), Integrity Impact (None, Partial, Complete), and Availability Impact (None, Partial, Complete). Since Clair does not provide a command line interface to analyze a Docker image, we use Clairctl to analyze a complete Docker image.
+In the preprocessing step, we use Clair to generate the vulnerabilities for a given image. Clair is a vulnerability scanner that inspects a Docker image and generates its vulnerabilities by providing a \textit{CVE-ID}, a description and an attack vector for each vulnerability. An attack vector is an entity that describes which conditions and effects are connected to the given vulnerability. We collect the fields in the attack vector as defined by the NVD \cite{booth2013national}:
+
+\begin{itemize}
+	\item Access Vector (Local, Adjacent Network, Network)
+	\item Access Complexity (Low, Medium, High)
+	\item Authentication (None, Single, Multiple)
+	\item Confidentiality Impact (None, Partial, Complete)
+	\item Integrity Impact (None, Partial, Complete)
+	\item Availability Impact (None, Partial, Complete)
+\end{itemize}
+
+Since Clair does not provide a command line interface to analyze a Docker image, we use Clairctl to analyze a complete Docker image.
 
 \begin{algorithm}
 	\SetAlgoLined
