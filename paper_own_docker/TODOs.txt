@@ -1,4 +1,0 @@
-1- the repo for the tool, clean-up, guide, readme, and a video capture
-2- A presentaion of the approach
-3- The comments from proofreading
-4- A concept for causal modeling of the ag
