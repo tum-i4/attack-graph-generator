@@ -1,8 +1,6 @@
 # Attack Graph Generation for Microservice Architecture
 
-Microservices are increasingly dominating the field of service sys-
-tems, among their many characteristics are technology hetero-
-geneity, communicating small services, and automated deployment.
+Microservices are increasingly dominating the field of service systems, among their many characteristics are technology heterogeneity, communicating small services, and automated deployment.
 Therefore, with the increase of utilizing third-party components
 distributed as images, the potential vulnerabilities existing in a
 microservice-based system increase.
