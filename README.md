@@ -1,3 +1,17 @@
+# Academic Citation 
+Please cite the following paper when using this tool. 
+
+Ibrahim, Amjad, Stevica Bozhinoski, and Alexander Pretschner. "Attack graph generation for microservice architecture." Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing. ACM, 2019.
+
+@inproceedings{ibrahim2019attack,
+  title={Attack graph generation for microservice architecture},
+  author={Ibrahim, Amjad and Bozhinoski, Stevica and Pretschner, Alexander},
+  booktitle={Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing},
+  pages={1235--1242},
+  year={2019},
+  organization={ACM}
+}
+
 # Attack Graph Generation for Microservice Architecture
 
 Microservices are increasingly dominating the field of service systems, among their many characteristics are technology heterogeneity, communicating small services, and automated deployment.
