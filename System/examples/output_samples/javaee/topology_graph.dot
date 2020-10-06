@@ -1,0 +1,12 @@
+// Topology Graph
+graph {
+	"docker host"
+	"movieplex7-tomee"
+	"react-client"
+	outside
+	"movieplex7-tomee" -- "react-client" [contstraint=false]
+	"react-client" -- outside [contstraint=false]
+	"docker host" -- "react-client" [contstraint=false]
+	"docker host" -- "movieplex7-tomee" [contstraint=false]
+	"movieplex7-tomee" -- outside [contstraint=false]
+}

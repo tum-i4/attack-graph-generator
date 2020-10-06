@@ -1,0 +1,46 @@
+// Topology Graph
+graph {
+	outside
+	netflixossexample_configservice
+	"docker host"
+	netflixossexample_servicec
+	netflixossexample_zuul
+	netflixossexample_turbine
+	netflixossexample_springclouddashboard
+	netflixossexample_serviceb
+	netflixossexample_servicea
+	netflixossexample_hystrixdashboard
+	netflixossexample_eureka
+	netflixossexample_rabbitmq
+	netflixossexample_zuul -- netflixossexample_eureka [contstraint=false]
+	netflixossexample_servicea -- netflixossexample_eureka [contstraint=false]
+	netflixossexample_servicec -- netflixossexample_servicea [contstraint=false]
+	"docker host" -- netflixossexample_serviceb [contstraint=false]
+	netflixossexample_springclouddashboard -- netflixossexample_serviceb [contstraint=false]
+	netflixossexample_springclouddashboard -- netflixossexample_servicea [contstraint=false]
+	"docker host" -- netflixossexample_springclouddashboard [contstraint=false]
+	netflixossexample_turbine -- netflixossexample_hystrixdashboard [contstraint=false]
+	"docker host" -- netflixossexample_rabbitmq [contstraint=false]
+	"docker host" -- netflixossexample_turbine [contstraint=false]
+	netflixossexample_servicec -- netflixossexample_serviceb [contstraint=false]
+	"docker host" -- netflixossexample_servicea [contstraint=false]
+	netflixossexample_servicec -- netflixossexample_rabbitmq [contstraint=false]
+	"docker host" -- netflixossexample_zuul [contstraint=false]
+	netflixossexample_turbine -- netflixossexample_rabbitmq [contstraint=false]
+	netflixossexample_turbine -- netflixossexample_springclouddashboard [contstraint=false]
+	outside -- netflixossexample_zuul [contstraint=false]
+	netflixossexample_serviceb -- netflixossexample_rabbitmq [contstraint=false]
+	netflixossexample_configservice -- "docker host" [contstraint=false]
+	netflixossexample_configservice -- netflixossexample_serviceb [contstraint=false]
+	"docker host" -- netflixossexample_eureka [contstraint=false]
+	netflixossexample_serviceb -- netflixossexample_servicea [contstraint=false]
+	netflixossexample_servicec -- netflixossexample_eureka [contstraint=false]
+	netflixossexample_configservice -- netflixossexample_servicec [contstraint=false]
+	netflixossexample_springclouddashboard -- netflixossexample_eureka [contstraint=false]
+	netflixossexample_servicea -- netflixossexample_rabbitmq [contstraint=false]
+	netflixossexample_configservice -- netflixossexample_servicea [contstraint=false]
+	netflixossexample_servicec -- netflixossexample_springclouddashboard [contstraint=false]
+	"docker host" -- netflixossexample_servicec [contstraint=false]
+	netflixossexample_serviceb -- netflixossexample_eureka [contstraint=false]
+	"docker host" -- netflixossexample_hystrixdashboard [contstraint=false]
+}

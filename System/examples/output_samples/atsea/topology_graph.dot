@@ -1,0 +1,16 @@
+// Topology Graph
+graph {
+	outside
+	atsea_app
+	atsea_db
+	"docker host"
+	atsea_reverse_proxy
+	atsea_payment_gateway
+	outside -- atsea_db [contstraint=false]
+	outside -- atsea_app [contstraint=false]
+	atsea_app -- "docker host" [contstraint=false]
+	atsea_app -- atsea_db [contstraint=false]
+	"docker host" -- atsea_payment_gateway [contstraint=false]
+	"docker host" -- atsea_reverse_proxy [contstraint=false]
+	atsea_db -- "docker host" [contstraint=false]
+}
