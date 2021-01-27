@@ -156,7 +156,7 @@ def add_edge(nodes,
     if node_start_full not in nodes:
         nodes.add(node_start_full)
 
-    if node_end not in nodes:
+    if node_end_full not in nodes:
         nodes.add(node_end_full)
 
     key = node_start_full + "|" + node_end_full 
